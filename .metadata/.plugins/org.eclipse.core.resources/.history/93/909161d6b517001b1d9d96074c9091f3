@@ -1,0 +1,11 @@
+package Ejercicio1FileSistem;
+
+public class CriterioOr implements Criterio {
+
+	@Override
+	public boolean cumple(ElementFileSystem elem) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

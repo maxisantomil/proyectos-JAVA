@@ -1,0 +1,6 @@
+package Recuperatorio_Prog2;
+
+public class Descuentos {
+	arrayList<Criterio>Descuento;
+
+}

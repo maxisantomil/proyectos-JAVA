@@ -1,0 +1,11 @@
+package Ejercicio7busquedaDocumentos;
+
+import java.util.ArrayList;
+
+public class Documento {
+	private String titulo;
+	private ArrayList<Autor>autores;
+	private String contenidotex;
+	private ArrayList<String>palabrasClaves;
+	
+}

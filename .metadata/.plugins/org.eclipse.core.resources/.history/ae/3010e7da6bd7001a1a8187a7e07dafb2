@@ -1,0 +1,18 @@
+package PracticoInicial;
+
+public class Partida {
+	
+private Jugador p1= new Jugador("player1");
+private Jugador p2= new Jugador("player2");
+
+public Jugador ganador() {
+	if (p1.getScore() > p2.getScore()) 
+		return p1;
+	else 
+		if ((p2.getScore()) > (p1.getScore()))
+			return p2;
+		else 
+			return null;
+	}
+}
+

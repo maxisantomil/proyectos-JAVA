@@ -1,0 +1,13 @@
+package Ejercicio5Empleados;
+
+import java.util.ArrayList;
+
+public class Empresa {
+
+	
+	ArrayList<Empleado>empleados;
+	
+	Empleado e1= new EmpleadoSueldoFijo("jorge", "perez",33524, 18000);
+	Empleado e2= new EmpleadoVenta("maxi", "santoval", 3517251, 20000,0.15, 9000);
+	
+}

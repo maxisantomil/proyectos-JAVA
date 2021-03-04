@@ -1,0 +1,11 @@
+
+public class EmpresaGanadera {
+
+	public static void main(String[] args) {
+		Conjunto conjunto= new Conjunto();
+		
+		
+
+	}
+
+}

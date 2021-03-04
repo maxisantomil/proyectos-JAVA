@@ -1,0 +1,34 @@
+package Ejercicio2;
+
+public class CasaExigente extends CasaHowart{
+
+	
+	
+	public CasaExigente(String n, int e) {
+		super(n,e);
+	}
+	
+	public boolean cumpleCualidades(Alumno p) {
+		
+	 if ((cualidades.isMagianegra())== (p.cualidades.isMagianegra())){
+		 return true;
+	 	}
+	 return false;
+	}
+	
+	public boolean FamiliarSeencuentraenCasa(Alumno a) {
+		for (Alumno n:Alumnos) {
+			if (n.equals(a)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void AgregarAlumno (Alumno p) {
+		if ((p.FamiliarEstaCasa(this)) && (cumpleCualidades(p))){
+			Alumnos.add(p);
+		}
+	}
+	
+}

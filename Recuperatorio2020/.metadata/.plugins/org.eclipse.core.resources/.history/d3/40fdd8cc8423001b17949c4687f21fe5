@@ -1,0 +1,20 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Voluntario v1= new Voluntario("maxi","argentina",30,"masculino", false, false);
+		Voluntario v2= new Voluntario("jose","argentina",31,"masculino", true, false);
+		Voluntario v3= new Voluntario("pepe","argentina",32,"masculino", false, true);
+		Voluntario v4= new Voluntario("juan","argentina",33,"masculino", true, false);
+	
+	GrupoZona grupo1= new GrupoZona("barrio centro");
+	grupo1.agregarElemento(v1);
+	grupo1.agregarElemento(v2);
+	grupo1.agregarElemento(v3);
+	grupo1.agregarElemento(v4);
+	
+	
+	System.out.println(grupo1.cantidadVoluntarios());
+}
+	
+}

@@ -1,0 +1,27 @@
+package Libreria;
+
+public class Libreria {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Libro principito= new Libro("El Principito", "Lester", "el vive en un planeta lejano");
+		Cliente Jose= new Cliente(2500, 5);
+		
+		principito.addGenero("erotico");
+		principito.addGenero("gjgj");
+		
+		Jose.addGenero("fantasia");
+		Jose.addGenero("ciencia ficcion");
+		Jose.addGenero("accion");
+		
+		Jose.AceptaLibro(principito);
+		
+		DescuentoAniosAntiguedad aniosAntiguedad= new DescuentoAniosAntiguedad(5, 15);
+
+		
+		System.out.println(principito.getGeneros());
+		System.out.println(Jose.AceptaLibro(principito));
+	}
+	
+
+}

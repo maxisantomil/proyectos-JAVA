@@ -1,0 +1,25 @@
+package Ejercicio4CentrodeComputos;
+
+import java.util.ArrayList;
+
+public class Cola {
+
+	ArrayList<Proceso>procesos;
+	
+	
+	
+	public void agregarProceso (Proceso p) {
+		
+		boolean encontrado=false;
+		int i=0;
+		while (i<procesos.size() && !encontrado) {
+			Proceso procesoencola= procesos.get(i);
+			if (procesoencola.getMemoria() < p.getMemoria()){
+				procesos.add(i,p);
+				encontrado=true;
+			}
+		}if (!encontrado) {
+			procesos.add(p);
+		}
+	}
+}

@@ -1,0 +1,25 @@
+package Ejercicio6WorkBreakdownStructure;
+
+public class RecursoCompartido extends Recurso {
+
+	
+	
+	
+	
+	
+	public RecursoCompartido(String nomb) {
+		super(nomb);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean isEstaocupado() {
+		return false;
+	}
+
+	@Override
+	public void setEstaocupado(Boolean f) {
+		
+	}
+
+}

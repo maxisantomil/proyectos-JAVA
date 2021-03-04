@@ -1,0 +1,39 @@
+package PracticoInicial;
+
+public class Jugador {
+
+	private String name;
+	private String apodo;
+	private int score;
+	
+	public Jugador(String name1) {
+		this.name=name1;
+		apodo="";
+		score=0;
+	}
+	
+	public Jugador(String name,String apodo1) {
+		this.apodo=apodo1;
+		this.name= name;
+		score=0;
+	}
+	
+	
+	public String getname() {
+		return name;
+	}
+	
+	public int getScore() {
+		return score;
+	}
+	
+	public String getapodo() {
+		return apodo;
+	}
+	
+	public void incrementarPuntaje() {
+		score++;
+	}
+	
+	
+}

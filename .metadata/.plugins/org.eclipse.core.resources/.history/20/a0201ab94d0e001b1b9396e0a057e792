@@ -1,0 +1,7 @@
+package Ejercicio4Vivero;
+
+public class Fichaplanta {
+	private String nombreCientifico;
+	private String nombresVulgares;
+	private String clasificaciónSuperior;
+}

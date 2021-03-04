@@ -1,0 +1,13 @@
+package SeleccionFutbol;
+import java.util.ArrayList;
+import java.time.LocalDate;
+public class SeleccionFutbol {
+	
+	public static void main(String []args) {
+		
+		ArrayList<Integrante>seleccion;
+		
+		seleccion=new ArrayList<Integrante>();
+		Integrante jugador1= new Integrante("Lionel","Messi",34825712,LocalDate.of(1989,05,03));
+}
+}

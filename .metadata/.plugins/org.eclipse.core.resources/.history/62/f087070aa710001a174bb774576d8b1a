@@ -1,0 +1,32 @@
+package Libreria;
+
+import java.util.ArrayList;
+
+public class ConjCliente implements Clientela {
+
+	ArrayList<Clientela>grupos;
+	
+	public ConjCliente() {
+		grupos=new ArrayList<>();
+	}
+	public boolean AceptaLibro(Libro l) {
+		boolean acepta=false;
+		for (Clientela c: grupos) {
+			if (c.AceptaLibro(l)){
+				acepta=true;
+			}
+		}
+		return acepta;
+	}
+	
+	public double getDinerogastado() {
+		double suma=0;
+		for (Clientela c:grupos) {
+			suma+=c.getDinerogastado();
+		}
+		return suma;
+	}
+	
+	
+	
+}

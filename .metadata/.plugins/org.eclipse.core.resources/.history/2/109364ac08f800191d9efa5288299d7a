@@ -1,0 +1,12 @@
+
+public class EmpresaGanadera {
+
+	public static void main(String[] args) {
+		Conjunto conjunto= new Conjunto();
+		
+		Animal vacaLola= new Animal(1, 1, 80, "Holando", "Hembra", false, 2);
+		
+
+	}
+
+}

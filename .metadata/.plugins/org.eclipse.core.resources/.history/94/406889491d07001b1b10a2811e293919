@@ -1,0 +1,11 @@
+package Ejercicio7busquedaDocumentos;
+
+public class CriterioContenidotieneX extends Criterio {
+
+	@Override
+	public boolean cumpleCriterio(Documento doc) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

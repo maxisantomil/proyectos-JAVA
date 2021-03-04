@@ -1,0 +1,25 @@
+
+public class Episodio {
+	private String titulo;
+	private String descripcion;
+	private boolean flagvisto;
+	private int calificacion;
+	
+	
+	public Episodio(String t,String des) {
+		titulo = t;
+		descripcion = des;
+		flagvisto=false;
+		calificacion= -1;
+	}
+	
+	public void  agregarCalificacion( int cali) {
+		int calificacionminima = 1;
+		int calificacionmaxima = 5;
+		if ((cali > calificacionminima)&& (cali<=calificacionmaxima)) {
+			calificacion= cali;
+		}
+		else 
+			System.out.println("la calificacion ingresada no es valida , ingrese un numero del 1 al 5");
+	}
+}

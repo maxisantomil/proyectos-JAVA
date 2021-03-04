@@ -1,0 +1,64 @@
+package Ejercicio2SistemaElectoral;
+
+public class MainSistema {
+
+	public static void main(String[] args) {
+		Candidato c1= new Candidato("pepe", "obero", "marylin");
+		Candidato c2= new Candidato("tuvieja", "los pario", "rr");
+		Candidato c3= new Candidato("fr", "kk", "queseyo");
+		Candidato c4= new Candidato("guachin", "chori", "pan");
+		
+		Voto v1= new Voto(1);
+		Voto v2= new Voto(2);
+		Voto v3= new Voto(3);
+		Voto v4= new Voto(4);
+		Voto v5= new Voto(5);
+		Voto v6= new Voto(6);
+		Voto v7= new Voto(7);
+		Voto v8= new Voto(8);
+		
+		v1.votar(c2);
+		v2.votar(c1);
+		v3.votar(c2);
+		v4.votar(c1);
+		v5.votar(c2);
+		v6.votar(c1);
+		v7.votar(c2);
+		v8.votar(c1);
+		
+		
+		Establecimiento Escuela= new Establecimiento("EE N 22");
+		Establecimiento mesa1= new Establecimiento("la joda loca");
+		Establecimiento mesa2= new Establecimiento("oo");
+		
+			mesa1.agregardniPadron(1);
+			mesa1.agregardniPadron(2);
+			mesa2.agregardniPadron(3);
+			mesa2.agregardniPadron(4);
+			mesa2.agregardniPadron(5);
+			
+		
+				Escuela.agregardniPadron(6);
+				Escuela.agregardniPadron(7);
+				Escuela.agregardniPadron(8);
+				
+				mesa1.agregarVoto(v1);
+				mesa1.agregarVoto(v2);
+				mesa2.agregarVoto(v3);
+				mesa2.agregarVoto(v4);
+				mesa2.agregarVoto(v5);
+				Escuela.agregarVoto(v6);
+				Escuela.agregarVoto(v7);
+				Escuela.agregarVoto(v8);
+				
+				Escuela.agregarVoto(mesa1);
+				Escuela.agregarVoto(mesa2);
+				
+				
+				System.out.println(mesa1.votosporCandidato("tuvieja"));
+				
+				
+		
+	}
+
+}

@@ -1,0 +1,51 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class Sensor {
+	private String nombre;
+	private ArrayList<Double>registros;
+	
+	
+	
+	public Sensor(String nombre) {
+		this.nombre=nombre;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public ArrayList<Double> getRegistros(){
+		return (ArrayList<Double>)registros.clone();
+	}
+	
+	
+	
+	public double promedioXcantRegistros(int cant) {
+		int inicio= registros.size()-cant;
+		double promedio=0.0;
+		for (int i= inicio; i< registros.size(); i++) {
+			promedio+=registros.get(i).doubleValue();
+		}
+		return promedio/cant;
+	}
+	
+	public double ultimoRegistro() {
+		return registros.get(registros.size()).doubleValue();
+	}
+	
+	public double valorMaximoNRegistros(int cant) {
+		double valor=0.0;
+		double compara=0.0;
+		int inicio= registros.size()-cant;
+		for (int i=inicio;i<registros.size();i++) {
+			valor=registros.get(i);
+			if (valor>compara) {
+				compara=valor;
+			}
+		}
+		return compara;
+	}
+	
+}

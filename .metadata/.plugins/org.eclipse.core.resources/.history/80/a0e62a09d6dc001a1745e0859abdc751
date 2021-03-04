@@ -1,0 +1,9 @@
+package Ejercicios2020;
+import java.util.Date;
+public class Runion {
+	private String direccion;
+	private String tema;
+	private int Duracion;
+	private Date fecha;
+
+}

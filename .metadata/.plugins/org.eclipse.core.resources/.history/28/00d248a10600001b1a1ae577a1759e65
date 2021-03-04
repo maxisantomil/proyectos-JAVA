@@ -1,0 +1,23 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionTemperatura extends Criterio {
+
+	PrediccionTemperatura(int cant, int maxT){
+	super(cant,maxT);
+	}
+
+	@Override
+	public boolean predicelluvia(EstacionMeteorologica e) {
+		double promedio=0;
+		if (e.superatemperaturaminima(cantmaximaRegistros, valoraComparar)){
+			System.out.println("dan temperaturas maximas de :"+ valoraComparar + (e.superatemperaturaminima(cantmaximaRegistros, valoraComparar))) ;
+			return true;
+			
+		}
+		System.out.println("dan temperaturas maximas de :"+ valoraComparar + (e.superatemperaturaminima(cantmaximaRegistros, valoraComparar))) ;
+		return false;
+	}
+
+}

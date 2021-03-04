@@ -1,0 +1,91 @@
+import java.util.ArrayList;
+
+public class Serie {
+	private String nombre;
+	private String descripcion;
+	private String creador;
+	private String genero;
+	ArrayList<Temporada>Temporadas;
+	
+	
+	
+	public Serie(String n, String d, String c, String g) {
+		nombre = n; 
+		descripcion = d;
+		creador = c;
+		genero = g;
+		Temporadas = new ArrayList<Temporada>();
+		
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+	public String getCreador() {
+		return creador;
+	}
+
+
+
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
+
+	public ArrayList<Temporada> getTemporadas() {
+		return Temporadas;
+	}
+	
+	
+	public void addtemporada (Temporada t) {
+		Temporadas.add(t);
+	}
+	
+	public int canttemporadas () {
+		return Temporadas.size();
+	}
+	
+	public int cantEpisodiosVistos() {
+		int cant = 0;
+		for (Temporada t: Temporadas) {
+			cant = cant + t.totalepisodiosvistos();
+		}
+		return cant;
+	}
+}

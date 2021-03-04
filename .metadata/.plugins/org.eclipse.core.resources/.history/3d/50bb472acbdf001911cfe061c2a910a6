@@ -1,0 +1,81 @@
+package Practico_4_1_Congreso;
+import java.util.ArrayList;
+public class Comite {
+	ArrayList<EvaluadorB>evaluadores;
+	ArrayList<Trabajo>trabajos;
+	ArrayList<String>tema_expert;
+
+	
+	public Comite() {
+		evaluadores=new ArrayList<EvaluadorB>();
+		trabajos=new ArrayList<Trabajo>();
+		tema_expert=new ArrayList<String>();
+	}
+	
+	
+	public void addEvaluadores(EvaluadorB e) {
+		evaluadores.add(e);
+	}
+
+	public void addTrabajos(Trabajo t) {
+		trabajos.add(t);
+	}
+		
+	public void addTemas_expertos(String tema){
+		tema_expert.add(tema);
+	}
+	
+	public boolean isExperto(EvaluadorB e) {
+		for(String t_e: tema_expert) {
+			if(e.conoce(t_e)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	public void asignarunTPevaluador(Trabajo t,EvaluadorB e) {
+		if (e.Apto_trabajo(t)){
+			e.addTrabajo(t);
+		}
+	}
+	
+	public void asignarTrabajosevaluadores() {
+		for (EvaluadorB e:evaluadores) {
+			for (Trabajo t:trabajos) {
+				if (e.Apto_trabajo(t)){
+					e.addTrabajo(t);
+				
+				}
+			}
+		}
+	}
+	public void imprimirTrabajos(EvaluadorB e) {
+		for (Trabajo t:trabajos) {
+			if (e.tiene(t)){
+				System.out.println("el evaluador:  "+e.getNombre()+" tiene el :  "+t.getNombre());
+			}
+		}
+	}
+	public void imprimirEvaluador(Trabajo t) {
+		for (EvaluadorB e:evaluadores) {
+			if (e.tiene(t)){
+				System.out.println("el :"+t.getNombre()+"  lo tiene el evaluador: "+ e.getNombre());
+			}
+			
+		}
+	}
+	public void cantTrabajos(EvaluadorB e) {
+		System.out.println("el evaluador : "+e.getNombre()+" tiene:  "+  e.getCantTrabajos()+" trabajos.");
+	}
+	
+	public void tipodeEvaluador(EvaluadorB e) {
+		if (isExperto(e)) {
+			System.out.println("el evaluador :"+ e.getNombre()+" es experto");
+		}
+			else {
+				System.out.println("el evaluador :"+ e.getNombre()+" es comun");
+		}
+	}
+}
+
+

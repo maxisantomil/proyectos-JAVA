@@ -1,0 +1,12 @@
+package Ejercicio1;
+
+public class Timbre {
+	String nombre; 
+
+
+
+
+public boolean HacerSonar(Alarma a) {
+	return true;
+	}
+}

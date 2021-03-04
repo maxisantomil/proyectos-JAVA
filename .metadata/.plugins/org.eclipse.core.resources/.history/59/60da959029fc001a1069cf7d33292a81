@@ -1,0 +1,12 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public abstract class Prediccion {
+	String nombre;
+	
+	
+	public abstract boolean predicelluvia(ArrayList<Registro>registros,int n,int max);
+	
+	
+}

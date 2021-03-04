@@ -1,0 +1,40 @@
+package Ejercicio3SistemaAlquiler;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class Cliente {
+	String nombre;
+	int 	  dni;
+	ArrayList<Alquiler>alquileres;
+	
+	public Cliente (String nombre,int dni) {
+		this.nombre=nombre;
+		this.dni=dni;
+		alquileres=new ArrayList<>();
+	}
+	public void agregarAlquiler(Alquiler nuevo) {
+		alquileres.add(nuevo);
+	}
+	
+	public ArrayList<Item> getAlquileres(){
+		return (ArrayList<Item>)alquileres.clone();
+	}
+	public void devolverItemAlquilado(Item i) {
+		i.itemDevuelto();
+	}
+	
+	public boolean alquileresVencidos() {
+		for (Alquiler a:alquileres) {
+			if (a.alquilerVencido()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	@Override
+	public String toString() {
+		return "Cliente [nombre=" + nombre + ", dni=" + dni + "]";
+	}
+	
+}

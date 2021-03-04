@@ -1,0 +1,29 @@
+
+public class PocimaFortalecedora extends Pocima {
+	private double porcentaje;
+
+	public PocimaFortalecedora(double porc,String s) {
+		super(s);
+		porcentaje=porc;
+	}
+	
+	
+	
+	public double getPorcentaje() {
+		return porcentaje;
+	}
+
+
+
+	public void setPorcentaje(double porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+
+
+
+	@Override
+	public double modificarAtributo(Atributo atr) {
+		return atr.getValor()*((porcentaje/100)+1);
+		}
+
+}

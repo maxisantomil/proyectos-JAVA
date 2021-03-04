@@ -1,0 +1,18 @@
+package Ejercicio6Congreso;
+
+import java.util.ArrayList;
+
+public class Evaluador {
+	private String nombre;
+	private ArrayList<String>palabrasclaves;
+	private int canttrabajosAsignados;
+	
+	
+	
+	public boolean esApto(Trabajo t) {
+		if (t.cumpleRequisitos(this)) {
+			return true;
+		}
+		return false;
+	}
+}

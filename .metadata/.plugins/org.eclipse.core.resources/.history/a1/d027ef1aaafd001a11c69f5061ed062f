@@ -1,0 +1,57 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class EstacionMeteorologica {
+	private String Nombre;
+	private ArrayList<Registro>registros;
+	private Prediccion criterioPrediccion;
+	
+	public EstacionMeteorologica(String n) {
+		Nombre=n;
+		registros=new ArrayList<>();
+	}
+	
+	public void agregarRegistro(Registro r) {
+		registros.add(r);
+	}
+	
+	public double cantlluviaAcumulada() {
+		double suma=0;
+		for (Registro r :registros) {
+			 suma+=r.getCantllovido();
+		}
+		return suma;
+	}
+	
+	public void setRegistros(ArrayList<Registro> registros) {
+		this.registros = registros;
+	}
+
+	
+	public ArrayList<Registro> getRegistros() {
+		return (ArrayList<Registro>)registros.clone();
+	}
+
+	public boolean valloverenproxhora() {
+			return criterioPrediccion.predicelluvia(this) ;
+			
+	}
+	
+	public void agregarPrediccion(Prediccion x) {
+		criterioPrediccion=x;
+	}
+	
+	public double  promedioLLuvias(int cantregistros) {
+		double promedio=0;
+		System.out.println(registros.size());
+		int tope=registros.size()- cantregistros;
+		System.out.println(tope);
+		System.out.println(registros.get(2).cantllovido);
+		for (int i=registros.size(); i>tope;i--){
+			promedio=promedio + (registros.get(i).getCantllovido());
+		}
+		promedio= promedio/cantregistros;
+		return promedio;
+	}
+}

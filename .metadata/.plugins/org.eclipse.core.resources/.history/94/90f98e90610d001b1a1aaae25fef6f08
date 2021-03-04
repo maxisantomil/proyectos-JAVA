@@ -1,0 +1,23 @@
+package Ejercicio3Biblioteca;
+
+public class MainBiblio {
+
+	public static void main(String[] args) {
+		Biblioteca Alfa= new Biblioteca("Alfa");
+		Libro l1= new Libro(1, "harry potter 1 ", "J Rowling", 2000, "fantasia");
+		Libro l2= new Libro(5, "harry potter 3 ", "J Rowling", 2002, "fantasia");
+		Libro l3= new Libro(3, "harry potter 2 ", "J Rowling", 2001, "fantasia");
+		Libro l4= new Libro(2, "cien anios de soledad", "Marquez", 1960, "bibliografica");
+
+		Libro l5= new Libro(4, "Angular basico", "Kl", 2010, "profesional");
+		
+		Alfa.agregarLibro(l1);
+		Alfa.agregarLibro(l2);
+		Alfa.agregarLibro(l3);
+		Alfa.agregarLibro(l4);
+		Alfa.agregarLibro(l5);
+		
+		System.out.println(Alfa.mostrarLibros_porDefecto());
+	}
+
+}

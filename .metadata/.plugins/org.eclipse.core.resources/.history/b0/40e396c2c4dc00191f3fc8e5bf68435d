@@ -1,0 +1,36 @@
+package Practico_4_1_Congreso;
+
+import java.util.ArrayList;
+
+public class Sistema_Congreso {
+	public static void main(String[] args) {
+
+	ArrayList<EvaluadorB>evaluadores;
+	ArrayList<String>tema_expert;
+	ArrayList<Trabajo>trabajos;
+	
+	evaluadores= new ArrayList<EvaluadorB>();
+	tema_expert= new ArrayList<String>();
+	
+	EvaluadorB eva1 = new EvaluadorB("martin Pesolano");
+	EvaluadorB eva2 = new EvaluadorB("jorge enrique Farineli");
+	EvaluadorB eva3 = new EvaluadorB("rodrigo Mileto");
+	evaluadores.add(eva1);
+	evaluadores.add(eva2);
+	evaluadores.add(eva3);
+	
+	
+	String tema1= new String("quimica,biologia,fisica");
+	String tema2= new String("inversiones,impuestos,inflacion");
+	tema_expert.add(tema1);
+	tema_expert.add(tema2);
+	
+	eva1.addTema(tema2);
+	
+	Trabajo poster = new Trabajo();
+	
+	for(EvaluadorB e: evaluadores) {
+			System.out.println("el evaluador :"+e + "es experto en "+ e.gettemas());
+		}
+	}	
+}

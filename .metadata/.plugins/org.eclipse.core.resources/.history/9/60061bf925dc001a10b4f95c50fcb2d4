@@ -1,0 +1,26 @@
+package Libreria;
+
+public class DescuentoCantLibros implements CriterioDescuento{
+	int cant;
+	int porcentaje;
+	
+	
+	public DescuentoCantLibros(int ca, int des) {
+		cant=ca;
+		porcentaje=des;
+	}
+	
+	public boolean cumple(Cliente e) {
+		return e.getLibros().size()>=cant;
+	}
+
+	public int getPorcentaje() {
+		return porcentaje;
+	}
+
+	public void setPorcentaje(int porcentaje) {
+		this.porcentaje = porcentaje;
+	}
+
+	
+}

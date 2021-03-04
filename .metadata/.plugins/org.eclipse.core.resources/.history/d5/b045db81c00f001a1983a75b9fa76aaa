@@ -1,0 +1,25 @@
+package Libreria;
+
+public class Libro extends ElementLibro{
+	private String nombre;
+	private String autor;
+	private String resumen;
+
+	public Libro(String n,String au,String res) {
+		super();
+		this.nombre=n;
+		this.autor=au;
+		this.resumen=res;
+	}
+	
+	
+	public boolean acepta(String s) {
+		boolean acepta=false;
+		for (String b : super.getGeneros()) {
+			if (b.equals(s)){
+				acepta=true;
+			}
+		}
+		return acepta;
+	}
+}

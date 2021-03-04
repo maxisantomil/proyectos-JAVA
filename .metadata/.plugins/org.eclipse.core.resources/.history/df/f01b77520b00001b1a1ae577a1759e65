@@ -1,0 +1,11 @@
+package Ejercicio2Meteorologo;
+
+public class PrediccionUltimoRegistroViento extends Criterio {
+
+	@Override
+	public boolean predicelluvia() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

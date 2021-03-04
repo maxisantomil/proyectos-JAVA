@@ -1,0 +1,104 @@
+import java.util.ArrayList;
+
+public class Voluntario extends ElementZona{
+	private String nacionalidad;
+	private int edad;
+	private String genero;
+	ArrayList<String>enfermedadesPre;
+	private boolean recibioPlacebo;
+	private boolean contrajoEnfermedad;
+	
+	
+	public Voluntario(String nombre, String nacionalidad,int edad, String genero,boolean placebo, boolean conEnfer) {
+		super(nombre);
+		this.nacionalidad=nacionalidad;
+		this.edad=edad;
+		this.genero=genero;
+		enfermedadesPre= new ArrayList<>();
+		this.recibioPlacebo=placebo;
+		this.contrajoEnfermedad=conEnfer;
+	}
+	
+	
+	public void agregarEnfermedadPre(String e) {
+		if (!contieneEnfermedad(e)) {
+			enfermedadesPre.add(e);
+		}
+	}
+	
+	public boolean contieneEnfermedad(String enfermedad) {
+		return enfermedadesPre.contains(enfermedad);
+	}
+	
+
+	public String getNacionalidad() {
+		return this.nacionalidad;
+	}
+
+
+	public int getEdad() {
+		return edad;
+	}
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+	public boolean isRecibioPlacebo() {
+		return recibioPlacebo;
+	}
+
+
+
+
+	public boolean isContrajoEnfermedad() {
+		return contrajoEnfermedad;
+	}
+	
+
+	@Override
+	public int cantidadVoluntarios() {
+		return 1;
+	}
+
+	@Override
+	public int cantidadVoluntariosCriterio(Criterio c) {
+		if (c.cumple(this)){
+			return 1;
+		}
+		return 0;
+	}
+
+
+	@Override
+	public ArrayList<Voluntario> ListaVoluntariosVacuna(Criterio c) {
+		ArrayList<Voluntario>nuevaLista= new ArrayList<>();
+		if (c.cumple(this)) {
+			nuevaLista.add(this);
+		}
+		return nuevaLista;
+	}
+	
+	public boolean equals(Object o) {
+		try {
+			Voluntario v= (Voluntario)o;
+			return this.getNombre().equals(v.getNombre())&& (this.getEdad()==v.getEdad());
+			//para mayor precicion se deberia tener un dni de cada voluntario
+		}catch(Exception exc) {
+			return false;
+		}
+	}
+
+
+	@Override
+	public String toString() {
+		return "Voluntario [nombre: "+ this.getNombre()+" nacionalidad=" + nacionalidad + ", edad=" + edad + ", genero=" + genero
+				+ ", enfermedadesPre=" + enfermedadesPre + ", recibioPlacebo=" + recibioPlacebo
+				+ ", contrajoEnfermedad=" + contrajoEnfermedad + "]";
+	}
+	
+	
+	
+}

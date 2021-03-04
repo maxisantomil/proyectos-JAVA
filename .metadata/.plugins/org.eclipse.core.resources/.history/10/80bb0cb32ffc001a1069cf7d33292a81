@@ -1,0 +1,38 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class EstacionMeteorologica {
+	private String Nombre;
+	private ArrayList<Registro>registros;
+	private ArrayList<Prediccion> predicelluvia;
+	
+	public EstacionMeteorologica(String n) {
+		Nombre=n;
+		registros=new ArrayList<>();
+		predicelluvia=new ArrayList<>();
+	}
+	
+	
+	public double cantlluviaAcumulada() {
+		double suma=0;
+		for (Registro r :registros) {
+			 suma+=r.getCantllovido();
+		}
+		return suma;
+	}
+	
+	
+	public boolean valloverenproxhora() {
+		for (Prediccion p:predicelluvia) {
+			if (!p.predicelluvia(this.registros)) {
+				return false;
+			}
+		}
+		return false;
+	}
+	
+	public void agregarPrediccion(Prediccion x) {
+		predicelluvia.add(x);
+	}
+}

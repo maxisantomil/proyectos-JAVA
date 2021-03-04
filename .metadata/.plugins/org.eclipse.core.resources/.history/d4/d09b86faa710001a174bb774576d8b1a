@@ -1,0 +1,9 @@
+package Libreria;
+
+import java.util.ArrayList;
+
+public interface Clientela {
+	public abstract boolean AceptaLibro(Libro l);
+	public abstract double getDinerogastado();
+	public abstract int getLibros() ;
+}

@@ -1,0 +1,24 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionPrecipitaciones extends Criterio {
+	int cantRegistros;
+	Sensor sensor;
+	int max;
+	public PrediccionPrecipitaciones(Sensor s,int cantRegistros,int maxmilimetros) {
+		this.sensor=s;
+		this.cantRegistros=cantRegistros;
+		this.max=maxmilimetros;
+	}
+
+	@Override
+	public boolean predicelluvia() {
+	 if (sensor.promedioXcantRegistros(cantRegistros)< max) {
+		 return true;
+	 }
+		return false;
+		
+	}
+
+}

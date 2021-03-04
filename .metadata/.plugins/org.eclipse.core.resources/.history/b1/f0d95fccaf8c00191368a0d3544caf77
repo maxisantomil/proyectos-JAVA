@@ -1,0 +1,121 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class prueba {
+		final static int MAXARR = 10, MAXNUM = 10, INDINICIAL = 0, MAXARRP=3, INDNULL = -1;
+
+		public static void main(String[] args) {
+			int[] arr = new int[MAXARR];
+			int[] arrP = new int[MAXARRP];
+			int[] arrR= new int [MAXARRP];
+			int fin = INDNULL, ini = INDINICIAL;
+			int posicionactual=0;
+			boolean soniguales=false;
+			inicializarArregloP(arrR);
+			inicializarArregloP(arrP);
+			inicializarArreglo(arr);
+			imprimirArreglo(arr);
+			while (posicionactual!= INDNULL){
+			ini = obtenerInicioSec(arr,posicionactual);
+			fin = obtenerFinSec(arr, ini);
+			soniguales= verifica_si_son_iguales(arr,arrP,ini,fin);
+			if (soniguales==true) {
+				remplazar_arr(arr,arrR,ini,fin);
+			}
+			else {
+				posicionactual=fin+1;
+			}
+			imprimirArreglo(arr);
+			}
+		}
+
+		public static void inicializarArregloP(int[] arr) {
+			for (int i = 0; i < MAXARRP ; i++) {
+					System.out.println ("Ingrese integer: "+i);
+					arr[i]=obtenerEntero();
+					}
+					for (int i = 0; i < MAXARRP ; i++)
+					System.out.println(arr[i]);
+				}
+			public static int obtenerEntero(){
+				int valor = 0;
+				boolean enterovalido = false;
+				BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+				do {
+					try {
+						valor = new Integer(entrada.readLine());
+						enterovalido = true;
+						}
+					catch (Exception exc ) {
+							enterovalido = false;
+							}
+					} 
+				while (!enterovalido);
+				return valor;
+			}
+		public static void inicializarArreglo(int[] arr) {
+			for (int i = 0; i < MAXARR ; i++) {
+				System.out.println ("Ingrese integer: "+i);
+				arr[i]=obtenerEntero();
+				}
+				for (int i = 0; i < MAXARR ; i++)
+				System.out.println(arr[i]);
+			}
+
+		public static int obtenerInicioSec(int[] arr, int finAnt) {
+			int i = finAnt + 1;
+			while ((i < MAXARR) && (arr[i] == 0)) {
+				i++;
+			}
+			if (i < MAXARR) {
+				return i;
+			} else {
+				return INDNULL;
+			}
+		}
+
+		public static int obtenerFinSec(int [] arr, int ini) {
+			if (ini != INDNULL) {
+				int i = ini;
+				while ( (i < MAXARR) && (arr[i] != 0) ) {
+					i++;
+				}
+				return i-1;
+			} else {
+				return INDNULL;
+			}
+		}
+		
+		public static void imprimirArreglo(int [] arr) {
+			for (int i = 0; i < MAXARR; i++) {
+				System.out.println("pos " +i + ": " + arr[i]);
+			}
+		}
+		
+		public static boolean verifica_si_son_iguales(int arr[], int arrP[],int ini, int fin) {
+			int i=ini;
+			int k=0;
+			
+			while ((i<= fin) &&( k<MAXARRP)){
+				if (arr[i]==arrP[k]) {
+					i++;
+					k++;
+				}
+				else {
+					return false;
+				}
+			}
+			
+			return true;
+			}
+		
+		public static void remplazar_arr(int arr[],int arrR[], int ini,int fin) {
+			int k=0;
+			for (int i =ini; i<= fin;i++) {
+				arr[i]=arrR[k];
+				k++;
+			}
+		}
+		
+	}
+
+

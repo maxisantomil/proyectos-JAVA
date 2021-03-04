@@ -1,0 +1,84 @@
+package SeleccionFutbol;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class Integrante {
+	String nombre;
+	String apellido;
+	int pasaporte;
+	LocalDate nac;
+	String pais;
+	boolean viajando;
+	boolean concentracion;
+	boolean paisdeorigen;
+	
+	
+	public Integrante(String n,String a,int p,LocalDate f){
+		nombre=n;
+		apellido=a;
+		pasaporte=p;
+		nac=f;
+		viajando=false;
+		concentracion=false;
+		paisdeorigen=false;
+	}
+	
+	public void AgregarEstados() {
+		Estado.add(viajando);
+		Estado.add(concentracion);
+		Estado.add(paisdeorigen);
+		
+	}
+	
+	
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
+	public int getPasaporte() {
+		return pasaporte;
+	}
+
+
+	public void setPasaporte(int pasaporte) {
+		this.pasaporte = pasaporte;
+	}
+
+
+	public LocalDate getNac() {
+		return nac;
+	}
+
+
+	public void setNac(LocalDate nac) {
+		this.nac = nac;
+	}
+
+
+
+	public boolean Isdisponible() {
+		//if (getEstado()=="En pais de origen"){
+				return true;
+		}
+		//else return false;
+	}
+	
+

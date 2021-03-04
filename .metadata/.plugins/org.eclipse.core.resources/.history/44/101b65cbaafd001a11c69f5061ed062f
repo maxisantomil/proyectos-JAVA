@@ -1,0 +1,37 @@
+package Ejercicio2Meteorologo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Prediccion promLLuviaTandil= new PrediccionPrecipitaciones(2,2);
+		//Prediccion TemperaturaTandil= new PrediccionTemperatura(1,25);
+		
+		EstacionMeteorologica Tandil= new EstacionMeteorologica("Tandil meteorolgia");
+		Tandil.agregarPrediccion(promLLuviaTandil);
+		//Tandil.agregarPrediccion(TemperaturaTandil);
+		
+		Registro primerahora= new Registro(15,19,30,18,7);
+		Registro primerahor= new Registro(30,19,30,18,7);
+		Registro primeraho= new Registro(15,19,30,18,7);
+		Registro primerah= new Registro(15,19,30,18,7);
+		Registro primera= new Registro(15,19,30,18,7);
+		Registro primer= new Registro(15,19,30,18,7);
+		Registro prime= new Registro(15,19,30,18,7);
+		Registro prim= new Registro(15,19,30,18,7);
+		Registro pri= new Registro(15,19,30,18,7);
+		Tandil.agregarRegistro(primerahora);
+		Tandil.agregarRegistro(primerahor);
+		
+		
+		System.out.println(primerahora);
+		//Tandil.agregarRegistro(primeraho);
+		//Tandil.agregarRegistro(primerah);
+		//Tandil.agregarRegistro(primera);
+		//Tandil.agregarRegistro(primer);
+		//Tandil.agregarRegistro(prime);
+
+		System.out.println(Tandil.valloverenproxhora());
+	}
+
+}

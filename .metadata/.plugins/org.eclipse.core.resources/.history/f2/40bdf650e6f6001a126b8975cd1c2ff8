@@ -1,0 +1,16 @@
+package Ejercicio4Contribuyentes;
+
+public class ContribuyenteComerciante extends Contribuyente{
+	private double montoVentas;
+	private final double  porcentMonto=0.5;
+	private final double porcentVentas=0.035;
+	public ContribuyenteComerciante(String n,int cod, double mont, double venta) {
+		super(n,cod,mont);
+		montoVentas=venta;
+	}
+	
+	
+	public double getMonto() {
+		return ((super.getMonto()*porcentMonto) + (montoVentas*porcentVentas));
+	}
+}

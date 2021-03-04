@@ -1,0 +1,37 @@
+package Ejercicio2;
+
+import java.util.ArrayList;
+
+
+public class Alarma {
+	String nombre;
+	ArrayList<Sensor>Sensores;
+	Timbre timbre;
+
+	public Alarma() {
+		nombre="comun";
+		Sensores= new ArrayList<Sensor>();
+		timbre= new Timbre();
+	}
+
+
+public boolean   comprobar () {
+
+			return true;
+		}
+		else return false;
+	}
+
+public void ActivarAlarma() {
+	if (this.comprobar()) {
+		timbre.HacerSonar();
+		System.out.println("se activo la alarma sonora ");
+	}
+	else System.out.println(" no se detecto movimientos o roturas dentro de la casa");
+}
+
+public void setTimbre(Timbre t) {
+	timbre=t;
+}
+
+}

@@ -1,0 +1,113 @@
+
+import java.util.ArrayList;
+public class Carta {
+	 private String personaje;
+	   private ArrayList<Atributo>atributos;
+	   private Pocima pocima;
+	   
+	   		public Carta(String perso) {
+	   			personaje=perso;
+	   			atributos=new ArrayList<>();
+	   		}
+	   		public void addAtributo(Atributo atr) {
+	   			if(!atributos.contains(atr))
+	   			atributos.add(atr);
+	   		}
+	   		
+	   		/*public boolean comparaAtributos(Carta c){
+	   			ArrayList<Atributo> lista=c.getAtributos();
+	   	        for (Atributo a:atributos){
+	   	        if (lista.contains(a)){ 
+	   	            return true;
+	   	            }
+	   	        }
+	   	        return false;
+	   	        }*/
+	   		public boolean comparaAtributos(Carta c){
+	   	        ArrayList <Atributo> lista= c.getAtributos();
+	   	        if (lista.size()== atributos.size()){
+	   	        for (Atributo a:atributos){
+	   	            for (int i=0;i< lista.size();i++){
+	   	                if (a.equals(lista.get(i))){
+	   	                    return true;
+	   	                }
+	   	                else {
+	   	                    i=lista.size();
+	   	                    return false;
+	   	                }
+	   	            }
+	   	        }
+	   	       }
+	   	     return false;   
+	   	    }
+	   		
+	   		@Override
+			public String toString() {
+				return "\n"+"Carta [personaje=" + personaje +" "+ " Atributos=" + atributos + "]";
+			}
+			public boolean equals(Object o) {
+	   			try{
+	   				Carta carta=(Carta)o;
+	   				return this.personaje.equals(carta.getPersonaje());
+	   			}catch(Exception exc) {
+	   				return false;
+	   			}
+	   		}
+	   		public Atributo randomAtributo() {
+	   			int atributo= (int)(Math.random()*atributos.size()-1)+1;
+	   			return atributos.get(atributo);
+	   		}
+
+			public String getPersonaje() {
+				return personaje;
+			}
+
+			public void setPersonaje(String personaje) {
+				this.personaje = personaje;
+			}
+
+			public ArrayList<Atributo> getAtributos() {
+				ArrayList<Atributo> copia= new ArrayList<>(atributos);
+				return copia;
+			}
+
+			public void setAtributos(ArrayList<Atributo> atributos) {
+				this.atributos = atributos;
+			}
+			
+			
+			public int getValorAtributoAComparar(String atributo){
+	   			int valor=0;
+	   			for(Atributo a: atributos) {
+	   				if(a.getNombre().equals(atributo)) {
+	   					return a.getValor();
+	   				}
+	   			}
+	   			return valor;
+	   		}
+			
+			public Atributo getAtributoCarta(String nombre) {
+				Atributo aux=null;
+				for (Atributo a: atributos) {
+					if (a.getNombre().equals(nombre)) {
+							 aux = a;
+					}
+				}
+				return aux;
+			}
+			
+			
+			
+			public int comparaCarta(Carta carta2, String atributo) {
+				int valor=0;
+				for (Atributo a: atributos) {
+					if (a.getNombre().equals(atributo)){
+						 valor= a.compareTo(carta2.getAtributoCarta(atributo));
+					}
+				}
+				return valor;
+			}
+			
+	   
+	}
+

@@ -1,0 +1,46 @@
+package Ejercicio4CentrodeComputos;
+
+import java.util.ArrayList;
+
+public class CentroComputos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ColaOrdenada colaordenadaProcesos = new ColaOrdenada();
+		ColaOrdenada colaordenadaCpu = new ColaOrdenada();
+			
+		ElementoOrdenable proc1= new Proceso(215,8, "thelastofus.exe");
+		ElementoOrdenable proc2= new Proceso(57,8, "thelastofus.exe");
+		ElementoOrdenable proc3= new Proceso(100,8, "thelastofus.exe");
+		
+		ElementoOrdenable cpu1= new Computadora("intel", 4, 2300);
+		ElementoOrdenable cpu2= new Computadora("amd", 6, 2100);
+		ElementoOrdenable cpu3= new Computadora("intel", 8, 2900);
+		
+		colaordenadaProcesos.agregarElemento(proc3);
+		colaordenadaProcesos.agregarElemento(proc2);
+		colaordenadaProcesos.agregarElemento(proc1);
+		
+		colaordenadaCpu.agregarElemento(cpu1);
+		colaordenadaCpu.agregarElemento(cpu2);
+		colaordenadaCpu.agregarElemento(cpu3);
+		
+		System.out.println(colaordenadaProcesos);
+		System.out.println(colaordenadaCpu);
+		while (colaordenadaCpu.elementos.size()>0) {
+				Computadora c1= (Computadora)colaordenadaCpu.siguiente();
+			if  (colaordenadaProcesos.elementos.size()>0) {
+					Proceso p1= (Proceso)colaordenadaProcesos.siguiente();
+					c1.ejecuta_proceso(p1);
+				}
+		}
+		System.out.println(colaordenadaProcesos);
+		System.out.println(colaordenadaCpu);
+	}
+		//colaordenadaCpu.agregarElemento(e);
+				
+		//for (Computadora pc: computadoras) {
+			//pc.ejecuta()
+		//}
+}

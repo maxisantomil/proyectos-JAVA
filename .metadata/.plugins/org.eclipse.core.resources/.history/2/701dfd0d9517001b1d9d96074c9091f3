@@ -1,0 +1,33 @@
+package Ejercicio1FileSistem;
+
+public class Archivo extends ElementFileSystem{
+	private double tamanio;
+	private String extension;
+	
+	
+	
+	public Archivo(String nombre, double tamanio,String extension ) {
+		super(nombre);
+		this.tamanio=tamanio;
+		this.extension=extension;
+	}
+
+
+
+	@Override
+	public double getTamanio() {
+		return this.tamanio;
+	}
+
+
+
+	@Override
+	public boolean contieneElemento(ElementFileSystem e) {
+		return this.equals(e);
+	}
+	
+	
+	
+	
+	
+}

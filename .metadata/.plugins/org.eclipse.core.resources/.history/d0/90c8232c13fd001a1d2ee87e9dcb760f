@@ -1,0 +1,13 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionAND extends Prediccion {
+
+	@Override
+	public boolean predicelluvia(ArrayList<Registro> registros) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,19 @@
+
+public class main {
+
+	public static void main(String[] args) {
+	
+		PuntoGeometrico punto1= new PuntoGeometrico(1,1);
+		
+		Rectangulo rectangulo1 = new Rectangulo (punto1,4,2);
+		
+		System.out.println("ancho del rectangulo: " + rectangulo1.ancho);
+		System.out.println("largo del rectangulo: " +rectangulo1.largo);
+		rectangulo1.estructurarRectangulo();
+		System.out.println("area del rectangulo: " + rectangulo1.calcular_area());
+		System.out.println("es cuadrado?: "+ rectangulo1.es_cuadrado());
+		System.out.println("utilizando la formula el largo superior es de: "+ rectangulo1.largo_superior());
+		System.out.println("en que posicion se encuentra el rectangulo?: "+ rectangulo1.posicion());
+	}
+
+}

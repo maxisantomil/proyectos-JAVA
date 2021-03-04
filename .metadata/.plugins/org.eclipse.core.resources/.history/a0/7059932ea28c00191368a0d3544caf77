@@ -1,0 +1,53 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class prueba {
+		final static int MAXARR = 10, MAXNUM = 10, INDINICIAL = 0, INDNULL = -1;
+
+		public static void main(String[] args) {
+			int[] arr = new int[MAXARR];
+			int fin = INDNULL, ini = INDINICIAL;
+			inicializarArreglo(arr);
+			imprimirArreglo(arr);
+			ini = obtenerInicioSec(arr, fin);
+			fin = obtenerFinSec(arr, ini);
+			System.out.println(ini);
+			System.out.println(fin);
+		}
+
+		public static void inicializarArreglo(int[] arr) {
+			for (int i = 0; i < MAXARR ; i++) {
+				arr[i] = 0;
+			}
+		}
+
+		public static int obtenerInicioSec(int[] arr, int finAnt) {
+			int i = finAnt + 1;
+			while ((i < MAXARR) && (arr[i] == 0)) {
+				i++;
+			}
+			if (i < MAXARR) {
+				System.out.println(i);
+				return i;
+			} else {
+				return INDNULL;
+			}
+		}
+
+		public static int obtenerFinSec(int [] arr, int ini) {
+			if (ini != INDNULL) {
+				int i = ini;
+				while ( (i < MAXARR) && (arr[i] != 0) ) {
+					i++;
+				}
+				return i-1;
+			} else {
+				return INDNULL;
+			}
+		}
+		
+		public static void imprimirArreglo(int [] arr) {
+			for (int i = 0; i < MAXARR; i++) {
+				System.out.println("pos " +i + ": " + arr[i]);
+			}
+		}
+	}

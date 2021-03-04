@@ -1,0 +1,25 @@
+package Ejercicio4Contribuyentes;
+
+import java.util.ArrayList;
+
+public class Ciudad {
+	String nombre;
+	int cantHabitantes;
+	ArrayList<Contribuyente>contribuyentes; 
+	double gastosMantenimiento;
+	
+	
+	public double montoRecaudado () {
+		double sumaMonto;
+		for (Contribuyente x:contribuyentes) {
+			sumaMonto+=x.getMonto();
+		}
+		return sumaMonto;
+	}
+	
+	public boolean estaEnDeficit() {
+		return (montoRecaudado() < gastosMantenimiento);
+		}
+	
+	
+}

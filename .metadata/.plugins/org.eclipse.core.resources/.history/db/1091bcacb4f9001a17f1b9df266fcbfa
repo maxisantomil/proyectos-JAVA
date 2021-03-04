@@ -1,0 +1,11 @@
+package Ejercicio5Empleados;
+
+public class EmpleadoSueldoFijo extends Empleado {
+
+	@Override
+	public double getSueldo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

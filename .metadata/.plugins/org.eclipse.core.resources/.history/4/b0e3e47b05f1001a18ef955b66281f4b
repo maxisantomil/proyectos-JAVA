@@ -1,0 +1,6 @@
+package Ejercicio4;
+
+public class Masajista extends Persona{
+	private String titulo;
+	private int aniosExperiencia;
+}

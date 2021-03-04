@@ -1,0 +1,21 @@
+package Libreria;
+
+import java.util.ArrayList;
+
+public class ConjCliente extends ElementLibro {
+
+	ArrayList<Cliente>grupos;
+	
+	
+	public boolean aceptaGrupo(Libro l) {
+		boolean acepta=false;
+		for (Cliente c: grupos) {
+			if (c.AceptaLibro(l)){
+				acepta=true;
+			}
+		}
+		return acepta;
+	}
+	
+	
+}

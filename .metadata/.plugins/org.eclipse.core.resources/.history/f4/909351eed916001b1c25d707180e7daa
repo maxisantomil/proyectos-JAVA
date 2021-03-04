@@ -1,0 +1,73 @@
+package Ejercicio6WorkBreakdownStructure;
+
+import java.util.ArrayList;
+
+public class Tareacompuesta extends ElementTarea {
+	private ArrayList<ElementTarea>tareas;
+	
+	public Tareacompuesta(String nombre) {
+		super.setNombre(nombre);
+		tareas= new ArrayList<>();
+	}
+	
+	
+	
+	
+
+	public ArrayList<ElementTarea> getTareas() {
+		return new ArrayList<>(this.tareas);
+	}
+
+
+
+	@Override
+	public ArrayList<ElementTarea> listatareasRecurso(Recurso r) {
+		ArrayList<ElementTarea> aux= new ArrayList<>();
+		for (ElementTarea t:tareas) {
+			aux.addAll(t.listatareasRecurso(r));
+		}
+		if (!aux.isEmpty())
+			aux.add(this);
+		return aux;
+	}
+	
+	public void agregarTarea(ElementTarea n) {
+		tareas.add(n);
+	}
+
+	@Override
+	public ArrayList<Recurso> listadeRecursosInvolucrados() {
+		ArrayList<Recurso>recursos= new ArrayList<>();
+		ArrayList<Recurso>aux= null;
+		for (ElementTarea t:tareas) {
+			aux=t.listadeRecursosInvolucrados();
+			for (Recurso r: aux) {
+				if (!recursos.contains(r)) {
+					recursos.add(r);
+				}
+			}
+		}
+		return recursos;
+	}
+
+	@Override
+	public boolean SepuedeasignarRecurso(Recurso r) {
+		for (ElementTarea t: tareas) {
+			if (t.SepuedeasignarRecurso(r)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public int compareTo(ElementTarea o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+	
+	
+	
+}

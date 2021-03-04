@@ -1,0 +1,39 @@
+package Practico_4_1_Congreso;
+
+import java.util.ArrayList;
+
+public class Sistema_Congreso {
+	public static void main(String[] args) {
+	Comite comite = new Comite();
+	
+	EvaluadorB eva1 = new EvaluadorB("martin Pesolano");
+	EvaluadorB eva2 = new EvaluadorB("jorge enrique Farineli");
+	EvaluadorB eva3 = new EvaluadorB("rodrigo Mileto");
+	EvaluadorB eva4 = new EvaluadorB("maxi Santomil");
+	
+	String tema1= new String("programacion 1");
+	String tema2= new String("matematica 1");
+	String temaespecial1= new String("angular");
+	String temaespecial2= new String("saas");
+	String temaespecial3= new String("php");
+	
+	
+	Trabajo t1= new Trabajo("trabajo A");
+	Trabajo t2= new Trabajo("trabajo B");
+	Trabajo t3= new Poster("poster A");
+	
+	eva1.addTema(tema1);
+	eva1.addTema(temaespecial1);
+	eva2.addTema(temaespecial2);
+	eva2.addTema(tema2);
+	eva3.addTema(tema2);
+	eva3.addTema(tema1);
+	eva4.addTema(temaespecial3);
+	
+	Trabajo poster = new Trabajo();
+	
+	for(EvaluadorB e: evaluadores) {
+			System.out.println("el evaluador :"+e + "es experto en "+ e.gettemas());
+		}
+	}	
+}

@@ -1,0 +1,56 @@
+package Ejercicio1Contrato;
+
+public class Candidato {
+	String nombre;
+	String apellido;
+	String empresa;
+	double sueldo;
+	Criterio criterioAceptacion;
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
+
+	public Contrato getContratoPropio() {
+		return contratoPropio;
+	}
+
+
+
+	public void setContratoPropio(Contrato contratoPropio) {
+		this.contratoPropio = contratoPropio;
+	}
+
+
+
+	public boolean aceptaContrato(Contrato x) {
+		if ((contratoPropio==null)){
+			return true;
+		}
+		 if ((!contratoPropio.isExclusivo()) &&(criterioAceptacion.acepta(x))) {
+				return true;
+			}else return false;
+	}
+	
+}

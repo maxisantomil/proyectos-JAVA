@@ -1,0 +1,66 @@
+package Parcial;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Territorio extends ElemMundo {
+	String nombre;
+	ArrayList<ElemMundo>comarcas;
+
+	public Territorio(String n) {
+		nombre=n;
+		comarcas=new ArrayList<ElemMundo>();
+	}
+	
+	public void addComarca(ElemMundo c) {
+		comarcas.add(c);
+	}
+
+	public int getHabitantes() {
+		int suma=0;
+		for(ElemMundo e:comarcas) {
+			suma+=e.getHabitantes();
+
+		}
+		return suma;
+	}
+
+	public double getSup() {
+		double suma=0;
+		for(ElemMundo e: comarcas) {
+			suma+=e.getSup();
+		}
+		return suma;
+	}
+	public double getIngresos() {
+		double suma=0;
+		for(ElemMundo e: comarcas) {
+			suma+=e.getIngresos();
+		}
+		return suma;
+	}
+	
+	public void addComarca(ElemMundo e) {
+		comarcas.add(e);
+	}
+	
+	public ArrayList<Comarca> filtro(Filtro f,Comparator<Comarca> c){
+		ArrayList<Comarca>lista= new ArrayList<Comarca>();
+		for(ElemMundo e: comarcas) {
+			lista.addAll(e.filtro(f,c));
+<<<<<<< HEAD
+			
+=======
+
+>>>>>>> bc92c8c0c316468ca0ccf65b5e0b203743306998
+		}
+
+		Collections.sort(lista,c);
+		//Collections.reverse(lista);
+		return lista;
+	}
+
+
+
+}
+

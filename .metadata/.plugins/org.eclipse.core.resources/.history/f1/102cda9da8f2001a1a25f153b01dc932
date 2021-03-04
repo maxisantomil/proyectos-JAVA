@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+public class Celular {
+	
+ArrayList<Contacto>Contactos;
+
+	public Celular() {
+		Contactos= new ArrayList<>();
+	}
+	
+	
+	public void agregarConctacto(Contacto c) {
+		Contactos.add(c);
+	}
+	
+	public int cantidadContactos() {
+		return Contactos.size();
+	}
+	
+	public boolean estaRepetido(Contacto c) {
+			if (Contactos.contains(c)) {
+				return true;
+			}
+			else
+		return false;
+		
+	}
+}

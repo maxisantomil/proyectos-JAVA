@@ -1,0 +1,28 @@
+package Ejercicio3CooperativaAgricola;
+
+import java.util.ArrayList;
+
+public class Cereal {
+	private String nombre;
+	ArrayList<String>minerales;
+	
+	
+	public Cereal (String n) {
+		nombre=n;
+		minerales= new ArrayList<>();
+	}
+	
+	
+	public void agregarMineral(String a) {
+		String mineral= a.toLowerCase();
+		if (!(minerales.contains(a))){
+			minerales.add(a);
+		}
+	}
+	
+	
+	
+	public esaptoParaLote(Lote l) {
+		for (String g: minerales)
+	}
+}

@@ -1,0 +1,42 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Voluntario v1= new Voluntario("maxi","argentina",30,"masculino", true, false);
+		Voluntario v2= new Voluntario("maxi","argentina",30,"masculino", false, true);
+		Voluntario v3= new Voluntario("pepe","argentina",32,"masculino", false, true);
+		Voluntario v4= new Voluntario("juan","argentina",33,"masculino", true, false);
+		v1.agregarEnfermedadPre("gripe");
+		v1.agregarEnfermedadPre("diabetes");
+		v2.agregarEnfermedadPre("diabetes");
+		v3.agregarEnfermedadPre("diabetes");
+		v4.agregarEnfermedadPre("gripe");
+		v4.agregarEnfermedadPre("diabetes");
+		
+		
+		
+	GrupoZona grupo1= new GrupoZona("barrio centro");
+	
+	GrupoZona grupoTandil= new GrupoZona("tandil");
+	grupo1.agregarElemento(v1);
+	grupo1.agregarElemento(v2);
+	grupo1.agregarElemento(v3);
+	grupo1.agregarElemento(v4);
+	grupoTandil.agregarElemento(grupo1);
+	
+	Criterio criterioEnfermedad= new CriterioContieneEnfermedadPreexistente("diabetes");
+	Criterio criterioPlacebo= new CriterioPlacebo();
+	Criterio criterioVacuna= new CriterioNot(criterioPlacebo);
+	Criterio criterioContrajoEnfermedad= new CriterioContrajoEnfermedad();
+	CriterioAnd criterioAnd2= new CriterioAnd(criterioVacuna, criterioContrajoEnfermedad);
+	Criterio criterioAnd= new CriterioAnd(criterioEnfermedad,criterioAnd2);
+	//ejemplo de como implemente para quedarme con el voluntario que se puso vacuna. 
+	
+	System.out.println("la cantidad de voluntarios son: "+grupoTandil.cantidadVoluntarios());
+	System.out.println("la cantidad de voluntarios por Criterio son: "+grupoTandil.cantidadVoluntariosCriterio(criterioEnfermedad));
+	System.out.println("porcentaje de voluntarios por tal criterio: "+ grupoTandil.porcentajeVoluntariosCriterio(criterioEnfermedad));
+	System.out.println();
+	
+}
+	
+}

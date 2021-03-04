@@ -1,0 +1,50 @@
+package AgendaPersonal;
+
+import java.util.ArrayList;
+
+public class AgendaP {
+	ArrayList<Reunion>Reuniones;
+	Usuario usu;
+	
+	
+	
+	
+	public void AgregarReunion (Reunion re) {
+		Reuniones.add(re);
+		re.AgregarParticipante(this);
+	}
+
+
+
+
+	public ArrayList<Reunion> getReuniones() {
+		return Reuniones;
+	}
+
+
+
+
+	public void setReuniones(ArrayList<Reunion> reuniones) {
+		Reuniones = reuniones;
+	}
+
+
+
+
+	public Usuario getUsu() {
+		return usu;
+	}
+
+
+
+
+	public void setUsu(Usuario usu) {
+		this.usu = usu;
+	}
+	
+	public void mostraragendadelusuario() {
+		for (Reunion r: Reuniones ) {
+			System.out.println("Direccion del evento: "+ r.getDireccion() +"  Tema :" + r.getTema() +"  duracion del evento en hs: " +r.getDuracion()+ "  fecha del evento: "+ r.getFecha()+" participantes: "+  r.Participantes );
+		}
+	}
+}

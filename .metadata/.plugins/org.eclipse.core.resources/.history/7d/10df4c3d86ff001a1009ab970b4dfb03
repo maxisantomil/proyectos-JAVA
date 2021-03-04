@@ -1,0 +1,36 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class EstacionMeteorologica {
+	private String Nombre;
+	private ArrayList<Sensor>sensores;
+	private Prediccion criterioPrediccion;
+	
+	public EstacionMeteorologica(String n) {
+		Nombre=n;
+		sensores=new ArrayList<>();
+	}
+	
+	public void agregarSensor(Sensor r) {
+		sensores.add(r);
+	}
+	
+	
+
+	
+	public ArrayList<Sensor> getSensores() {
+		return (ArrayList<Sensor>)sensores.clone();
+	}
+
+	public boolean valloverenproxhora() {
+			return criterioPrediccion.predicelluvia(this) ;
+			
+	}
+	
+	public void agregarPrediccion(Prediccion x) {
+		criterioPrediccion=x;
+	}
+	
+	
+}

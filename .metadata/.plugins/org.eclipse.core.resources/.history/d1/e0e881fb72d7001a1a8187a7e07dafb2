@@ -1,0 +1,11 @@
+package PracticoInicial;
+
+public class JuegoDados {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Partida p= new Partida();
+		p.jugar();
+	}
+
+}

@@ -1,0 +1,44 @@
+package Ejercicio4CentrodeComputos;
+
+import java.util.ArrayList;
+
+public class CentroComputos {
+
+		
+		ColaOrdenada colaordenadaProcesos = new ColaOrdenada();
+		ColaOrdenada colaordenadaCpu = new ColaOrdenada();
+			
+		
+		
+		ElementoOrdenable cpu1= new Computadora("intel", 4, 2300);
+		ElementoOrdenable cpu2= new Computadora("amd", 6, 2100);
+		ElementoOrdenable cpu3= new Computadora("intel", 8, 2900);
+		
+		
+		public void agregarProcesos(ElementoOrdenable proc) {
+			colaordenadaProcesos.agregarElemento(proc);
+		
+		}
+		colaordenadaCpu.agregarElemento(cpu1);
+		colaordenadaCpu.agregarElemento(cpu2);
+		colaordenadaCpu.agregarElemento(cpu3);
+		
+		System.out.println(colaordenadaProcesos);
+		System.out.println(colaordenadaCpu);
+		
+		public void ejecutarProcesos() {
+		
+		
+		while (colaordenadaCpu.elementos.size()>0) {
+				Computadora c1= (Computadora)colaordenadaCpu.siguiente();
+			if  (colaordenadaProcesos.elementos.size()>0) {
+					Proceso p1= (Proceso)colaordenadaProcesos.siguiente();
+					c1.ejecuta_proceso(p1);
+				}
+			}
+		System.out.println(colaordenadaProcesos);
+		System.out.println(colaordenadaCpu);
+		
+		}
+	}
+}

@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+
+public class Voluntario extends ElementZona{
+	private String nombre ;
+	private String nacionalidad;
+	private int edad;
+	private String genero;
+	ArrayList<String>enfermedades;
+	private boolean recibioPlacebo;
+	private boolean contrajoEnfermedad;
+	
+	
+	
+	
+	
+}

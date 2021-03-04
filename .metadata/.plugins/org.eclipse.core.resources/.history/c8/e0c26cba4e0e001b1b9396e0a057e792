@@ -1,0 +1,24 @@
+package Ejercicio4Vivero;
+
+public class Fichaplanta {
+	private String nombreCientifico;
+	private String nombresVulgares;
+	private String clasificaciónSuperior;
+	private String familia;
+	private String clase;
+	private boolean plantaInterior;
+	private int riego;
+	private int sol;
+	
+	
+	public Fichaplanta(String nCien,String nVul,String clasi,String fami,String clase,int riefo, int sol) {
+		this.nombreCientifico=nCien;
+		this.nombresVulgares=nVul;
+		this.clasificaciónSuperior=clasi;
+		this.familia=fami;
+		this.clase=clase;
+		this.riego=riefo;
+		this.sol=sol;
+	}
+	
+}

@@ -1,0 +1,14 @@
+package Ejercicio4Vivero;
+
+
+public class FiltroNombreCientifico extends Filtro{
+
+	@Override
+	public boolean cumple(Fichaplanta f) {
+		if 
+		return false;
+	}
+
+	
+
+}

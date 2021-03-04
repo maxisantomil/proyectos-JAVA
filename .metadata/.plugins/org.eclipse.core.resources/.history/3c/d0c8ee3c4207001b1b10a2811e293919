@@ -1,0 +1,19 @@
+
+public class mainProyectoEspecial {
+
+	public static void main(String[] args) {
+		String mazoPath = "src/Json/superheroes.json";
+		Mazo mazo=new Mazo();
+		mazo.agregarMazo(mazoPath);
+		//System.out.println(mazo);
+		Jugador j1= new Jugador("maxi");
+		Jugador j2= new Jugador("jose");
+		
+		Juego Marvel= new Juego("Marvel", mazo, j1, j2);
+		Marvel.repartirCartas();
+		System.out.println(j1);
+		System.out.println(j2);
+		System.out.println(mazo);
+	}
+
+}

@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+
+public class Temporada {
+	private int ndetemporada;
+	ArrayList<Episodio>Episodios;
+	
+	
+	
+	
+	public Temporada(int temp) {
+		ndetemporada=temp;
+		Episodios = new ArrayList<Episodio>();
+	}
+	
+	public void agregarepisodios(Episodio r) {
+		Episodios.add(r);
+	}
+	
+	public int totalepisodiosvistos() {
+		int cantidad=0;
+		for (Episodio e:Episodios) {
+			if (e.isFlagvisto()) {
+				cantidad++;
+			}
+		}
+		return cantidad;
+	}
+	
+	public double promediotemporada() {
+		int sumacalif=0;
+		for (Episodio e: Episodios) {
+			if (e.getCalificacion()>0)
+			sumacalif= sumacalif + e.getCalificacion();
+		}
+		return (sumacalif/ Episodios.size());
+	}
+	
+	public boolean viotemporadacompleta() {
+		for (Episodio e: Episodios) {
+			if (!e.isFlagvisto()) {
+				return false;
+			}
+		}
+		 return true; 
+	}
+}

@@ -1,0 +1,29 @@
+package Ejercicio1;
+
+public class Alarma {
+	String nombre;
+	boolean rompiovidrio;
+	boolean abriopuertaventana;
+	boolean detectamovimiento;
+	Timbre timbre;
+
+	public Alarma() {
+		nombre="comun";
+	}
+
+public boolean   comprobar () {
+
+		if ((this.abriopuertaventana == true) || (this.detectamovimiento==true)|| (this.rompiovidrio==true)) {
+			return true;
+		}
+		else return false;
+	}
+
+public void ActivarAlarma() {
+	if (this.comprobar()) {
+		timbre.HacerSonar();
+	}
+}
+
+}
+

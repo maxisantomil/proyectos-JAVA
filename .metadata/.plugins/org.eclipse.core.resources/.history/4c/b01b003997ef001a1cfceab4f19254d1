@@ -1,0 +1,12 @@
+package Ejercicio1;
+
+public class AlarmaLuminosa extends Alarma{
+	Luz luz;
+	
+	public AlarmaLuminosa() {
+		super();
+		luz = new Luz("predeterminada");
+	}
+
+	
+}

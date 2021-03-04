@@ -1,0 +1,26 @@
+package Ejercicio6Congreso;
+
+import java.util.ArrayList;
+
+public class Comite {
+	private String nombre;
+	ArrayList<Evaluador>evaluadores;
+	ArrayList<Trabajo>trabajos;
+	
+	
+	
+	public boolean esAptoparaEvaluar(Evaluador e, Trabajo t) {
+		return true;
+	}
+	
+	
+	public ArrayList<Trabajo> trabajosAsignablesaEvaluador(Evaluador x){
+	 ArrayList<Trabajo> trabajosAsig= new ArrayList<>();
+		for (Trabajo t: trabajos) {
+			if (t.cumpleRequisitos(x)){
+				trabajosAsig.add(t);
+			}
+		}
+		return trabajosAsig;
+	}
+}

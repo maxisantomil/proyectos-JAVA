@@ -1,0 +1,21 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionPrecipitaciones extends Prediccion {
+	double promedio;
+	
+	public PrediccionPrecipitaciones(int cant,int maxmilimetros) {
+		super(cant,maxmilimetros);
+	}
+
+	@Override
+	public boolean predicelluvia(EstacionMeteorologica e) {
+	 if (e.promedioLLuvias(this.cantmaximaRegistros) > this.valoraComparar) {
+		 return false;
+	 }
+		return true;
+		
+	}
+
+}

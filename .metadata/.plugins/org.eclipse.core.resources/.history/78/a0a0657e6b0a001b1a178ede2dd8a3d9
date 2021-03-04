@@ -1,0 +1,11 @@
+package Ejercicio1;
+
+import java.util.ArrayList;
+
+public class Palabra {
+	private String nombre_palabra;
+	private String definicion;
+	private ArrayList<String>sinonimos;
+	private ArrayList<String>antonimos;
+	
+}

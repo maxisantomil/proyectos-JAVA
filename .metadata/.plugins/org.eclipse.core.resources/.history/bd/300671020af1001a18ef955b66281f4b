@@ -1,0 +1,20 @@
+package Ejercicio4;
+
+import java.util.ArrayList;
+
+public class SeleccionFutbol {
+
+	ArrayList<Persona>Plantel;
+	
+	
+	public SeleccionFutbol() {
+		Plantel= new ArrayList<Persona>();
+	}
+	
+	public void incorporarPersona(Persona p) {
+		Plantel.add(p);
+	}
+	
+	
+	
+}

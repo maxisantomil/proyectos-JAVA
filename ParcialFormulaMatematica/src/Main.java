@@ -1,0 +1,29 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		Numero n1= new Numero (3);
+		Numero n2= new Numero (6);
+		Numero n3= new Numero (5);
+		Numero n4= new Numero (9);
+		
+		
+		Operador suma = new OperadorSuma();
+		Operador  resta= new OperadorResta();
+		Operador divisor= new OperadorDivisor();
+		Operador potencia= new OperadorPotencia();
+		Operador raiz= new OperadorRaiz();
+
+		Expresion potencia1= new Expresion(n1,n2,potencia);
+		Expresion sumatoria1= new Expresion(n3, n4,suma);
+		
+		Expresion divisor1= new Expresion(n2,n1,divisor);
+		
+		Expresion final1= new Expresion(sumatoria1,divisor1,suma);
+		System.out.println(divisor1.getValor());
+		System.out.println(sumatoria1  .operadores());
+	}
+
+}

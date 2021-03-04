@@ -1,0 +1,30 @@
+package Ejercicio4Vivero;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Vivero {
+	private String nombre;
+	private ArrayList<Fichaplanta>plantas;
+	
+	
+	public Vivero(String nombre) {
+		this.nombre=nombre;
+		this.plantas= new ArrayList<>();
+	}
+	
+	
+	public void agregarFicha(Fichaplanta f) {
+		if (!plantas.contains(f)) {
+			plantas.add(f);
+		}
+	}
+	
+	
+	
+	public ArrayList<Fichaplanta> listaxCriterio(Comparator compara){
+		ArrayList<Fichaplanta> listaAux=  (ArrayList<Fichaplanta>)plantas.clone();
+		Collections.sort(listaAux, compara);
+	}
+}

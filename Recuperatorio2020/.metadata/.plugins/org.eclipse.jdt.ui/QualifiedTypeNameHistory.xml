@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="GrupoZona"/>
+    <fullyQualifiedTypeName name="CriterioContieneEnfermedadPreexistente"/>
+    <fullyQualifiedTypeName name="CriterioPlacebo"/>
+    <fullyQualifiedTypeName name="CriterioAnd"/>
+    <fullyQualifiedTypeName name="CriterioContrajoEnfermedad"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="CriterioEdad"/>
+    <fullyQualifiedTypeName name="CriterioGenero"/>
+    <fullyQualifiedTypeName name="GrupoPrivado"/>
+    <fullyQualifiedTypeName name="Voluntario"/>
+</qualifiedTypeNameHistroy>

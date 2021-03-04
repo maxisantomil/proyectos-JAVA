@@ -1,0 +1,49 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Voluntario v1= new Voluntario("maxi","argentina",20,"masculino", true, false);
+		Voluntario v2= new Voluntario("jose","argentina",30,"masculino", false, true);
+		Voluntario v3= new Voluntario("pepe","argentina",24,"masculino", false, true);
+		Voluntario v4= new Voluntario("juan","argentina",33,"masculino", true, false);
+		v1.agregarEnfermedadPre("gripe");
+		v1.agregarEnfermedadPre("diabetes");
+		v2.agregarEnfermedadPre("diabetes");
+		v3.agregarEnfermedadPre("diabetes");
+		v4.agregarEnfermedadPre("gripe");
+		v4.agregarEnfermedadPre("diabetes");
+		
+		
+		
+	GrupoZona grupo1= new GrupoZona("barrio centro");
+	
+	GrupoZona grupoTandil= new GrupoZona("tandil");
+	GrupoZona grupoTandil2= new GrupoZona("tandil2");
+	grupoTandil2.agregarElemento(grupo1);
+	grupo1.agregarElemento(v1);
+	grupo1.agregarElemento(v2);
+	grupo1.agregarElemento(v3);
+	grupo1.agregarElemento(v4);
+	grupoTandil.agregarElemento(grupo1);
+	grupoTandil.agregarElemento(grupoTandil2);
+	Criterio criterioEnfermedad= new CriterioContieneEnfermedadPreexistente("diabetes");
+	Criterio criterioEnfermedad2= new CriterioContieneEnfermedadPreexistente("hipertension");
+	Criterio criterioPlacebo= new CriterioPlacebo();
+	Criterio criterioVacuna= new CriterioNot(criterioPlacebo);
+	//ejemplo de como implemente para quedarme con el voluntario que tiene vacuna. 
+	Criterio criterioContrajoEnfermedad= new CriterioContrajoEnfermedad();
+	CriterioAnd criterioAnd2= new CriterioAnd(criterioVacuna, criterioContrajoEnfermedad);
+	Criterio criterioAnd= new CriterioAnd(criterioEnfermedad,criterioAnd2);
+	Criterio criterioEdad= new CriterioEdad(25);
+	Criterio criterioGenero= new CriterioGenero("masculino");
+	Criterio criterioAnd3= new CriterioAnd(criterioGenero,criterioEnfermedad);
+
+	
+	System.out.println("la cantidad de voluntarios son: "+grupoTandil.cantidadVoluntarios());
+	System.out.println("la cantidad de voluntarios por Criterio son: "+grupoTandil.cantidadVoluntariosCriterio(criterioEnfermedad));
+	System.out.println("porcentaje de voluntarios por tal criterio: "+ grupoTandil.porcentajeVoluntariosCriterio(criterioEnfermedad));
+	System.out.println(grupoTandil.ListaVoluntariosVacuna(criterioAnd3));
+	
+}
+	
+}

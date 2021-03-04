@@ -1,0 +1,14 @@
+package Ejercicio2Meteorologo;
+
+public class PrediccionUltimoRegistroHumedad extends Prediccion {
+	
+	public PrediccionUltimoRegistroHumedad(int valormaximo) {
+		super(1,valormaximo);
+	}
+
+	@Override
+	public boolean predicelluvia(EstacionMeteorologica e) {
+		return false;
+	}
+
+}

@@ -1,0 +1,17 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public abstract class Prediccion {
+	int cantmaximaRegistros;
+	int valoraComparar;
+	
+	public Prediccion(int c, int v) {
+		cantmaximaRegistros=c;
+		valoraComparar=v;
+	}
+	
+	public abstract boolean predicelluvia(ArrayList<Registro>registros);
+	
+	
+}

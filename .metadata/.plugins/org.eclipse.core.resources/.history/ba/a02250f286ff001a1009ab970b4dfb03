@@ -1,0 +1,12 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public abstract class Criterio {
+	
+	
+	public abstract boolean predicelluvia(EstacionMeteorologica e);
+
+	
+	
+}

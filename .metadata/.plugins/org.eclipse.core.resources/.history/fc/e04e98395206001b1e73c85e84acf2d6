@@ -1,0 +1,19 @@
+
+public class Jugador {
+	private Mazo mazo;
+	private String nombre;
+	
+		public Jugador(String nomb){
+			nombre=nomb;
+		}
+		
+		public Carta sacarCarta() {
+			return mazo.getCarta();
+			}
+		
+		public void agregarCartaalMazo(Carta c) {
+			mazo.agregarCarta(c);
+		}
+		
+}
+

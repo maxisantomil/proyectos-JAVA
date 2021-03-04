@@ -1,0 +1,34 @@
+
+public class Rectangulo {
+  PuntoGeometrico vertice1;
+  PuntoGeometrico vertice2;
+  PuntoGeometrico vertice3;
+  PuntoGeometrico vertice4;
+  double ancho_a;
+  double ancho_b;
+  double largo_c;
+  double largo_d;
+   
+  public Rectangulo(PuntoGeometrico a,PuntoGeometrico b,PuntoGeometrico c,PuntoGeometrico d) {
+	  vertice1= a;
+	  vertice2=b;
+	  vertice3=c;
+	  vertice4=d;
+	  ancho_a=0;
+	  ancho_b=0;
+	  largo_c=0;
+	  largo_d=0;
+  }
+  
+  public void calcular_lados(PuntoGeometrico v1,PuntoGeometrico v2 ) {
+	  ancho_a=vertice1.calculaEuclidea(vertice3);
+	  ancho_b=vertice2.calculaEuclidea(vertice4);
+	  largo_c= vertice1.calculaEuclidea(vertice2);
+	  largo_d=vertice3.calculaEuclidea(vertice4);
+	  
+	  
+  }
+  
+  
+}
+

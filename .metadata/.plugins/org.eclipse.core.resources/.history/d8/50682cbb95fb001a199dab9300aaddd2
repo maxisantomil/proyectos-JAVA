@@ -1,0 +1,48 @@
+package Ejercicio1Contratov2;
+
+public abstract class Contrato {
+
+	String nombre;
+	double sueldo;
+	int horasSemanales;
+	
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public double getSueldo() {
+		return sueldo;
+	}
+
+
+
+	public void setSueldo(double sueldo) {
+		this.sueldo = sueldo;
+	}
+
+
+
+	public int getHorasSemanales() {
+		return horasSemanales;
+	}
+
+
+
+	public void setHorasSemanales(int horasSemanales) {
+		this.horasSemanales = horasSemanales;
+	}
+
+
+
+	public abstract boolean comparaContrato(Contrato c);
+}

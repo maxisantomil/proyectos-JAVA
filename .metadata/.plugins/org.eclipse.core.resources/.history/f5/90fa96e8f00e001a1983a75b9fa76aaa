@@ -1,0 +1,44 @@
+package Recuperatorio_Prog2;
+
+public class Correo {
+
+	public static void main(String[] args) {
+		Paquete_Carta carta= new Paquete_Carta(1, 200, true);
+		Paquete_Carta paquete= new Paquete_Carta(2, 400, false);
+		Paquete_Carta especial= new Paquete_Carta(3, 259, true);
+		
+		Direccion destinatario= new Direccion("Flanders", "Tandil", "Pinto", 1375);
+		Direccion remitente= new Direccion("Homer", "Sprinfield", "SiempreViva", 777);
+		Direccion destinatarioP= new Direccion("Marge", "Tandil", "Belgrano", 1040);
+		Direccion remitenteP= new Direccion("Bart","New York", "St Lewis", 84);
+		Direccion destinatarioE= new Direccion("Lisa", "Mar del Plata", "Independencia", 363);
+		Direccion remitenteE= new Direccion("Milhouse","Seatle", "Mc Carney", 558);
+		carta.setDestinatario(destinatario);
+		carta.setRemitente(remitente);
+		paquete.setDestinatario(destinatarioP);
+		paquete.setRemitente(remitenteP);
+		especial.setDestinatario(destinatarioE);
+		especial.setRemitente(remitenteE);
+		Combo postal= new Combo(8);
+		Combo empresarial= new Combo(9);
+		Combo servicios= new Combo(10);
+		System.out.println(especial);
+		
+		Criterio peso= new CriterioPeso(300);
+		Criterio ciudad= new CriterioCiudad("Tandil");
+		Criterio serv= new CriterioRemitente("Milhouse");
+		
+		postal.setAcepta(ciudad);
+		empresarial.setAcepta(serv);
+		servicios.setAcepta(peso);
+		
+		postal.addElmens(carta);
+		empresarial.addElmens(paquete);
+		servicios.addElmens(especial);
+		servicios.addElmens(paquete);
+		
+		System.out.println(empresarial);
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package Ejercicio1Contrato;
+
+public class CriterioHora extends Criterio {
+
+	@Override
+	public boolean compare(Contrato c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

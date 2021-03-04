@@ -1,0 +1,23 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionTemperatura extends Prediccion {
+
+	PrediccionTemperatura(int cant, int maxT){
+	super(cant,maxT);
+	}
+
+	@Override
+	public boolean predicelluvia(EstacionMeteorologica e) {
+		double promedio=0;
+		//int tope=registros.size()- cantmaximaRegistros;
+		//for (int i=0; i< registros.size();i++){
+			//promedio+= (registros.get(i).getTemperatura())/cantmaximaRegistros;
+		//}
+		if (promedio>valoraComparar) {
+			return true;
+		}else return false;
+	}
+
+}

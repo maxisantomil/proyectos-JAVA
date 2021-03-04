@@ -1,0 +1,25 @@
+package Ejercicio2;
+
+public class AlarmaLuminosa extends Alarma{
+	Luz luz;
+	
+	public AlarmaLuminosa() {
+		super();
+		luz = new Luz("predeterminada");
+	}
+
+	public void comprobar() {
+		super.comprobar();
+		luz.encenderLuz();
+	}
+	
+	public void ActivarAlarma() {
+		super.ActivarAlarma();
+		
+	}
+	
+	
+	public void setLuz(Luz l) {
+		luz= l;
+	}
+}

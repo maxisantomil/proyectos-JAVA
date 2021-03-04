@@ -1,0 +1,121 @@
+
+import java.util.ArrayList;
+
+public class Juego {
+
+	private String nombreJuego;
+	private Mazo mazo;
+	private Jugador j1;
+	private Jugador j2;
+	private Jugador ganador;
+	final static int MAXIMORONDAS=8,NUMEROBASE=0;
+	 
+			public Juego(String nombre,Mazo cartas,Jugador jj1,Jugador jj2) {
+				nombreJuego=nombre;
+				mazo=cartas;
+				j1=jj1;
+				j2=jj2;
+			}
+			
+			
+			public String getNombreJuego() {
+				return nombreJuego;
+			}
+
+
+			public void setNombreJuego(String nombreJuego) {
+				this.nombreJuego = nombreJuego;
+			}
+
+
+			public Jugador getJ1() {
+				return j1;
+			}
+
+
+			public void setJ1(Jugador j1) {
+				this.j1 = j1;
+			}
+
+
+			public Jugador getJ2() {
+				return j2;
+			}
+
+
+			public void setJ2(Jugador j2) {
+				this.j2 = j2;
+			}
+
+
+			public void repartirCartas(){
+				mazo.mezclar();
+				while(mazo.getMazo().size()>0) { // modifique la forma para que pueda repartir todas las cartas
+					j1.agregarCartaalMazo(mazo.getCarta());
+					j2.agregarCartaalMazo(mazo.getCarta());
+				}
+			}
+
+
+			@Override
+			public String toString() {
+				return "Juego [nombreJuego=" + nombreJuego + ", mazo=" + mazo + ", j1=" + j1 + ", j2=" + j2 + "]";
+			}
+					
+			public void jugar() {
+				int i=0;
+				boolean primeravez=true;
+				while (i<MAXIMORONDAS && j1.cantidadCartas()>0 && j2.cantidadCartas()>0) {
+					i++;
+					System.out.println("---------RONDA"+i+"--------");
+					jugarRonda();
+			}
+		}
+
+
+			public void jugar() {
+				int i=0;
+				ganador=j1;
+				while(i<MAXIMORONDAS&&(j1.cantidadCartas()>NUMEROBASE)&&(j2.cantidadCartas()>NUMEROBASE)) {
+					++i;
+					System.out.println("---------RONDA "+i+" ----------");
+						jugarRonda();
+						
+						
+					
+				}
+			}
+			
+			public void determinarGanador(String atributo) {
+				Carta cartaJugador1=j1.sacarCarta();			
+				Carta cartaJugador2=j2.sacarCarta();
+				int valorAtributo1=cartaJugador1.getValorAtributoAComparar(atributo);
+				int valorAtributo2=cartaJugador2.getValorAtributoAComparar(atributo);
+				System.out.println("La carta de "+j1.getNombre()+" es "+ cartaJugador1.getPersonaje()+" con "+atributo+" "+valorAtributo1);
+				System.out.println("La carta de "+j2.getNombre()+" es "+ cartaJugador2.getPersonaje()+" con "+atributo+" "+valorAtributo2);
+				if(valorAtributo1>valorAtributo2) {
+					ganador=j1;
+					j1.agregarCartaalMazo(cartaJugador1);
+					j1.agregarCartaalMazo(cartaJugador2);
+					}
+				else if(valorAtributo2>valorAtributo1){
+					ganador=j2;
+					j2.agregarCartaalMazo(cartaJugador2);
+					j2.agregarCartaalMazo(cartaJugador1);
+				}
+				else {
+					j1.agregarCartaalMazo(cartaJugador1);
+					j2.agregarCartaalMazo(cartaJugador2);
+				}
+			}
+			public void jugarRonda() {
+				String atributo=ganador.elegirAtributo();
+				System.out.println("El jugador "+ganador.getNombre()+" elige el atributo "+atributo);
+				determinarGanador(atributo);
+				System.out.println("Gana la ronda: "+ganador.getNombre());
+				System.out.println(j1.getNombre()+" posee ahora "+j1.cantidadCartas()+" cartas y "+j2.getNombre()+" posee ahora "+j2.cantidadCartas()+" cartas");
+				}
+			
+			
+}
+

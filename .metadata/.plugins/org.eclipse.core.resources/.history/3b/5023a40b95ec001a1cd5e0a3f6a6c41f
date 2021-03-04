@@ -1,0 +1,60 @@
+package AgendaPersonal;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+public class AgendaP {
+	ArrayList<Reunion> Reuniones;
+	Usuario usu;
+
+	public AgendaP(Usuario u) {
+		usu = u;
+		Reuniones = new ArrayList<Reunion>();
+	}
+
+	public void AgregarReunion(Reunion re) {
+		if (esvalido(re)) {
+			Reuniones.add(re);
+			re.AgregarParticipante(this.usu);
+		} else
+			System.out.println(
+					"no se puede agendar la reunion ya que se superponen, " + "la reunion es: " + re.toString());
+	}
+
+	public boolean esvalido(Reunion newReunion) {
+		for (Reunion r : Reuniones) {
+			if ((r.getFecha().getDayOfYear()) == (newReunion.getFecha().getDayOfYear())) {
+				if (( newReunion.getFecha().getHour() > r.getFecha().getHour()) && (newReunion.getFecha().getHour()< r.horadefinalizacion())){  
+					return false;
+				} else if ((newReunion.horadefinalizacion()> r.getFecha().getHour()) && (newReunion.horadefinalizacion() < r.horadefinalizacion())){
+						return false;
+				}
+			}		
+		}
+		return true;
+	}
+	public ArrayList<Reunion> getReuniones() {
+		return Reuniones;
+	}
+
+	public void setReuniones(ArrayList<Reunion> reuniones) {
+		Reuniones = reuniones;
+	}
+
+	public Usuario getUsu() {
+		return usu;
+	}
+
+	public void setUsu(Usuario usu) {
+		this.usu = usu;
+	}
+
+	public void mostraragendadelusuario() {
+		for (Reunion r : Reuniones) {
+			System.out.println("Direccion del evento: " + r.getDireccion() + "  Tema :" + r.getTema()
+					+ "  duracion del evento en hs: " + r.getDuracion() + "  fecha del evento: " + r.getFecha()
+					+ " participantes: " + r.Participantes);
+		}
+	}
+
+}

@@ -1,0 +1,22 @@
+package Ejercicios2020;
+import java.util.Date;
+import java.util.ArrayList;
+
+public class Reunion {
+	private String direccion;
+	private String tema;
+	private int Duracion;
+	private Date fecha;
+	ArrayList<Usuario>Participantes;
+	
+	
+	public Reunion(String d,String te,int duracion, Date fecha) {
+		this.direccion=d;
+		this.tema=te;
+		this.Duracion=duracion;
+		this.fecha=fecha;
+	}
+	
+	
+
+}

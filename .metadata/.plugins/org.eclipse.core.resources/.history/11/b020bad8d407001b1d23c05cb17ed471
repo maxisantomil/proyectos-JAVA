@@ -1,0 +1,17 @@
+
+public class CriterioGenero extends Criterio {
+	String genero;
+	
+	public CriterioGenero(String genero) {
+		this.genero=genero;
+	}
+	
+	@Override
+	public boolean cumple(Pelicula p) {
+		if (p.getGeneros().contains(genero)) {
+			return true;
+		}
+		return false;
+	}
+
+}

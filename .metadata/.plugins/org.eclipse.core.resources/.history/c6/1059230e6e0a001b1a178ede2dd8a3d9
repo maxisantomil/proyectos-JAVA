@@ -1,0 +1,25 @@
+package Ejercicio1;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Diccionario implements Comparable {
+
+		ArrayList<Palabra>palabras_alfabeticamente;
+		
+		
+		
+		public void agregarPalabra(Palabra p) {
+			if (!palabras_alfabeticamente.contains(p)) {
+				palabras_alfabeticamente.add(p);
+				Collections.sort(palabras_alfabeticamente);
+				}
+			}
+		
+		
+		
+		public void ordenar_alfabeticamente() {
+			ArrayList<Palabra>ordenados;
+			
+		}
+}

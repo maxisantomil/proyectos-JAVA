@@ -1,0 +1,11 @@
+package Ejercicio1Contrato;
+
+public class CriterioAnd extends Criterio {
+
+	@Override
+	public boolean acepta(Contrato c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

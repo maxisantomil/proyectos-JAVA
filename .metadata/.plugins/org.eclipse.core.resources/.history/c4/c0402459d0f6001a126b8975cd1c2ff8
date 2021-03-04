@@ -1,0 +1,59 @@
+package Ejercicio2;
+
+import java.util.ArrayList;
+
+public class Alumno {
+	String nombre;
+	Cualidad cualidades;
+	ArrayList<Alumno>familiares;
+	
+	public Alumno (String n) {
+		nombre=n;
+		cualidades= new Cualidad();
+		familiares= new ArrayList<>();
+	}
+	
+	public void AsignarCualidades(boolean a, boolean b, boolean c, boolean d) {
+		cualidades.setSangrepura(a);
+		cualidades.setUsavarita(b);
+		cualidades.setSabevolar(c);
+		cualidades.setMagianegra(d);
+	}
+	
+	public void agregarFamiliar(Alumno a) {
+		familiares.add(a);
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Cualidad getCualidades() {
+		return cualidades;
+	}
+
+	public void setCualidades(Cualidad cualidades) {
+		this.cualidades = cualidades;
+	}
+
+	public ArrayList<Alumno> getFamiliares() {
+		return familiares;
+	}
+
+	public void setFamiliares(ArrayList<Alumno> familiares) {
+		this.familiares = familiares;
+	}
+
+	public boolean FamiliarEstaCasa(CasaExigente c ) {
+		for (Alumno l:familiares) {
+			if ((c.FamiliarSeencuentraenCasa(l))){
+				return true;
+			}
+		}
+		return false;
+	}
+}

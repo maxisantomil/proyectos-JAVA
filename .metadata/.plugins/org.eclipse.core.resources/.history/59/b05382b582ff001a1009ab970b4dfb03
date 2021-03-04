@@ -1,0 +1,14 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class Sensor {
+	private String nombre;
+	private ArrayList<Integer>registros;
+	
+	
+	
+	public Sensor(String nombre) {
+		this.nombre=nombre;
+	}
+}

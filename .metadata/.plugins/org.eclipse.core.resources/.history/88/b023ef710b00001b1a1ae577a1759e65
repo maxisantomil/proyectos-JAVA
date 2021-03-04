@@ -1,0 +1,25 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionTemperatura extends Criterio {
+	Sensor sensor;
+	int cantMaximaRegistros;
+	double minTemperatura;
+	PrediccionTemperatura(Sensor sensor,int cant, int maxT){
+		this.sensor= sensor;
+		this.cantMaximaRegistros=cant;
+		this.minTemperatura=maxT;
+	
+	}
+
+	@Override
+	public boolean predicelluvia() {
+		double promedio=0;
+		if (sensor.valorMaximoNRegistros(cantMaximaRegistros) > minTemperatura){
+			return true;
+		}
+		return false;
+	}
+
+}

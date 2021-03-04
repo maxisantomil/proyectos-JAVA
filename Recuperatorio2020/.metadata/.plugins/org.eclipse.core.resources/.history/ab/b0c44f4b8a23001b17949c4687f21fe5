@@ -1,0 +1,12 @@
+
+public abstract class ElementZona {
+
+	
+	
+	public abstract int cantidadVoluntarios();
+	public abstract int cantidadVoluntariosCriterio(Criterio c);
+	
+	public double porcentajeVoluntariosCriterio(Criterio c) {
+		return (cantidadVoluntariosCriterio(c)/cantidadVoluntarios());
+	}
+}

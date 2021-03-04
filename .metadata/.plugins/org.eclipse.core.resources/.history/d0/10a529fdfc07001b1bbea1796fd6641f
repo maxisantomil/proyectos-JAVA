@@ -1,0 +1,33 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Pelicula pelicula1= new Pelicula("the lord of the ring", "blabla", "Peter Jackson", 2003, 230, 16);
+		pelicula1.agregarActor("sam");
+		pelicula1.agregarActor("frodo");
+		pelicula1.agregarActor("gorum");
+		pelicula1.agregarGenero("aventura");
+		pelicula1.agregarGenero("drama");
+		pelicula1.agregarGenero("guerra");
+		
+		Pelicula pelicula2= new Pelicula("star wars", "en una galaxia..", "lucasfilm", 1997, 210, 16);
+		pelicula2.agregarActor("vader");
+		pelicula2.agregarActor("chewaca");
+		pelicula2.agregarActor("skywalker");
+		pelicula2.agregarGenero("cs ficcion");
+		pelicula2.agregarGenero("drama");
+		pelicula2.agregarGenero("guerra");
+				
+		PlataformaStreaming netflix= new PlataformaStreaming("netflix");
+		netflix.agregarPelicula(pelicula1);
+		netflix.agregarPelicula(pelicula2);
+		netflix.agregarPelicula(pelicula2);
+		
+		Criterio cri1= new CriterioDirector("lucasfilm");
+		
+		System.out.println(netflix.buscadorPeliculas(cri1));
+		System.out.println(netflix.esrentable(pelicula2,cri1));
+		System.out.println(netflix.mostrarCatalogo());
+	}
+
+}

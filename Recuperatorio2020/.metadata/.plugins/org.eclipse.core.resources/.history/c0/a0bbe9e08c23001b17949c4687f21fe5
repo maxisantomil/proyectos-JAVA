@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+
+public abstract class ElementZona {
+
+	
+	
+	public abstract int cantidadVoluntarios();
+	public abstract int cantidadVoluntariosCriterio(Criterio c);
+	
+	public double porcentajeVoluntariosCriterio(Criterio c) {
+		return ((double)cantidadVoluntariosCriterio(c)/cantidadVoluntarios())*100;
+	}
+	
+	public abstract ArrayList<Voluntario>ListaVoluntariosVacuna(Criterio c);
+}

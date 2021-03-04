@@ -1,0 +1,26 @@
+package Ejercicio2Meteorologo;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		Sensor lluviasTandil= new Sensor("lluvias de Tandil");
+		lluviasTandil.agregarRegistro(110.0);
+		lluviasTandil.agregarRegistro(24.0);
+		lluviasTandil.agregarRegistro(0.0);
+		lluviasTandil.agregarRegistro(80.0);
+		
+		Sensor temperaturasTandil= new Sensor("Temperaturas de Tandil");
+		temperaturasTandil.agregarRegistro(12.0);
+		temperaturasTandil.agregarRegistro(8.0);
+		temperaturasTandil.agregarRegistro(20.0);
+		temperaturasTandil.agregarRegistro(23.0);
+		
+		Criterio criterioTandil= new PrediccionMaxTemperatura(temperaturasTandil, 3, 25);
+		
+		EstacionMeteorologica Tandil= new EstacionMeteorologica("Estacion Tandil",lluviasTandil, null, temperaturasTandil, null, criterioTandil);
+		
+		System.out.println("va a llover en la proxima hora en la ciudad de: " + Tandil.toString()+ ": "+   Tandil.valloverenproxhora());
+	}
+
+}

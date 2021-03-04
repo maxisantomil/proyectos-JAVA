@@ -1,0 +1,44 @@
+package SeleccionFutbol;
+import java.util.ArrayList;
+import java.time.LocalDate;
+public class SeleccionFutbol {
+	
+	public static void main(String []args) {
+		
+		ArrayList<Integrante>seleccion;
+		
+		seleccion=new ArrayList<Integrante>();
+
+		Integrante jugador1= new Integrante("Lionel","Messi",34825712,LocalDate.of(1989,05,03));
+		jugador1.setRolfutbolista();
+		jugador1.setEstadopais();
+		Integrante jugador2= new Integrante("Kun","Aguero",35825712,LocalDate.of(1990,07,07));
+		jugador2.setRolfutbolista();
+		jugador2.setEstadoconcentra();
+		Integrante tecnico1= new Integrante("kiko","Cosmefulanito",23825712,LocalDate.of(1979,04,06));
+		tecnico1.setRolentrenador();
+		tecnico1.setEstadoViaje();
+		Integrante tecnico2= new Integrante("Luis","Alvarez",25825712,LocalDate.of(1989,05,03));
+		tecnico2.setRolentrenador();
+		tecnico2.setEstadoViaje();
+		Integrante masajista1= new Integrante("Fernando","Gonzalez",32825712,LocalDate.of(1989,05,03));
+		masajista1.setRolmasajista();
+		masajista1.setEstadopais();
+	
+		seleccion.add(jugador1);
+		seleccion.add(jugador2);
+		seleccion.add(tecnico1);
+		seleccion.add(tecnico2);
+		seleccion.add(masajista1);
+		
+		for(Integrante e:seleccion) {	
+			System.out.println("Seleccion Los LOQUILLOS : "+" "+ "*"+e.getApellido()+" "+e.getNombre()+"*" +" "+"("+ e.getRol()+")"+" *Esta disponible para un evento : " + e.Isdisponible());
+		}
+	}
+	
+	
+	
+	
+	
+	
+}

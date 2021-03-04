@@ -1,0 +1,8 @@
+
+public abstract class ElementZona {
+
+	
+	
+	public abstract int cantidadVoluntarios();
+	public abstract int cantidadVoluntariosCriterio(Criterio c);
+}

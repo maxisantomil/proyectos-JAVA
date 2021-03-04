@@ -1,0 +1,14 @@
+
+public class PocimaRetornaValorEspecifico extends Pocima {
+	private int valorFijo;
+	public PocimaRetornaValorEspecifico(int valor,String s) {
+		super(s);
+		valorFijo=valor;
+	}
+
+	@Override
+	public double modificarAtributo(Atributo c) {
+		return valorFijo;
+	}
+
+}

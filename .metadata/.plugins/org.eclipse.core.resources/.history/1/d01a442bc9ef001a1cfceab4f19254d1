@@ -1,0 +1,33 @@
+package Ejercicio2;
+
+public class CentralMonitoreo {
+
+	public static void main(String[] args) {
+		Alarma a1= new Alarma();
+		AlarmaLuminosa a2= new AlarmaLuminosa();
+		
+		Sensor s1= new Sensor("living");
+		Sensor s2= new Sensor("comedor");
+		Sensor s3= new Sensor ("garage");
+		Sensor s4= new Sensor("habitacion");
+		Sensor s5= new Sensor("cocina");
+		
+		Timbre t1= new Timbre("1");
+		Luz l1= new Luz("blanca");
+
+		a1.setTimbre(t1);
+		a1.AgregarSensor(s1);
+		a1.AgregarSensor(s2);
+		a1.AgregarSensor(s3);
+		a1.AgregarSensor(s4);
+		a1.AgregarSensor(s5);
+		a2.AgregarSensor(s4);
+		a2.AgregarSensor(s3);
+		a2.AgregarSensor(s2);
+		a2.setLuz(l1);
+		s5.setSeActivo(true);
+		s4.setSeActivo(true);
+		a1.comprobar();
+	}
+
+}

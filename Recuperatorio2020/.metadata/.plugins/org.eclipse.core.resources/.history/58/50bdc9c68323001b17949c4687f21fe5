@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class ZonaGeografica extends ElementZona {
+	private String nombre;
+	ArrayList<ElementZona>hijos;
+	
+	
+	
+	public ZonaGeografica(String nombre) {
+		this.nombre=nombre;
+		hijos= new ArrayList<>();
+	}
+	
+	
+	public void agregarElemento(ElementZona e) {
+		hijos.add(e);
+	}
+
+
+	@Override
+	public int cantidadVoluntarios() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

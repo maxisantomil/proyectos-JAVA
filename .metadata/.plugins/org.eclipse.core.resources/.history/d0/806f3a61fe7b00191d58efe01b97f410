@@ -1,0 +1,35 @@
+package proyecto1;
+
+public class matrices_tp8e5 {
+	final static int maxfil=5;
+	final static int maxcol=4;
+	final static int maxnum=10;
+	
+	
+
+public static void main(String[] args) {
+	int mat[][]= new int[maxfil][maxcol];
+	cargar_matriz(mat);
+	imprimir_matriz(mat);
+}
+
+
+public static void cargar_matriz(int[][] mat) {
+for (int i = 0 ; i < maxfil; i++)
+	for (int j = 0 ; j < maxcol; j++)
+		mat[i][j] = (int)(Math.random()*maxnum+1);
+
+}
+
+
+public static void imprimir_matriz(int[][] mat) {
+for (int i = 0 ; i < maxfil; i++) {
+	for (int j = 0 ; j < maxcol; j++)
+		System.out.print("  "+ mat[i][j]);
+	System.out.println("  ");
+	}
+
+}
+
+
+}

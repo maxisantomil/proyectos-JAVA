@@ -1,0 +1,17 @@
+package AgendaPersonal;
+
+import java.util.ArrayList;
+
+public class AgendaP {
+	ArrayList<Reunion>Reuniones;
+	Usuario usu;
+	
+	
+	
+	
+	public void AgregarReunion (Reunion re) {
+		Reuniones.add(re);
+		re.AgregarParticipante(this);
+	}
+
+}

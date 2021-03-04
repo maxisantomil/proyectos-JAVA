@@ -1,0 +1,23 @@
+package Ejercicio5Empleados;
+
+import java.util.ArrayList;
+
+public class Empresa {
+
+	String nombre;
+	ArrayList<Empleado>empleados;
+	
+	
+	public void  agregarEmpleado(Empleado e) {
+		empleados.add(e);
+	}
+	
+	
+	public double totalgastosSueldos() {
+		double suma=0;
+		for (Empleado e: empleados) {
+			suma+= e.getSueldo();
+		}
+		return suma;
+	}
+}

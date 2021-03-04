@@ -1,0 +1,10 @@
+package Ejercicio6WorkBreakdownStructure;
+
+public class RecursoCompartido extends Recurso {
+
+	@Override
+	public boolean isEstaocupado() {
+		return false;
+	}
+
+}

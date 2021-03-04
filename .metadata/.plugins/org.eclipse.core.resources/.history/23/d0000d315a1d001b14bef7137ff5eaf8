@@ -1,0 +1,61 @@
+
+public class PocimaSelectiva extends Pocima {
+	String atributo;
+	int porcentaje;
+
+			public PocimaSelectiva(String s,String atr,int porc ) {
+					super(s);
+					atributo=atr;
+					porcentaje=porc;
+				}
+			
+			
+			
+			
+			
+			
+		public String getAtributo() {
+				return atributo;
+			}
+
+
+
+
+
+
+			public void setAtributo(String atributo) {
+				this.atributo = atributo;
+			}
+
+
+
+
+
+
+			public int getPorcentaje() {
+				return porcentaje;
+			}
+
+
+
+
+
+
+			public void setPorcentaje(int porcentaje) {
+				this.porcentaje = porcentaje;
+			}
+
+
+
+
+
+
+		@Override
+		public double modificarAtributo(Atributo c) {
+			if(c.getNombre().equals(atributo)) {
+				return c.getValor()*(porcentaje/100)+c.getValor();
+			};
+			return c.getValor();
+		}
+
+	}

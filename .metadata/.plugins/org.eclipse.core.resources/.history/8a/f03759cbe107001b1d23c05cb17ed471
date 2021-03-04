@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+
+public class PlataformaStreaming {
+	private String nombre;
+	private ArrayList<Pelicula>catalogoPeliculas;
+	
+	
+	
+	
+	
+	public PlataformaStreaming (String nombre) {
+		this.nombre=nombre;
+		this.catalogoPeliculas= new ArrayList<>();
+	}
+	
+	
+	public void agregarPelicula(Pelicula p) {
+		if (!catalogoPeliculas.contains(p)){
+			catalogoPeliculas.add(p);
+		}
+	}
+	
+	
+	public ArrayList<Pelicula> buscadorPeliculas(Criterio criterio){
+		ArrayList<Pelicula>auxiliar= new ArrayList<>();
+		for (Pelicula p:catalogoPeliculas) {
+			if (criterio.cumple(p)){
+				auxiliar.add(p);
+			}
+		}
+		return auxiliar;
+	}
+	
+	
+	
+	
+}

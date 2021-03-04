@@ -1,0 +1,39 @@
+package Ejercicio6WorkBreakdownStructure;
+
+import java.time.LocalDate;
+
+public class MainWorkBreak {
+
+	public static void main(String[] args) {
+	ElementTarea t1= new Tareaterminal("ksjkdla", LocalDate.of(2020, 04,27), LocalDate.of(2020,05, 29));
+	Recurso r1= new RecursoExclusivo("maxi");
+	Recurso r2= new RecursoExclusivo("jose");
+	Recurso rr3= new RecursoCompartido("serrucho");
+	Recurso rr4= new RecursoCompartido("impresora");
+	Recurso rr5= new RecursoCompartido("martillo");
+	RecursoExclusivo r6= new RecursoExclusivo("chota");
+	
+	Tareacompuesta TareaPrincipal= new Tareacompuesta("pintar la casa");
+	Tareaterminal t2= new Tareaterminal("lijar pared",LocalDate.of(2020,04,02),LocalDate.of(2020, 04, 05));
+	t2.asignarRecurso(r2);
+	t2.asignarRecurso(rr3);
+	t2.asignarRecurso(rr4);
+	t2.asignarRecurso(r6);
+	Tareaterminal t3= new Tareaterminal("pintar cocina",LocalDate.of(2020,03,01),LocalDate.of(2020, 04,01));
+	t3.asignarRecurso(rr3);
+	t3.asignarRecurso(r1);
+	t3.asignarRecurso(rr5);
+	t3.asignarRecurso(r6);
+	
+	TareaPrincipal.agregarTarea(t2);
+	TareaPrincipal.agregarTarea(t3);
+	t2.getFechaInicio();
+	
+	System.out.println(t3.getRecursos());
+	
+	System.out.println(TareaPrincipal.listatareasRecurso(r6));
+	System.out.println(TareaPrincipal.listadeRecursosInvolucrados());
+	System.out.println(TareaPrincipal.getTareas());
+	}
+
+}

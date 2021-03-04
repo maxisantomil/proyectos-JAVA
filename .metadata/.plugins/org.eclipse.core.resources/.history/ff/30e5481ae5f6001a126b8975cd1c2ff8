@@ -1,0 +1,7 @@
+package Ejercicio4Contribuyentes;
+
+public class Contribuyente {
+	String nombre;
+	int codid;
+
+}

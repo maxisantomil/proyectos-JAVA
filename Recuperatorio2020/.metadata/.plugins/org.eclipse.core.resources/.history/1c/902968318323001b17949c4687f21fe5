@@ -1,0 +1,5 @@
+
+public class ZonaGeografica extends ElementZona {
+	private String nombre;
+	ArrayList<ElementZona>hijos;
+}

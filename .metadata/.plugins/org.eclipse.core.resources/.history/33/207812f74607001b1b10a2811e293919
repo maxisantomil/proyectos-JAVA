@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+
+public class Jugador {
+	private Mazo mazo;
+	private String nombre;
+	private int contador;
+		public Jugador(String nomb){
+			nombre=nomb;
+			mazo= new Mazo();
+		}
+		
+		
+		
+		
+		public int CantidadCartas() {
+			return mazo.getMazo().size();
+		}
+
+
+
+
+		public void setMazo(Mazo mazo) {
+			this.mazo = mazo;
+		}
+
+
+
+
+		public String getNombre() {
+			return nombre;
+		}
+
+
+
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+
+
+
+		public Carta sacarCarta() {
+			return mazo.getCarta();
+			}
+		
+		public void agregarCartaalMazo(Carta c) {
+			mazo.agregarCarta(c);
+		}
+
+		@Override
+		public String toString() {
+			return "Jugador [ nombre: "+ nombre + ", " + mazo +" "+ "\n";
+		}
+		
+		public String elegirAtributo() {
+			return mazo.elegirCaracteristica().getNombre();
+		}
+		
+}
+

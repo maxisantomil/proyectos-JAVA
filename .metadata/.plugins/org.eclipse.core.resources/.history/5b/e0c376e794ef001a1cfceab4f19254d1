@@ -1,0 +1,25 @@
+package Ejercicio1;
+
+public class Alarma {
+	boolean rompiovidrio;
+	boolean abriopuertaventana;
+	boolean detectamovimiento;
+	Timbre timbre;
+
+
+public boolean   comprobar () {
+
+		if ((this.abriopuertaventana == true) || (this.detectamovimiento==true)|| (this.rompiovidrio==true)) {
+			return true;
+		}
+		else return false;
+	}
+
+public boolean hacerSonar() {
+	if (this.comprobar()) {
+		timbre.HacerSonar();
+	}
+}
+
+}
+

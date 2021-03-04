@@ -1,0 +1,100 @@
+package Ejercicio3Biblioteca;
+
+public class Libro implements Comparable<Libro>{
+	private int id;
+	private String nombre;
+	private String autor;
+	private int anio_edicion;
+	private String genero;
+	
+	
+	public Libro(int id,String nom,String autor,int anio, String gen  ) {
+		this.id=id;
+		this.nombre=nom;
+		this.autor=autor;
+		this.anio_edicion=anio;
+		this.genero=gen;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getAutor() {
+		return autor;
+	}
+
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+
+	public int getAnio_edicion() {
+		return anio_edicion;
+	}
+
+
+	public void setAnio_edicion(int anio_edicion) {
+		this.anio_edicion = anio_edicion;
+	}
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+	
+	
+	
+	
+	
+	
+	public boolean equals(Object o) {
+		try {
+			Libro aux= (Libro)o;
+			return this.getNombre().equals(aux.getNombre());
+		}catch(Exception exc) {
+			return false;
+		}
+	
+	}
+
+
+	@Override
+	public int compareTo(Libro o) {
+		if (this.getId()> o.getId())
+			return 1000;
+		else if (this.getId() < o.getId()) {
+			return -5000;
+			
+			}else return 0;
+		}
+
+
+	@Override
+	public String toString() {
+		return "Libro [id=" + id + ", nombre=" + nombre + ", autor=" + autor + ", anio_edicion=" + anio_edicion
+				+ ", genero=" + genero + "]";
+	}
+	
+	
+}
+
+	

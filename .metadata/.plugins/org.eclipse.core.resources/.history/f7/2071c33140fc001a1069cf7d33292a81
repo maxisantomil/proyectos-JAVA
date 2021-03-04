@@ -1,0 +1,25 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionPrecipitaciones extends Prediccion {
+	int promedio;
+	
+	public PrediccionPrecipitaciones(int cant,int maxmilimetros) {
+		super(cant,maxmilimetros);
+	}
+
+	@Override
+	public boolean predicelluvia(ArrayList<Registro> registros) {
+		promedio=0;
+		int tope=registros.size()- cantmaximaRegistros;
+		for (int i=0; i<=tope;i++){
+			promedio+= (registros.get(i).getCantllovido());
+		}
+		promedio= promedio/cantmaximaRegistros;
+		if (promedio< valoraComparar) {
+			return true;
+		}else return false;
+	}
+
+}

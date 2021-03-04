@@ -1,0 +1,137 @@
+package Ejercicio4;
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Persona {
+	
+		String nombre;
+		String apellido;
+		int pasaporte;
+		Date nac;
+		String pais;
+		boolean viajando;
+		boolean concentracion;
+		boolean paisdeorigen;
+		
+		
+		public Persona(String n,String a,int p,Date f,String pa){
+			nombre=n;
+			apellido=a;
+			pasaporte=p;
+			nac=f;
+			pais=pa;
+			viajando=false;
+			concentracion=false;
+			paisdeorigen=false;
+		}
+		
+		
+		
+		public String getNombre() {
+			return nombre;
+		}
+
+
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+
+
+		public String getApellido() {
+			return apellido;
+		}
+
+
+
+		public void setApellido(String apellido) {
+			this.apellido = apellido;
+		}
+
+
+
+		public int getPasaporte() {
+			return pasaporte;
+		}
+
+
+
+		public void setPasaporte(int pasaporte) {
+			this.pasaporte = pasaporte;
+		}
+
+
+
+		public Date getNac() {
+			return nac;
+		}
+
+
+
+		public void setNac(LocalDate nac) {
+			this.nac = nac;
+		}
+
+
+
+		public String getPais() {
+			return pais;
+		}
+
+
+
+		public void setPais(String pais) {
+			this.pais = pais;
+		}
+
+
+
+		public boolean isViajando() {
+			return viajando;
+		}
+
+
+
+		public void setViajando(boolean viajando) {
+			this.viajando = viajando;
+		}
+
+
+
+		public boolean isConcentracion() {
+			return concentracion;
+		}
+
+
+
+		public void setConcentracion(boolean concentracion) {
+			this.concentracion = concentracion;
+		}
+
+
+
+		public boolean isPaisdeorigen() {
+			return paisdeorigen;
+		}
+
+
+
+		public void setPaisdeorigen(boolean paisdeorigen) {
+			this.paisdeorigen = paisdeorigen;
+		}
+
+
+
+		public boolean estadisponible() {
+			if ((this.paisdeorigen)&&(!this.concentracion)&&(!this.viajando)) {
+				return true;
+			}
+			else return false;
+		}
+		
+		public void estado() {
+			System.out.println("la persona se encuentra viajando ? : "+ this.isViajando()+
+			 "la persona esta concentrando?: "+ this.isConcentracion()+ "la persona esta en su pais de origen?: "+ this.isPaisdeorigen());
+		}
+}

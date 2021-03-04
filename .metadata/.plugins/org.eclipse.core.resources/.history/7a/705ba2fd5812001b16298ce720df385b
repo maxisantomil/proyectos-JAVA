@@ -1,0 +1,13 @@
+package Ejercicio2SistemaElectoral;
+
+public abstract class ElementoElectoral {
+	
+	
+	
+	
+	
+	public abstract int getDni();
+	public abstract int contarTotalidadVotos();
+	public abstract int contarVotoCandidato(String candidato);
+	public abstract boolean contieneCandidato(String candidato);
+}

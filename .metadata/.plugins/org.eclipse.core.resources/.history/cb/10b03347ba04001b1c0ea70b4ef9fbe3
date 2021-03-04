@@ -1,0 +1,38 @@
+package Ejercicio4CentrodeComputos;
+
+import java.util.ArrayList;
+
+public abstract class ColaOrdenada {
+
+	ArrayList<Proceso>procesos;
+	
+	
+	
+	public void agregarProceso (Proceso p) {
+		
+		boolean encontrado=false;
+		int i=0;
+		while (i<procesos.size() && !encontrado) {
+			Proceso procesoencola= procesos.get(i);
+			if (this.esmenor(procesoencola,p)){
+				procesos.add(i,p);
+				encontrado=true;
+			}
+			i++;
+			
+		}if (!encontrado) {
+			procesos.add(p);
+		}
+	}
+	
+	public Proceso siguiente() {
+		if (!this.procesos.isEmpty()) {
+			Proceso siguiente= procesos.get(0);
+			/*return*/ this.procesos.remove(0); //es lo mismo pero mas corto con el remove
+			return siguiente;
+		}
+		else return null;
+	}
+	
+	
+}

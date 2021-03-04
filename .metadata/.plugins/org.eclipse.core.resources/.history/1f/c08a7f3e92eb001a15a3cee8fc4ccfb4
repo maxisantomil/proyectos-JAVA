@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class Temporada {
+	private int ndetemporada;
+	ArrayList<Episodio>Episodios;
+	
+	
+	
+	
+	public Temporada(int temp) {
+		ndetemporada=temp;
+		Episodios = new ArrayList<Episodio>();
+	}
+	
+	
+	public int totalepisodiosvistos() {
+		for (int i=0; i < Episodios.size();i++) {
+			if Episodios.
+		}
+	}
+}

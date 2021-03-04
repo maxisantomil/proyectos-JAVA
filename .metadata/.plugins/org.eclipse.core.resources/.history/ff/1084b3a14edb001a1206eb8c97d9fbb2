@@ -1,0 +1,13 @@
+package PracticoInicial;
+
+public class Cubilete {
+
+private Dado d1=new Dado();
+private Dado d2=new Dado();
+
+
+public void roll() {
+	d1.roll();
+	d2.roll();
+}
+}

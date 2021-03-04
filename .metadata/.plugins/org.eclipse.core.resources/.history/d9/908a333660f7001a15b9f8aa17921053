@@ -1,0 +1,32 @@
+package Ejercicio4Contribuyentes;
+
+
+
+public class mainPais {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Territorio buenosaires= new Territorio("Buenos Aires");
+		Territorio lapampa= new Territorio ("La Pampa");
+		
+		Ciudad tandil= new Ciudad("Tandil",120000,250000);
+		Ciudad azul= new Ciudad("Azul",40000,89000);
+		Ciudad mardelplata= new Ciudad("Mar del Plata",250000,500000);
+		Ciudad olavarria= new Ciudad("Olavarria",80000,350000);
+		Ciudad balcarce= new Ciudad("Balcarce",20000,50000);
+		
+		Contribuyente c1= new Contribuyente("santillan", 1, 12000);
+		Contribuyente c2= new Contribuyente("perez", 2, 15000);
+		Contribuyente c3= new ContribuyenteComerciante("gomez", 3, 12000, 30000); 
+		Contribuyente c4= new ContribuyenteProgramador("santomil",4, 15000,50000);
+		System.out.println(c3.getMonto());
+		System.out.println(c4.getMonto());
+		
+		tandil.agregarContribuyente(c1);
+		tandil.agregarContribuyente(c2);
+		tandil.agregarContribuyente(c3);
+		tandil.agregarContribuyente(c4);
+		System.out.println(tandil.montoRecaudado());
+	}
+
+}

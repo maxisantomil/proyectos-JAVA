@@ -1,0 +1,7 @@
+package Ejercicio4CentrodeComputos;
+
+public class Computadora {
+	private String modelo;
+	private int ram;
+	private int velocidadCpu;
+}

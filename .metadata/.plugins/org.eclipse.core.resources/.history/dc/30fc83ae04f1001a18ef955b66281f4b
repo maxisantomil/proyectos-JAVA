@@ -1,0 +1,26 @@
+package Ejercicio4;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class Persona {
+	
+		String nombre;
+		String apellido;
+		int pasaporte;
+		LocalDate nac;
+		String pais;
+		boolean viajando;
+		boolean concentracion;
+		boolean paisdeorigen;
+		
+		
+		public Persona(String n,String a,int p,LocalDate f){
+			nombre=n;
+			apellido=a;
+			pasaporte=p;
+			nac=f;
+			viajando=false;
+			concentracion=false;
+			paisdeorigen=false;
+		}
+}

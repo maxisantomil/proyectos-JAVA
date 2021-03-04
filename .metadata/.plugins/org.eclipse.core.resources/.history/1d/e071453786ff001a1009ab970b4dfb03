@@ -1,0 +1,21 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class PrediccionAND extends Prediccion {
+	Prediccion c1;
+	Prediccion c2;
+	
+	public PrediccionAND(Prediccion cc1,Prediccion cc2) {
+		super(0,0);
+		c1=cc1;
+		c2=cc2;
+	}
+	
+	@Override
+	
+	public boolean predicelluvia(EstacionMeteorologica e) {
+		return (c1.predicelluvia(e) && c2.predicelluvia(e));
+	}
+
+}

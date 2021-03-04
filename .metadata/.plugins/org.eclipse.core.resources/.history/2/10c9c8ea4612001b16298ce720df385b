@@ -1,0 +1,41 @@
+package Ejercicio2SistemaElectoral;
+
+public class MainSistema {
+
+	public static void main(String[] args) {
+		Candidato c1= new Candidato("pepe", "obero", "marylin");
+		Candidato c2= new Candidato("tuvieja", "los pario", "rr");
+		Candidato c3= new Candidato("fr", "kk", "queseyo");
+		Candidato c4= new Candidato("guachin", "chori", "pan");
+		
+		Voto v1= new Voto(3517251);
+		Voto v2= new Voto(3317251);
+		Voto v3= new Voto(3117251);
+		Voto v4= new Voto(2514221);
+		
+		v1.votar(c1);
+		v2.votar(c2);
+		v3.votar(c1);
+		v4.votar(c1);
+		
+		
+		
+		Establecimiento Escuela= new Establecimiento("EE N 22");
+				Escuela.agregardniPadron(3517251);
+				Escuela.agregardniPadron(3317251);
+				Escuela.agregardniPadron(3117251);
+				Escuela.agregardniPadron(2514221);
+				
+				
+				Escuela.agregarVoto(v1);
+				Escuela.agregarVoto(v2);
+				Escuela.agregarVoto(v3);
+				Escuela.agregarVoto(v4);
+				
+				System.out.println(Escuela.votosporCandidato("pepe"));
+				
+				
+		
+	}
+
+}

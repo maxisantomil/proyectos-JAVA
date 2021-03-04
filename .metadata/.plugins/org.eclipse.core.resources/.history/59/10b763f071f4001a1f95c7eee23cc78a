@@ -1,0 +1,20 @@
+package Ejercicio2;
+
+import java.util.ArrayList;
+
+public class Alumno {
+	String Nombre;
+	Cualidad cualidades;
+	ArrayList<Alumno>familiares;
+	
+	public Alumno (String n) {
+		
+	}
+	
+	public void AsignarCualidades(boolean a, boolean b, boolean c, boolean d) {
+		cualidades.setSangrepura(a);
+		cualidades.setUsavarita(b);
+		cualidades.setSabevolar(c);
+		cualidades.setMagianegra(d);
+	}
+}

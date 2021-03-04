@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+public class Jugador implements Comparable<Jugador> {
+	private Mazo mazo;
+	private String nombre;
+	private Estrategia estrategia;
+	
+		public Jugador(String nomb, Estrategia e){
+			nombre=nomb;
+			this.mazo=new Mazo();
+			estrategia=e;
+		}
+		
+		public String elegirAtributo() {
+			return mazo.elegirCaracteristica(estrategia).getNombre();
+		}
+		public int cantidadCartas() {
+			return mazo.dameCantidaddeCartas();
+		}
+		
+		public Carta sacarCarta() {
+			return mazo.getCarta();
+			}
+		
+		public void agregarCartaalMazo(Carta c) {
+			mazo.agregarCarta(c);
+		}
+
+		public Mazo getMazo() {
+			return mazo;
+		}
+
+		@Override
+		public String toString() {
+			return "Jugador ["+" nombre=" + nombre +"\n "+ "mazo=" + mazo +"\n" +"]";
+		}
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+		@Override
+		public int compareTo(Jugador o) {
+		return 	((Integer)this.cantidadCartas()).compareTo((Integer)o.cantidadCartas());
+		}
+		
+		
+		
+
+}
+
+

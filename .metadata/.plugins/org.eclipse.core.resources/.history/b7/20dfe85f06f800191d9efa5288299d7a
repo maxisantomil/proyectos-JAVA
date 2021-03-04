@@ -1,0 +1,51 @@
+
+public class Conjunto implements Ganaderia {
+	Arraylist <Ganaderia>Animales;
+	String nombre;
+	
+	public Conjunto() {
+		Animales = nre Arraylist <Ganaderia>();
+	}
+	
+	public double getPesoTotal () {
+		double pesototal=0;
+		for (Ganaderia e:Animales ) {
+			pesototal+= e.getPesoTotal();
+		}
+		return pesototal;
+	}
+	
+	public double getPromPeso() {
+		double suma=0;
+		for (Ganaderia e:Animales ) {
+			pesototal+= e.getPesoTotal();
+		}
+		if (Animales.size()!=0) {
+			return pesototal/Animales.size();
+		}
+		else {
+			return 0;	
+			}
+		}
+	
+	public int getCantAnimales() {
+		int suma=0;
+		for (Ganaderia e:Animales) {
+			suma+= e.getCantAnimales();
+		}
+		return suma;
+	}
+	
+	public double getPromEdad() {
+		int suma=0;
+		for (Ganaderia e:Animales) {
+			suma += e.getPromEdad();
+		}
+		if (Animales.size()!=0) {
+			return suma/Animales.size();
+			
+		}else {
+			return 0;
+		}
+	}
+}

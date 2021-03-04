@@ -1,0 +1,10 @@
+package PracticoInicial;
+
+public class JuegoDados {
+
+	public static void main(String[] args) {
+		Partida p= new Partida();
+		p.jugar();
+	}
+
+}

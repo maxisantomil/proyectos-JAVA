@@ -1,0 +1,19 @@
+package Ejercicio4Contribuyentes;
+
+public class ContribuyenteProgramador extends Contribuyente{
+
+	private double montoSoftware;
+	private final double  porcentMonto=0.2;
+	private final double  porcentSoft=0.02;
+	public ContribuyenteProgramador(String n,int cod, double mont, double soft) {
+		super(n,cod,mont);
+		montoSoftware=soft;
+	}
+	
+	
+	public double getMonto() {
+		return ((super.getMonto()*porcentMonto) + (montoSoftware*porcentSoft));
+	}
+	
+	
+}

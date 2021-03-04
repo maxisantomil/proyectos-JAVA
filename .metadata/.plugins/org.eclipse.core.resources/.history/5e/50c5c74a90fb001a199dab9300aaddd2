@@ -1,0 +1,21 @@
+package Ejercicio1Contrato;
+
+import java.util.ArrayList;
+
+public class Consultora {
+	String nombre;
+	ArrayList<Candidato>candidatos;
+	
+	
+	
+	public ArrayList<Candidato>potencialesCandidatos(Criterio c){
+		ArrayList<Candidato> potenciales= new ArrayList<>();
+		for (Candidato f: candidatos) {
+			if (f.aceptaContrato(c)){
+				potenciales.add(f);
+			}
+		}
+		return potenciales;
+	}
+	
+}

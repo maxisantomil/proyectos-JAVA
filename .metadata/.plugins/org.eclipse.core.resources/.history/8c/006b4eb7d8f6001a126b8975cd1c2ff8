@@ -1,0 +1,79 @@
+package Ejercicio2;
+
+import java.util.ArrayList;
+
+public class CasaHowart {
+	private String nombre;
+	 Cualidad cualidades;
+	 ArrayList<Alumno>Alumnos;
+	private int cantMaximaAlumnos;
+	
+	
+	public CasaHowart(String n, int c) {
+		nombre=n;
+		cantMaximaAlumnos=c;
+		cualidades= new Cualidad();
+		Alumnos= new ArrayList<>();
+	}
+	
+	
+	public void AsignarCualidades(boolean a, boolean b, boolean c, boolean d) {
+		cualidades.setSangrepura(a);
+		cualidades.setUsavarita(b);
+		cualidades.setSabevolar(c);
+		cualidades.setMagianegra(d);
+	}
+	
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public Cualidad getCualidades() {
+		return cualidades;
+	}
+
+
+	public void setCualidades(Cualidad cualidades) {
+		this.cualidades = cualidades;
+	}
+
+
+	public ArrayList<Alumno> getAlumnos() {
+		return Alumnos;
+	}
+
+
+	public void setAlumnos(ArrayList<Alumno> alumnos) {
+		Alumnos = alumnos;
+	}
+
+
+	public int getCantMaximaAlumnos() {
+		return cantMaximaAlumnos;
+	}
+
+
+	public void setCantMaximaAlumnos(int cantMaximaAlumnos) {
+		this.cantMaximaAlumnos = cantMaximaAlumnos;
+	}
+
+	public boolean cumpleCualidades(Alumno p) {
+		
+		 if ((cualidades.isMagianegra())== (p.cualidades.isMagianegra())){
+			 return true;
+		 	}
+		 return false;
+		}
+	public void AgregarAlumno (Alumno p) {
+		if (cumpleCualidades(p)){
+			Alumnos.add(p);
+		}
+	}
+}

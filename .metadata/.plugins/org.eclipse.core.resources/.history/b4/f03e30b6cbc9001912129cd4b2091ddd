@@ -1,0 +1,85 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class SimuladorRed {
+	
+	public static void main(String[] args) {
+	BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	try{
+	System.out.println ("Ingrese string para iniciar primera parte: ");
+	String opcion = entrada.readLine();
+	
+		Sucursal S0 = new Sucursal ();
+		Sucursal S1 = new Sucursal ();
+		Sucursal S2 = new Sucursal ();
+		Central central = new Central();
+		
+		S0.inicializar();
+		S1.inicializar();
+		S2.inicializar();
+		central.inicializar();
+		
+		central.agregarSucursal(S0);
+		central.agregarSucursal(S1);
+		central.agregarSucursal(S2);
+		
+		central.imprimirEstadoRed();
+		
+		
+		
+		System.out.println ("Ingrese string para iniciar segunda parte: ");
+		opcion = entrada.readLine();
+
+		central.setearStockProductosC(0, 50, 20, 100);
+		central.setearStockProductosC(1, 60, 30, 90);
+		central.setearStockProductosC(2, 150, 30, 200);
+				
+		S0.setearStockProductoS(0, 5, 2, 10);
+		S0.setearStockProductoS(1, 6, 3, 9);
+		S0.setearStockProductoS(2, 12, 3, 20);
+		S1.setearStockProductoS(0, 5, 2, 10);
+		S1.setearStockProductoS(1, 6, 3, 9);
+		S1.setearStockProductoS(2, 12, 3, 20);
+		S2.setearStockProductoS(1, 5, 3, 12);
+		S2.setearStockProductoS(2, 18, 3, 20);
+		central.imprimirEstadoRed();
+		
+		System.out.println ("Ingrese string para iniciar tercera parte: ");
+		opcion = entrada.readLine();
+		S0.vendeProducto(0,4);
+		S0.vendeProducto(1,2);
+		S1.vendeProducto(0,1);
+		S2.vendeProducto(1,5);
+		S2.vendeProducto(2,15);
+		central.imprimirEstadoRed();
+		System.out.println ("Ingrese string para iniciar cuarta parte: ");
+		System.out.println("la sucursal 0:");
+		central.ConsultaCantidadesNecesarias(S0);
+		System.out.println("la sucursal 1:");
+		central.ConsultaCantidadesNecesarias(S1);
+		System.out.println("la sucursal 2:");
+		central.ConsultaCantidadesNecesarias(S2);
+		central.imprimirEstadoRed();
+		System.out.println ("Ingrese string para iniciar quinta parte: ");
+		opcion = entrada.readLine();
+		abastecer(S0,S1,S2, central);
+		central.imprimirEstadoRed();
+		System.out.println ("Ingrese string para iniciar sexta parte: ");
+		opcion = entrada.readLine();
+		central.comprar_producto (0);
+		
+	System.out.println ("Ingrese string para salir: ");
+	opcion = entrada.readLine();
+	}
+	catch (Exception exc){
+	System.out.println(exc);
+	}
+	
+	}
+	public static void abastecer(Sucursal S0, Sucursal S1, Sucursal S2, Central central) {
+		for (int i= 0; i < Central.MAXTIPOPROD; i++) {
+			central.autoAbastecerSucursal(S0, i);
+			central.autoAbastecerSucursal(S1, i);
+			central.autoAbastecerSucursal(S2, i);
+		}
+	}
+}

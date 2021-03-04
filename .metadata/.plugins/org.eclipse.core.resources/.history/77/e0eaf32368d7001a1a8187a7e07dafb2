@@ -1,0 +1,8 @@
+package PracticoInicial;
+import java.util.ArrayList;
+
+public class Partida {
+	
+private Jugador p1= new Jugador("player1");
+private Jugador p2= new Jugador("player2");
+}

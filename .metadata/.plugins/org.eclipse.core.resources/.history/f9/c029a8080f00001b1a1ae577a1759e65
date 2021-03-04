@@ -1,0 +1,18 @@
+package Ejercicio2Meteorologo;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		Sensor lluviasTandil= new Sensor("lluvias de Tandil");
+		lluviasTandil.agregarRegistro(110.0);
+		lluviasTandil.agregarRegistro(24.0);
+		lluviasTandil.agregarRegistro(0.0);
+		lluviasTandil.agregarRegistro(80.0);
+		
+		
+		
+		
+	}
+
+}

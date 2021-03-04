@@ -1,0 +1,56 @@
+package Ejercicio2;
+
+public class Cualidad {
+	boolean sangrepura;
+	boolean usavarita;
+	boolean magianegra;
+	boolean sabevolar;
+	
+	public Cualidad() {
+		sangrepura=false;
+		usavarita=false;
+		magianegra=false;
+		sabevolar=false;
+	}
+
+	public boolean isSangrepura() {
+		return sangrepura;
+	}
+
+	public void setSangrepura(boolean sangrepura) {
+		this.sangrepura = sangrepura;
+	}
+
+	public boolean isUsavarita() {
+		return usavarita;
+	}
+
+	public void setUsavarita(boolean usavarita) {
+		this.usavarita = usavarita;
+	}
+
+	public boolean isMagianegra() {
+		return magianegra;
+	}
+
+	public void setMagianegra(boolean magianegra) {
+		this.magianegra = magianegra;
+	}
+
+	public boolean isSabevolar() {
+		return sabevolar;
+	}
+
+	public void setSabevolar(boolean sabevolar) {
+		this.sabevolar = sabevolar;
+	}
+
+	@Override
+	public String toString() {
+		return "Cualidad [sangrepura=" + sangrepura + ", usavarita=" + usavarita + ", magianegra=" + magianegra
+				+ ", sabevolar=" + sabevolar + "]";
+	}
+	
+	
+	
+}

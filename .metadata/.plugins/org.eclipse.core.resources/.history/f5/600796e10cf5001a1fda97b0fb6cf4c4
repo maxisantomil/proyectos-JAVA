@@ -1,0 +1,19 @@
+package Ejercicio3CooperativaAgricola;
+
+import java.util.ArrayList;
+
+public class Cooperativa {
+	String nombre;
+	ArrayList<String>mineralesEspecial;
+	ArrayList<String>mineralesSecundarios;
+	ArrayList<Lote>lotes;
+	
+	public String TipoLote(Lote l) {
+		for (String n:mineralesEspecial) {
+			if (!(l.getMinerales().contains(n))) {
+				return " es un lote comun, segun la clasificacion de la cooperativa";
+			}
+		}
+		return "es un lote especial, segun la clasificacion de la cooperativa";
+	}
+}

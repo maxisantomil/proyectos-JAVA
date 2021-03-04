@@ -1,0 +1,17 @@
+
+public class CriterioActor extends Criterio {
+	private String actor;
+	
+	public CriterioActor(String actor) {
+		this.actor=actor;
+	}
+	
+	@Override
+	public boolean cumple(Pelicula p) {
+		if (p.getActores().contains(actor)) {
+			return true;
+		}
+		return false;
+	}
+
+}

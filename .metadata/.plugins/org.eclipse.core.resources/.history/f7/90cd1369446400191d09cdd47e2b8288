@@ -1,0 +1,44 @@
+package proyecto1;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+//Práctico iteraciones - Programación 1 - TUDAI
+//8. En una empresa trabajan n empleados cuyos sueldos oscilan entre $100 y $500, realizar un
+//programa que pida los sueldos que cobra cada empleado e informe cuántos empleados cobran
+//entre 100y300 y cuántos cobran más de $300. Además el programa deberá informar el importe
+//que invierte la empresa en sueldos al personal.
+public class claseej1{
+	public static void main (String [] args) {
+		final float min = 100, max = 500, med = 300;
+		boolean valido = false;
+		float sueldo = 1, sumasueldo = 0;
+		int empleados1 = 0, empleados2 = 0;
+		
+		BufferedReader entrada = new BufferedReader (new InputStreamReader(System.in));
+		
+		while (!valido) {
+			try {
+				while (sueldo != 0) {
+					sueldo = new Float(entrada.readLine());
+					if ((sueldo >= min)&&(sueldo <= max)) {
+						sumasueldo += sueldo;
+						System.out.println("Registrado");
+						if (sueldo > med) {
+							empleados2++;
+						}
+						else {
+							empleados1++;
+						}
+					}
+					valido = true;
+				}
+			}
+			catch (Exception exc) {
+				valido = false;
+			}
+		}
+		System.out.println("Empleados que cobran entre $100 y $300: "+empleados1);
+		System.out.println("Empleados que cobran más de $300: "+empleados2);
+		System.out.println("Importe total de sueldos al personal: "+sumasueldo);
+	}
+}

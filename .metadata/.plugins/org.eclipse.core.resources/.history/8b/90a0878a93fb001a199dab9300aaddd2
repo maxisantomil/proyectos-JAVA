@@ -1,0 +1,25 @@
+package Ejercicio1Contrato;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Candidato cand1= new Candidato("maxi","santomil","hh",20000);
+		Candidato cand2= new Candidato("pepe","sanz","rr",15000);
+		
+		Criterio criterioHora= new CriterioHora(10);
+		Criterio criterioEmpresa= new CriterioEmpresa("technisis");
+		Criterio criterioExclusivo= new CriterioExclusivo();
+		Criterio criterioSueldo= new CriterioSueldo(20000);
+		
+		cand1.setCriterioAceptacion(criterioSueldo);
+		cand2.setCriterioAceptacion(criterioEmpresa);
+		
+		Contrato c1= new Contrato("uu", 25000, 8);
+		
+		
+		
+	}
+
+}

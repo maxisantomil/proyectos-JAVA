@@ -1,0 +1,61 @@
+package Libreria;
+import java.util.ArrayList;
+public class Cliente extends ElementLibro {
+	private ArrayList<ElementLibro>libros;
+	private double dinerogastado;
+	private int anosAntiguedad;
+	private ArrayList<String>autores;
+	private boolean exigente=false;
+	
+	
+	public Cliente(double d, int ant,boolean exi) {
+		super();
+		this.libros=new ArrayList<>();
+		this.dinerogastado=d;
+		this.anosAntiguedad=ant;
+		this.autores=new ArrayList<>();
+		this.exigente=exi;
+	}
+	
+	public boolean AceptaLibro(Libro e) {
+		boolean acepta=false;
+		for (String g : super.getGeneros()) {
+			if (e.acepta(g)) {
+				acepta=true;
+			}
+		}
+		return acepta;
+	}
+
+	public ArrayList<ElementLibro> getLibros() {
+		return libros;
+	}
+
+	public void setLibros(ArrayList<ElementLibro> libros) {
+		this.libros = libros;
+	}
+
+	public double getDinerogastado() {
+		return dinerogastado;
+	}
+
+	public void setDinerogastado(double dinerogastado) {
+		this.dinerogastado = dinerogastado;
+	}
+
+	public int getAnosAntiguedad() {
+		return anosAntiguedad;
+	}
+
+	public void setAnosAntiguedad(int anosAntiguedad) {
+		this.anosAntiguedad = anosAntiguedad;
+	}
+
+	public ArrayList<String> getAutores() {
+		return autores;
+	}
+
+	public void setAutores(ArrayList<String> autores) {
+		this.autores = autores;
+	}
+}

@@ -1,0 +1,87 @@
+package Ejercicio1Contrato;
+
+public class Candidato {
+	String nombre;
+	String apellido;
+	String empresa;
+	double sueldo;
+	Criterio criterioAceptacion;
+	
+	public Candidato(String n, String a, String em,double Su) {
+		nombre=n;
+		apellido=a;
+		empresa=em;
+		sueldo=Su;
+	}
+	
+	public String getEmpresa() {
+		return empresa;
+	}
+
+
+
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
+	}
+
+
+
+	public double getSueldo() {
+		return sueldo;
+	}
+
+
+
+	public void setSueldo(double sueldo) {
+		this.sueldo = sueldo;
+	}
+
+
+
+	public Criterio getCriterioAceptacion() {
+		return criterioAceptacion;
+	}
+
+
+
+	public void setCriterioAceptacion(Criterio criterioAceptacion) {
+		this.criterioAceptacion = criterioAceptacion;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
+
+
+	public boolean aceptaContrato(Contrato x) {
+		if ((sueldo==0)){
+			return true;
+		}
+		 if ((criterioAceptacion.acepta(x))) {
+				return true;
+			}else return false;
+	}
+	
+}

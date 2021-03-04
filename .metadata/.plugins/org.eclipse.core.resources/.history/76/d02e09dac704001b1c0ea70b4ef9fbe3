@@ -1,0 +1,22 @@
+package Ejercicio4CentrodeComputos;
+
+import java.util.ArrayList;
+
+public class CentroComputos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ColaOrdenada colaordenadaProcesos= new ColaOrdenada();
+		ArrayList<Computadora>computadoras;
+		ElementoOrdenable proc1= new Proceso(215,8, "thelastofus.exe");
+		ElementoOrdenable proc2= new Proceso(57,8, "thelastofus.exe");
+		ElementoOrdenable proc3= new Proceso(215,8, "thelastofus.exe");
+						
+		
+				
+		for (Computadora pc: computadoras) {
+			pc.ejecuta()
+		}
+	}
+
+}

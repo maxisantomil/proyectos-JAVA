@@ -1,0 +1,17 @@
+
+public class Fortalecedora extends Pocima {
+	private double porcentaje;
+	
+	
+	public Fortalecedora(double por) {
+		this.porcentaje=por;
+	}
+	
+	@Override
+	public double modificarAtributo(Atributo atr) {
+		return atr.getValor()*porcentaje;
+		
+	
+	}
+
+}

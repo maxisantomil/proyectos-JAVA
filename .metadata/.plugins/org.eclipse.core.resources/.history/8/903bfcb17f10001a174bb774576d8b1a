@@ -1,0 +1,33 @@
+package Libreria;
+
+public class Libreria {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Libro principito= new Libro("El Principito", "Lester", "el vive en un planeta lejano",600);
+		Cliente Jose= new Cliente(900, 5,true);
+		
+		principito.addGenero("erotico");
+		principito.addGenero("gjgj");
+		
+		Jose.addGenero("fantasia");
+		Jose.addGenero("ciencia ficcion");
+		Jose.addGenero("accion");
+		
+		Jose.AceptaLibro(principito);
+		
+		DescuentoAniosAntiguedad aniosAntiguedad= new DescuentoAniosAntiguedad(5, 15);
+		DescuentoCantLibros cantLibros= new DescuentoCantLibros(5, 10);
+		DescuentoDineroGastado gastado= new DescuentoDineroGastado(1000, 20);
+		
+		Descuentos descuentos= new Descuentos();
+		descuentos.addCriterio(aniosAntiguedad);
+		descuentos.addCriterio(cantLibros);
+		descuentos.addCriterio(gastado);
+		
+		System.out.println(descuentos.getDescuento(Jose));
+		System.out.println(Jose.AceptaLibro(principito));
+	}
+	
+
+}

@@ -1,0 +1,22 @@
+package Ejercicio4CentrodeComputos;
+
+public class Proceso {
+	private int memoriaRequerida;
+	private int cpuRequerido;
+	private String ejecutable;
+	
+	
+	public Proceso(int memoria, int cpuR, String eje) {
+		memoriaRequerida=memoria;
+		cpuRequerido=cpuR;
+		ejecutable=eje;
+	}
+	
+		public int getMemoriaRequerida() {
+			return memoriaRequerida;
+		}
+
+		public void setMemoriaRequerida(int memoriaRequerida) {
+			this.memoriaRequerida = memoriaRequerida;
+		}
+}

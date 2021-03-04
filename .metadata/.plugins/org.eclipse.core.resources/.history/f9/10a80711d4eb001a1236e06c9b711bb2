@@ -1,0 +1,35 @@
+package AgendaPersonal;
+import java.time.LocalDateTime;
+import java.util.*;
+public class MenuAgenda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Usuario us1 = new Usuario("maxi santomil",370585,"maxisantomil@hotmail.com","Belgrano 1040");
+		Usuario us2 = new Usuario("benjamin gutierrez",002255,"guti@hotmail.com","Azcuenaga 88");
+		Usuario us3 = new Usuario("gonzalo perez",85742,"gonzape33@hotmail.com","14 de julio 2300");
+		
+		Reunion r1= new Reunion("UNICEN", "programacion 2 ",2, LocalDateTime.now());
+		Reunion r2= new Reunion("Gimnasia", "fitness ",2, LocalDateTime.of(2020,05,01, 18,30));
+		Reunion r3= new Reunion("Escualo", "natacion ",1, LocalDateTime.of(2020,05,01, 19,00));
+		AgendaP agPersona1= new AgendaP(us1);
+		AgendaP agPersona2= new AgendaP(us2);
+		agPersona1.AgregarReunion(r1);
+		agPersona1.AgregarReunion(r2);
+		agPersona1.AgregarReunion(r3);
+		agPersona2.AgregarReunion(r3);
+		System.out.println(agPersona1.getReuniones());
+		System.out.println("los participantes de la reunion son :"+r1.getParticipantes());
+		System.out.println("la agenda del usuario: " +agPersona1.getUsu()+ " es: ");
+		agPersona1.mostraragendadelusuario();
+		System.out.println("la agenda del usuario: " +agPersona2.getUsu()+ " es: ");
+		agPersona2.mostraragendadelusuario();
+		
+	//r1.getFecha()
+		//public boolean VerificaHoraEvento(){
+			//for (Reunion r : Reuniones) {
+				//r1.
+			//}
+		}
+	}
+		

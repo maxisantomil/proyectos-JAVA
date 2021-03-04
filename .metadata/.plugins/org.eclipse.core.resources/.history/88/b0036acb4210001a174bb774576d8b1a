@@ -1,0 +1,15 @@
+package Libreria;
+
+public class DescuentoAniosAntiguedad implements CriterioDescuento{
+
+	int anios;
+	
+	public DescuentoAniosAntiguedad(int a) {
+		anios=a;
+	}
+	
+	public boolean cumple(Cliente e) {
+		return e.getAnosAntiguedad()>=anios;
+	}
+	
+}

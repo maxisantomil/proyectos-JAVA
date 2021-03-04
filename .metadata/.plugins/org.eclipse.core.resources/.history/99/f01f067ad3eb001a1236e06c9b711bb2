@@ -1,0 +1,93 @@
+package AgendaPersonal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+public class Reunion {
+	private String direccion;
+	private String tema;
+	private int Duracion;
+	private LocalDateTime fecha;
+	ArrayList<Usuario>Participantes;
+	
+	
+	public Reunion(String d,String te,int duracion, LocalDateTime fecha) {
+		this.direccion=d;
+		this.tema=te;
+		this.Duracion=duracion;
+		this.fecha=fecha;
+		Participantes = new ArrayList<Usuario>();
+	}
+
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+
+	public String getTema() {
+		return tema;
+	}
+
+
+	public void setTema(String tema) {
+		this.tema = tema;
+	}
+
+
+	public int getDuracion() {
+		return Duracion;
+	}
+
+
+	public void setDuracion(int duracion) {
+		Duracion = duracion;
+	}
+
+
+	public LocalDateTime getFecha() {
+		return fecha;
+	}
+
+
+	public void setFecha(LocalDateTime fecha) {
+		this.fecha = fecha;
+	}
+
+
+	public ArrayList<Usuario> getParticipantes() {
+		return Participantes;
+	}
+
+
+	public void setParticipantes(ArrayList<Usuario> participantes) {
+		Participantes = participantes;
+	}
+	
+	public void AgregarParticipante(Usuario u) {
+		Participantes.add(u);
+		
+	}
+	public boolean validar(Reunion d) {
+		System.out.println("la fecha de :"+d.getFecha());
+		System.out.println(this.fecha);
+		if ((d.fecha).equals( this.fecha)){
+			return false;
+		}
+		else
+			return true;
+	}
+	
+	public String toString() {
+		return " direccion "+ direccion + "tema " + tema + "duracion" + Duracion ;
+	}
+	
+	public int horadefinalizacion() {
+		return fecha.getHour() + Duracion;
+	}
+	
+}

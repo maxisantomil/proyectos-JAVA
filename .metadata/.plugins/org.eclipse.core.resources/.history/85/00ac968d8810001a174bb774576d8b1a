@@ -1,0 +1,25 @@
+package Libreria;
+import java.util.ArrayList;
+public abstract class ElementLibro {
+	ArrayList<String>generos;
+	
+	public abstract boolean AceptaLibro();
+	
+	public ElementLibro(){
+		generos= new ArrayList<>();
+	}
+
+	public ArrayList<String> getGeneros() {
+		return generos;
+	}
+
+	
+	public void addGenero(String s) {
+		this.generos.add(s);
+	}
+
+	@Override
+	public String toString() {
+		return "ElementLibro [generos=" + generos + "]";
+	}
+}

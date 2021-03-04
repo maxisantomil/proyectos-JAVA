@@ -1,0 +1,48 @@
+
+public class PuntoGeometrico {
+	private int coordenadax;
+	private int coordenaday;
+	
+	
+	public PuntoGeometrico() {
+		coordenadax=0;
+		coordenaday=0;
+	}
+	
+	public PuntoGeometrico(int x, int y) {
+		coordenadax=x;
+		coordenaday=y;
+	}
+	
+	public int getCoordenadax() {
+		return coordenadax;
+	}
+
+
+	public void setCoordenadax(int coordenadax) {
+		this.coordenadax = coordenadax;
+	}
+
+
+	public int getCoordenaday() {
+		return coordenaday;
+	}
+
+
+	public void setCoordenaday(int coordenaday) {
+		this.coordenaday = coordenaday;
+	}
+
+
+	public void desplazarpunto(int x, int y) {
+		coordenadax = coordenadax + x;
+		coordenaday = coordenaday + y;
+	}
+	
+	public int calculaEuclidea(PuntoGeometrico p2) {
+		int d=0;
+		
+		d=((coordenadax - p2.coordenadax)*(coordenadax - p2.coordenadax)) + ((coordenaday - p2.coordenaday)*(coordenaday - p2.coordenaday));
+		return d*d;
+	}
+}

@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class Voluntario extends ElementZona{
+	private String nombre ;
+	private String nacionalidad;
+	private int edad;
+	private String genero;
+	ArrayList<String>enfermedadesPre;
+	private boolean recibioPlacebo;
+	private boolean contrajoEnfermedad;
+	
+	
+	public Voluntario(String nombre, String nacionalidad,int edad, String genero,boolean placebo, boolean conEnfer) {
+		this.nombre=nombre;
+		this.nacionalidad=nacionalidad;
+		this.edad=edad;
+		this.genero=genero;
+		enfermedadesPre= new ArrayList<>();
+		this.recibioPlacebo=placebo;
+		this.contrajoEnfermedad=conEnfer;
+	}
+	
+	public void agregarEnfermedadPre(String e) {
+		if (!contieneEnfermedad(e)) {
+			enfermedadesPre.add(e);
+		}
+	}
+	
+	public boolean contieneEnfermedad(String enfermedad) {
+		return enfermedadesPre.contains(enfermedad);
+	}
+}

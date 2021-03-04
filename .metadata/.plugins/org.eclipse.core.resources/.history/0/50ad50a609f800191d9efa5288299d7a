@@ -1,0 +1,17 @@
+
+public class EmpresaGanadera {
+
+	public static void main(String[] args) {
+		Conjunto conjunto= new Conjunto();
+		
+		Ganaderia vacaLola= new Animal(1, 1, 80, "Holando", "Hembra", false, 2);
+		Animal toroLolo= new Animal(2, 2, 150, "dfdsf", "Macho", true, 0);
+		Animal vacaAura= new Animal(3, 1, 120, "sssss", "Hembra", false, 4);
+		
+		conjunto.add(Animal vacaLola);
+						
+		
+
+	}
+
+}

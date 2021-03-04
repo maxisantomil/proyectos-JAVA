@@ -1,0 +1,24 @@
+package Ejercicio5Empleados;
+
+public class EmpleadoVenta extends EmpleadoSueldoFijo{
+
+	double porcentaje;
+	double ventas;
+	
+	public EmpleadoVenta(String n, String a, int dni,double s,double por, double ven) {
+		super(n,a,dni,s);
+		porcentaje=por;
+		ventas=ven;
+	}
+	
+	
+	public double calculoextra() {
+		return ventas*porcentaje;
+	}
+	
+	//se puede abstraer metodo y extender del que no es metodo abstracto*/
+	
+	public double getSueldo() {
+		return super.getSueldo()+ calculoextra();
+	}
+}

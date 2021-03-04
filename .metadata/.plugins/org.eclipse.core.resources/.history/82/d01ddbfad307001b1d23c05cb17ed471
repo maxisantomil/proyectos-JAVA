@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Pelicula {
+	private String titulo;
+	private String sinopsis;
+	private ArrayList<String>generos;
+	private String director;
+	private ArrayList<String>actores;
+	private int anioEstreno;
+	private int duracion;
+	private int edadminima;
+	
+	public Pelicula(String titulo, String sinopsis,ArrayList<String> aux, String director,ArrayList<String> actores,int anio, int duracion, int edad ) {
+		this.titulo=titulo;
+		this.sinopsis=sinopsis;
+		this.generos=aux;
+		this.director=director;
+		this.actores=actores;
+		this.anioEstreno=anio;
+		this.duracion=duracion;
+		this.edadminima=edad;
+	}
+	
+	
+}

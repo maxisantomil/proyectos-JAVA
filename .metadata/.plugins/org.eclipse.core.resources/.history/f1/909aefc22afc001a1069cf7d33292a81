@@ -1,0 +1,19 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class EstacionMeteorologica {
+	private String Nombre;
+	private ArrayList<Registro>registros;
+	
+	
+	
+	
+	public double cantlluviaAcumulada() {
+		double suma=0;
+		for (Registro r :registros) {
+			 suma+=r.getCantLLuvia();
+		}
+		return suma;
+	}
+}

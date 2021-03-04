@@ -1,0 +1,14 @@
+
+public class PocimaReductora extends Pocima {
+	private int porcentaje;
+	public PocimaReductora(int porc,String s) {
+		super(s);
+		porcentaje=porc;
+	}
+
+	@Override
+	public double modificarAtributo(Atributo c) {
+		return c.getValor()-(c.getValor()*porcentaje/100);
+	}
+
+}

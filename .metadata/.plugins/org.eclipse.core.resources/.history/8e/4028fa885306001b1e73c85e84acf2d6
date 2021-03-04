@@ -1,0 +1,60 @@
+
+import java.util.ArrayList;
+
+public class Juego {
+
+	private String nombreJuego;
+	private Mazo mazo;
+	private Jugador j1;
+	private Jugador j2;
+	 
+			public Juego(String nombre,Mazo cartas,Jugador jj1,Jugador jj2) {
+				nombreJuego=nombre;
+				mazo=cartas;
+				j1=jj1;
+				j2=jj2;
+			}
+			
+			
+			public String getNombreJuego() {
+				return nombreJuego;
+			}
+
+
+			public void setNombreJuego(String nombreJuego) {
+				this.nombreJuego = nombreJuego;
+			}
+
+
+			public Jugador getJ1() {
+				return j1;
+			}
+
+
+			public void setJ1(Jugador j1) {
+				this.j1 = j1;
+			}
+
+
+			public Jugador getJ2() {
+				return j2;
+			}
+
+
+			public void setJ2(Jugador j2) {
+				this.j2 = j2;
+			}
+
+
+			public void repartirCartas(){
+				mazo.mezclar();
+				while(mazo.getCarta()!=null) {
+					j1.agregarCartaalMazo(mazo.getCarta());
+					j2.agregarCartaalMazo(mazo.getCarta());
+				}
+			}
+					
+				
+					
+}
+

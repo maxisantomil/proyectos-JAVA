@@ -1,0 +1,53 @@
+package Ejercicio1Contrato;
+
+public class Contrato {
+	String empresa;
+	double sueldo;
+	int horasSemanales;
+	Criterio criterio;
+	
+	
+	public String getEmpresa() {
+		return empresa;
+	}
+
+
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
+	}
+
+
+	public double getSueldo() {
+		return sueldo;
+	}
+
+
+	public void setSueldo(double sueldo) {
+		this.sueldo = sueldo;
+	}
+
+
+	public int getHorasSemanales() {
+		return horasSemanales;
+	}
+
+
+	public void setHorasSemanales(int horasSemanales) {
+		this.horasSemanales = horasSemanales;
+	}
+
+
+	public Criterio getCriterio() {
+		return criterio;
+	}
+
+
+	public void setCriterio(Criterio criterio) {
+		this.criterio = criterio;
+	}
+
+
+	boolean CompararC(Contrato c) {
+		
+	}
+}

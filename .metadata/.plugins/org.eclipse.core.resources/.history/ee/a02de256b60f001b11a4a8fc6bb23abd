@@ -1,0 +1,38 @@
+package Ejercicio4Vivero;
+
+import java.util.Comparator;
+
+public class MainVivero {
+
+	public static void main(String[] args) {
+	Fichaplanta planta1= new Fichaplanta("Dermius Squilim", "crassulas", "acacias", "b", 20, 6);
+	planta1.agregarnombreVulgar("la llorona");
+	planta1.agregarnombreVulgar("malefica");
+	Fichaplanta planta2= new Fichaplanta("Epifitaus Cornalingim", "crassulas", "fortum", "a", 15, 3);
+	planta1.agregarnombreVulgar("enredadora");
+	planta1.agregarnombreVulgar("fiestera");
+	Fichaplanta planta3= new Fichaplanta("Petritiuf Delem","dermica" , "acacias", "b", 20, 6);
+	planta1.agregarnombreVulgar("la llorona");
+	planta1.agregarnombreVulgar("malefica");
+	Fichaplanta planta4= new Fichaplanta("Petritiuf tifum","raquitica" , "ggrrggr", "a", 20, 8);
+	planta1.agregarnombreVulgar("petrificadora");
+	planta1.agregarnombreVulgar("la feucha");
+	
+	Vivero vivero= new Vivero("la tandilense");
+	vivero.agregarFicha(planta1);
+	vivero.agregarFicha(planta2);
+	vivero.agregarFicha(planta3);
+	vivero.agregarFicha(planta4);
+	
+	Filtro filtroClasificacion= new FiltroClasificacion("crassulas");
+	Filtro filtroNombreCientifico= new FiltroNombreCientifico("Dermius Squilim");
+	Comparator comparatorSol= new ComparatornivelSol();
+	
+	
+	System.out.println(vivero.toString());
+	
+	//System.out.println(vivero.listaxCriterio(filtroNombreCientifico));
+	//System.out.println(vivero.listaordenadaxComparador(filtroClasificacion, comparatorSol));
+	
+	}
+}

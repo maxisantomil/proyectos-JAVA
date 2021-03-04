@@ -1,0 +1,16 @@
+package Libreria;
+import java.util.ArrayList;
+public class Descuentos {
+	private ArrayList<CriterioDescuento>descuentos;
+	
+	public Descuentos() {
+		descuentos= new ArrayList<>();
+		
+	}
+	
+	
+	public void addCriterio(CriterioDescuento cd){
+		descuentos.add(cd);
+	}
+	
+}

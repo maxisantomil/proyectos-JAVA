@@ -1,0 +1,35 @@
+package Ejercicio4;
+
+import java.sql.Date;
+
+public class SistemaClub {
+
+	public static void main(String[] args) {
+		
+		SeleccionFutbol river= new SeleccionFutbol( "River Plate");
+		Entrenador entrenador= new Entrenador("marcelo", "Gallardo",1425845,new Date(2/2/1970),"Argentina",45);
+		Futbolista f1= new Futbolista("messi","pulga", 254896, new Date(1/6/1989), "argentina", 9, "izq", 300);
+		Futbolista f2= new Futbolista("leo","ponzio", 224896, new Date(8/4/1987), "argentina", 8, "der", 97);
+		Futbolista f3= new Futbolista("mariano","Martinez", 334896, new Date(27/3/1989), "argentina", 10, "der", 150);
+		Masajista m1= new Masajista("jose","gomez",178563,new Date(6/6/1962),"argentina","kinesiologo",2);
+		
+		
+		m1.setConcentracion(true);
+		m1.setPaisdeorigen(true);
+		m1.setViajando(false);
+		f1.setPaisdeorigen(false);
+		f1.setConcentracion(true);
+		f1.setViajando(false);
+		river.incorporarPersona(entrenador);
+		river.incorporarPersona(m1);
+		river.incorporarPersona(f1);
+		river.incorporarPersona(f2);
+		river.incorporarPersona(f3);
+		
+		f2.setPaisdeorigen(true);
+		f2.setConcentracion(false);
+		f2.setViajando(false);
+		System.out.println("el jugador: "+ f2.nombre+ ","+ f2.apellido+ " esta disponible? : "+ f2.estadisponible());
+		System.out.println(river.disponiblesparaevento());
+	}
+}

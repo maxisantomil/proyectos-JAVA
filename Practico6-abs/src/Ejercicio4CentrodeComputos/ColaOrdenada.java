@@ -1,0 +1,45 @@
+package Ejercicio4CentrodeComputos;
+
+import java.util.ArrayList;
+
+public class ColaOrdenada {
+
+	ArrayList<ElementoOrdenable>elementos;
+	
+	public ColaOrdenada() {
+		elementos= new ArrayList<>();
+	};
+	
+	public void agregarElemento (ElementoOrdenable e) {
+		
+		boolean encontrado=false;
+		int i=0;
+		while (i<elementos.size() && !encontrado) {
+			ElementoOrdenable elementoencola= elementos.get(i);
+			if (elementoencola.esmenor(e)){
+				elementos.add(i,e);
+				encontrado=true;
+			}
+			i++;
+			
+		}if (!encontrado) {
+			elementos.add(e);
+		}
+	}
+	
+	public ElementoOrdenable siguiente() {
+		if (!this.elementos.isEmpty()) {
+			ElementoOrdenable siguiente= elementos.get(0);
+			/*return*/ this.elementos.remove(0); //es lo mismo pero mas corto con el remove
+			return siguiente;
+		}
+		else return null;
+	}
+
+	@Override
+	public String toString() {
+		return "ColaOrdenada [elementos=" + elementos + "]";
+	}
+	
+	
+}

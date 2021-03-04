@@ -1,0 +1,39 @@
+package Ejercicio1;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Diccionario {
+
+		ArrayList<Palabra>palabras_alfabeticamente;
+		
+		public Diccionario() {
+			palabras_alfabeticamente= new ArrayList<>();
+		}
+		
+		
+		public void agregarPalabra(Palabra p) {
+			if (!palabras_alfabeticamente.contains(p)) {
+				palabras_alfabeticamente.add(p);
+				Collections.sort(palabras_alfabeticamente);
+				}
+			}
+		
+		public ArrayList<Palabra>mostrarDiccionario(){
+			return (ArrayList<Palabra>)palabras_alfabeticamente.clone();
+		}
+		
+		public void ordenar_alfabeticamente() {
+			ArrayList<Palabra>ordenados;
+			
+		}
+		
+		public void modificar_palabra(Palabra p) {
+			for (Palabra palabra:palabras_alfabeticamente) {
+				if (palabra.compareTo(p)== 0 ) {
+					palabra.modificarpalabra(p);
+				}
+			}
+		}
+		
+}

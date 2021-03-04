@@ -1,0 +1,11 @@
+package AgendaPersonal;
+import java.util.*;
+public class Agenda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Usuario us1 = new Usuario("maxi santomil",370585,"maxisantomil@hotmail.com","Belgrano 1040");
+	}
+
+}

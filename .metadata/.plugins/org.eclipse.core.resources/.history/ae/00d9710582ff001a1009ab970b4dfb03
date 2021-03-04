@@ -1,0 +1,6 @@
+package Ejercicio2Meteorologo;
+
+public class Sensor {
+	String nombre;
+	double valor;
+}

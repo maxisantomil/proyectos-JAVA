@@ -1,0 +1,54 @@
+package Ejercicio3CooperativaAgricola;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Cereal girasol=  new Cereal("girasol");
+		girasol.agregarMineral("zinc");
+		girasol.agregarMineral("potasio");
+		
+		Cereal trigo= new Cereal ("trigo");
+		trigo.agregarMineral("magnesio");
+		trigo.agregarMineral("sulfurato");
+		
+		Cereal alfalfa=  new Pastura("alfalfa", 75);
+		alfalfa.agregarMineral("zinc");
+		alfalfa.agregarMineral("potasio");
+		alfalfa.agregarMineral("magnesio");
+		alfalfa.agregarMineral("sulfuro");
+		
+		Lote parcela1= new Lote("lote1",40);
+		Lote parcela2= new Lote("lote2", 100);
+		Lote parcela3= new Lote("lote3",50);
+		
+		parcela1.agregarMineral("magnesio");
+		parcela1.agregarMineral("zinc");
+		parcela1.agregarMineral("potasio");
+		
+		parcela2.agregarMineral("sulfuro");
+		parcela2.agregarMineral("magnesio");
+		parcela2.agregarMineral("potasio");
+		parcela2.agregarMineral("zinc");
+		
+		parcela3.agregarMineral("zinc");
+		
+		Cooperativa laRural= new Cooperativa("La Rural");
+		laRural.agregarLote(parcela1);
+		laRural.agregarLote(parcela2);
+		laRural.agregarLote(parcela3);
+		
+		laRural.agregarMineralEspeciales("sulfuro");
+		laRural.agregarMineralEspeciales("zinc");
+		
+		
+		System.out.println(laRural.TipoLote(parcela2));
+		System.out.println(laRural.TipoLote(parcela1));
+		System.out.println(laRural.TipoLote(parcela3));
+		System.out.println("en el lote: "+ " "+ parcela2.nombre + "se puede sembrar: "+ alfalfa.toString() + " " +parcela2.aptoparaSembrar(alfalfa));
+		
+	}
+
+}

@@ -1,0 +1,71 @@
+package Ejercicio3SistemaAlquiler;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+public class Pelicula extends Item {
+	private String nombre;
+	private String informacion;
+	private int cantCopias;
+	
+	
+	public Pelicula(String n,String info,int cant) {
+		super();
+		this.nombre=n;
+		this.informacion=info;
+		this.cantCopias=cant;
+	}
+
+	
+	public int getCantCopias() {
+		return cantCopias;
+	}
+
+
+	public void setCantCopias(int cantCopias) {
+		this.cantCopias = cantCopias;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public String getInformacion() {
+		return informacion;
+	}
+
+
+	@Override
+	public boolean estaDisponible() {
+		if (cantCopias >0 ) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void itemDevuelto() {
+		this.cantCopias++;
+	}
+	public void itemAlquilado(LocalDate fecha) {
+		if (cantCopias>0){
+			this.cantCopias--;
+			this.setfechaEntrega(fecha);
+		}
+	}
+	public boolean equals(Object i) {
+		Pelicula item= (Pelicula)i;
+		try {
+			return (item.getNombre()== this.nombre);
+		}catch(Exception e) {
+			return false;
+		}
+	}
+
+
+	@Override
+	public String toString() {
+		return "Pelicula [nombre=" + nombre + ", informacion=" + informacion + ", cantCopias=" + cantCopias +"]";
+	}
+	
+}

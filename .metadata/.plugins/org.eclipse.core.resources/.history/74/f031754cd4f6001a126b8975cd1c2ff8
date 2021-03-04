@@ -1,0 +1,28 @@
+package Ejercicio2;
+
+public class CasaExigente extends CasaHowart{
+
+	
+	
+	public CasaExigente(String n, int e) {
+		super(n,e);
+	}
+	
+	
+	
+	public boolean FamiliarSeencuentraenCasa(Alumno a) {
+		for (Alumno n:Alumnos) {
+			if (n.equals(a)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void AgregarAlumno (Alumno p) {
+		if ((p.FamiliarEstaCasa(this)) && super.cumpleCualidades(p)){
+			Alumnos.add(p);
+		}
+	}
+	
+}

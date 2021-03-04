@@ -1,0 +1,61 @@
+package Practico_4_1_Congreso;
+
+import java.util.ArrayList;
+
+public class Sistema_Congreso {
+	public static void main(String[] args) {
+	Comite comite = new Comite();
+	
+	EvaluadorB eva1 = new EvaluadorB("martin Pesolano");
+	EvaluadorB eva2 = new EvaluadorB("jorge enrique Farineli");
+	EvaluadorB eva3 = new EvaluadorB("rodrigo Mileto");
+	EvaluadorB eva4 = new EvaluadorB("maxi Santomil");
+	
+	String tema1= new String("programacion 1");
+	String tema2= new String("matematica 1");
+	String temaespecial1= new String("angular");
+	String temaespecial2= new String("saas");
+	String temaespecial3= new String("php");
+	
+	
+	Trabajo t1= new Trabajo("trabajo A");
+	Trabajo t2= new Trabajo("trabajo B");
+	Trabajo t3= new Poster("poster A");
+	
+	eva1.addTema(tema1);
+	eva1.addTema(temaespecial1);
+	eva2.addTema(temaespecial2);
+	eva2.addTema(tema2);
+	eva3.addTema(tema2);
+	eva3.addTema(tema1);
+	eva4.addTema(temaespecial3);
+	
+	t1.addpalabrasclaves(temaespecial2);
+	t1.addpalabrasclaves(temaespecial3);
+	t2.addpalabrasclaves(tema1);
+	t2.addpalabrasclaves(tema2);
+	t3.addpalabrasclaves(temaespecial3);
+
+	comite.addEvaluadores(eva1);
+	comite.addEvaluadores(eva2);
+	comite.addEvaluadores(eva3);
+	comite.addEvaluadores(eva4);
+	comite.addTrabajos(t1);
+	comite.addTrabajos(t2);
+	comite.addTrabajos(t3);
+	comite.addTemas_expertos(tema1);
+	comite.addTemas_expertos(tema2);
+	comite.addTemas_expertos(temaespecial1);
+	comite.addTemas_expertos(temaespecial2);
+	comite.addTemas_expertos(temaespecial3);
+	
+	comite.asignarunTPevaluador(t1, eva3);
+	comite.asignarunTPevaluador(t2,eva1);
+	comite.asignarunTPevaluador(t3, eva4);
+	comite.asignarunTPevaluador(t3, eva1);
+	comite.asignarunTPevaluador(t1, eva2);
+	for(EvaluadorB e: evaluadores) {
+			System.out.println("el evaluador :"+e + "es experto en "+ e.gettemas());
+		}
+	}	
+}

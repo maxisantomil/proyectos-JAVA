@@ -1,0 +1,5 @@
+package Libreria;
+
+public interface Clientela {
+	public abstract boolean AceptaLibro(Libro l);
+}

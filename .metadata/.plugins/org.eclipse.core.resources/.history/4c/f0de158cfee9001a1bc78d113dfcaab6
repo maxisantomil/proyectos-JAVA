@@ -1,0 +1,20 @@
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Electrodomestico n1= new Electrodomestico("heladera pilco");
+		Electrodomestico n2= new Electrodomestico("lavarropas drean",33000);
+		Electrodomestico n3= new Electrodomestico("lavavajillas","verde");
+		Electrodomestico n4= new Electrodomestico("microondas",1200,"plateado",45,7.5);
+		
+		n1.toString();
+		n2.toString();
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package Ejercicio4Vivero;
+
+import Ejercicio2Vocabulario.Criterio;
+import Ejercicio2Vocabulario.Palabra;
+
+public class FiltroNombreCientifico implements Criterio {
+
+	@Override
+	public boolean cumple(Palabra p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

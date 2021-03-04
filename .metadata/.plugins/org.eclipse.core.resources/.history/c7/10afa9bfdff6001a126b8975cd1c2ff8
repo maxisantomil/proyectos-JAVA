@@ -1,0 +1,37 @@
+package Ejercicio2;
+
+public class CasaExigente extends CasaHowart{
+
+	
+	
+	public CasaExigente(String n, int e) {
+		super(n,e);
+	}
+	
+	
+	
+	public boolean FamiliarSeencuentraenCasa(Alumno a) {
+		for (Alumno n:Alumnos) {
+			if (n.equals(a)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void AgregarAlumno (Alumno p) {
+		if (Alumnos.size()==0) {
+			if (super.cumpleCualidades(p)){
+				Alumnos.add(p);
+			}
+		}
+		else {
+		if (super.cumpleCualidades(p) && (p.FamiliarEstaCasa(this)&& (Alumnos.size()<= cantMaximaAlumnos))){
+			Alumnos.add(p);
+			}else mensajeNocumple();
+		}
+	}
+	public String mensajeNocumple() {
+		return "no cumple con las exigencias de la casa el alumno";
+	}
+}

@@ -1,0 +1,11 @@
+package Ejercicio4Contribuyentes;
+
+public class ContribuyenteComerciante extends Contribuyente{
+	double montoVentas;
+	
+	
+	public ContribuyenteComerciante(String n,int cod, double mont, double venta) {
+		super(n,cod,mont);
+		montoVentas=venta;
+	}
+}

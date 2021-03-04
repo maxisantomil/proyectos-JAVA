@@ -1,0 +1,141 @@
+
+import java.util.ArrayList;
+
+public class Juego {
+
+	private String nombreJuego;
+	private Mazo mazo;
+	private Jugador j1;
+	private Jugador j2;
+	private Jugador ganador;
+	final static int NUMEROBASE=0;
+	private int cantrondas;
+	 
+			public Juego(String nombre,Mazo cartas,Jugador jj1,Jugador jj2, int rondas) {
+				nombreJuego=nombre;
+				mazo=cartas;
+				j1=jj1;
+				j2=jj2;
+				cantrondas=rondas;
+			}
+			
+			
+			public String getNombreJuego() {
+				return nombreJuego;
+			}
+
+
+			public void setNombreJuego(String nombreJuego) {
+				this.nombreJuego = nombreJuego;
+			}
+
+
+			public Jugador getJ1() {
+				return j1;
+			}
+
+
+			public void setJ1(Jugador j1) {
+				this.j1 = j1;
+			}
+
+
+			public Jugador getJ2() {
+				return j2;
+			}
+
+
+			public void setJ2(Jugador j2) {
+				this.j2 = j2;
+			}
+
+
+			public void repartirCartas(){
+				mazo.mezclar();
+				while(mazo.getMazo().size()>0) {
+					
+					if (mazo.esimpar()) {
+					j1.agregarCartaalMazo(mazo.getCarta());
+					}
+					else
+					j2.agregarCartaalMazo(mazo.getCarta());
+				}
+			}
+
+
+			@Override
+			public String toString() {
+				return "Juego [nombreJuego=" + nombreJuego + ", mazo=" + mazo + ", j1=" + j1 + ", j2=" + j2 + "]";
+			}
+					
+
+			
+
+			public void jugar() {
+				int i=0;
+				ganador=j1;
+				repartirCartas();
+				
+				//setear maximorondas preguntar 
+				
+				while(i<cantrondas&&(j1.cantidadCartas()>NUMEROBASE)&&(j2.cantidadCartas()>NUMEROBASE)) {
+					++i;
+					System.out.println("---------RONDA "+i+" ----------");
+						jugarRonda();
+				}
+				
+				muestradefinicionJuego();
+			}
+			
+			private void muestradefinicionJuego() {
+			if (j1.cantidadCartas() > j2.cantidadCartas()) {
+				System.out.println("  ");
+				System.out.println("///////////////////////////////////////////");
+				System.out.println("////// Gana el jugador: "+j1.getNombre()+" con :"+ j1.cantidadCartas()+"//////");
+				System.out.println("///////////////////////////////////////////");
+			}
+			else { if  (j1.cantidadCartas() < j2.cantidadCartas()) {
+				System.out.println("///////////////////////////////////////////");
+				System.out.println("////// Gana el jugador: "+j2.getNombre()+" con :"+ j2.cantidadCartas()+"//////");
+				System.out.println("////////////////////////////////////////// ");
+				}
+			else {	System.out.println("///////////////////////////////////////");
+					System.out.println("////// Empate  "+j1.cantidadCartas()+" y "+ j2.cantidadCartas()+"//////");
+					System.out.println("///////////////////////////////////////");
+				}
+			}
+		}
+			public void determinarGanador(String atributo) {
+				Carta cartaJugador1=j1.sacarCarta();			
+				Carta cartaJugador2=j2.sacarCarta();
+				int valorAtributo1=cartaJugador1.getValorAtributoAComparar(atributo);
+				int valorAtributo2=cartaJugador2.getValorAtributoAComparar(atributo);
+				System.out.println("La carta de "+j1.getNombre()+" es "+ cartaJugador1.getPersonaje()+" con "+atributo+" "+valorAtributo1);
+				System.out.println("La carta de "+j2.getNombre()+" es "+ cartaJugador2.getPersonaje()+" con "+atributo+" "+valorAtributo2);
+				int valorComparacion=cartaJugador1.comparaCarta(cartaJugador2, atributo);
+				if (valorComparacion>0){
+					ganador=j1;
+					j1.agregarCartaalMazo(cartaJugador1);
+					j1.agregarCartaalMazo(cartaJugador2);
+					}
+				else if(valorComparacion<0){
+					ganador=j2;
+					j2.agregarCartaalMazo(cartaJugador2);
+					j2.agregarCartaalMazo(cartaJugador1);
+				}
+				else {
+					j1.agregarCartaalMazo(cartaJugador1);
+					j2.agregarCartaalMazo(cartaJugador2);
+				}
+			}
+			public void jugarRonda() {
+				String atributo=ganador.elegirAtributo();
+				System.out.println("El jugador "+ganador.getNombre()+" elige el atributo "+atributo);
+				determinarGanador(atributo);
+				System.out.println("Gana la ronda: "+ganador.getNombre());
+				System.out.println(j1.getNombre()+" posee ahora "+j1.cantidadCartas()+" cartas y "+j2.getNombre()+" posee ahora "+j2.cantidadCartas()+" cartas");
+				}
+			
+			
+}
+

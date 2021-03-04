@@ -1,0 +1,16 @@
+package Ejercicio1Contrato;
+
+public class CriterioHora extends Criterio {
+	int horas;
+	
+	public CriterioHora(int h) {
+		horas=h;
+	}
+	
+	public boolean compare(Contrato c) {
+		if (c.getHorasSemanales()< horas)
+			return true;
+		else return false;
+	}
+
+}

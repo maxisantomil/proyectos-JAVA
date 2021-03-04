@@ -1,0 +1,27 @@
+package Ejercicio2Meteorologo;
+
+import java.util.ArrayList;
+
+public class EstacionMeteorologica {
+	private String Nombre;
+	private ArrayList<Registro>registros;
+	private Prediccion predicelluvia;
+	
+	
+	
+	public double cantlluviaAcumulada() {
+		double suma=0;
+		for (Registro r :registros) {
+			 suma+=r.getCantLLuvia();
+		}
+		return suma;
+	}
+	
+	
+	public boolean vallover() {
+		if (p.calculaPrediccion(this.registros)) {
+			return true;
+		}
+		return false;
+	}
+}

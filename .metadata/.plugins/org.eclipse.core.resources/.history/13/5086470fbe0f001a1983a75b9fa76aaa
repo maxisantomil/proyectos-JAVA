@@ -1,0 +1,19 @@
+package Libreria;
+import java.util.ArrayList;
+public abstract class ElementLibro {
+	ArrayList<String>generos;
+	
+	public ElementLibro(){
+		generos= new ArrayList<>();
+	}
+
+	public ArrayList<String> getGeneros() {
+		return generos;
+	}
+
+	public void setGeneros(ArrayList<String> generos) {
+		this.generos = generos;
+	}
+	
+	
+}

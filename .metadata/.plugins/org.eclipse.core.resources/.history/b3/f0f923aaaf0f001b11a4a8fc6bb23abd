@@ -1,0 +1,113 @@
+package Ejercicio4Vivero;
+
+import java.util.ArrayList;
+
+public class Fichaplanta {
+	private String nombreCientifico;
+	private ArrayList<String> nombresVulgares;
+	private String clasificaciónSuperior;
+	private String familia;
+	private String clase;
+	private boolean plantaInterior;
+	private int riego;
+	private int sol;
+	
+	
+	public Fichaplanta(String nCien,String clasi,String fami,String clase,int riefo, int sol) {
+		this.nombreCientifico=nCien;
+		nombresVulgares=new ArrayList<>();
+		this.clasificaciónSuperior=clasi;
+		this.familia=fami;
+		this.clase=clase;
+		this.riego=riefo;
+		this.sol=sol;
+	}
+	
+	
+	
+	
+	
+	public boolean isPlantaInterior() {
+		return plantaInterior;
+	}
+
+
+
+
+
+	public void setPlantaInterior(boolean plantaInterior) {
+		this.plantaInterior = plantaInterior;
+	}
+
+
+
+
+
+	public String getNombreCientifico() {
+		return nombreCientifico;
+	}
+
+
+
+
+
+	public String getClasificaciónSuperior() {
+		return clasificaciónSuperior;
+	}
+
+
+
+
+
+	public String getFamilia() {
+		return familia;
+	}
+
+
+
+
+
+	public String getClase() {
+		return clase;
+	}
+
+
+
+
+
+	public int getRiego() {
+		return riego;
+	}
+
+
+
+
+
+	public int getSol() {
+		return sol;
+	}
+
+
+
+
+
+	public void agregarnombreVulgar(String n) {
+		nombresVulgares.add(n);
+	}
+
+
+
+
+
+	public boolean contieneNombreVulgar(String nombre) {
+		for (String pal:nombresVulgares) {
+			if (pal.contains(nombre)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	
+}

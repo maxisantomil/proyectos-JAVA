@@ -1,0 +1,17 @@
+package Ejercicio3;
+
+public class EmpleadoHorasEx extends Empleado{
+	int horasExtras;
+
+	
+	public EmpleadoHorasEx(String n,int i,int h) {
+		super(n,i);
+		horasExtras=h;
+		
+	}
+	
+	public int calculaSueldo() {
+		int montoHoras=200;
+		return super.calculaSueldo()+ horasExtras*montoHoras;
+	}
+}

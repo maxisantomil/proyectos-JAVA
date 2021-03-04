@@ -1,0 +1,7 @@
+
+public abstract class Pocima {
+
+	
+	
+	public abstract double modificarAtributo(Carta atr);
+}

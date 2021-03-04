@@ -1,0 +1,10 @@
+
+public class Obstinado implements Estrategia {
+
+	@Override
+	public Atributo retornarAtributoEstrategico(Carta c) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+
+public class GrupoZona extends ElementZona {
+	ArrayList<ElementZona>hijos;
+	
+	
+	
+	public GrupoZona(String nombre) {
+		super(nombre);
+		hijos= new ArrayList<>();
+	}
+	
+	
+	public void agregarElemento(ElementZona e) {
+		if (!hijos.contains(e)) {
+			hijos.add(e);
+		}
+	}
+
+
+	@Override
+	public int cantidadVoluntarios() {
+		int total=0;
+		for (ElementZona e : hijos) {
+			total+=e.cantidadVoluntarios();
+		}
+		return total;
+	}
+
+
+	@Override
+	public int cantidadVoluntariosCriterio(Criterio c) {
+		int total=0;
+		for (ElementZona e: hijos) {
+			total+=e.cantidadVoluntariosCriterio(c);
+		}
+		return total;
+	}
+
+
+	@Override
+	public ArrayList<Voluntario> ListaVoluntariosVacuna(Criterio c) {
+		ArrayList<Voluntario>listaTotal= new ArrayList<>();
+		for(ElementZona e: hijos) {
+			listaTotal.addAll(e.ListaVoluntariosVacuna(c));
+		}
+		return listaTotal;
+	}
+	
+	public boolean equals(Object o) {
+		try {
+			GrupoZona g= (GrupoZona)o;
+			return this.getNombre().equals(g.getNombre());
+			}catch(Exception exc) {
+				return false;
+			}
+	}
+}

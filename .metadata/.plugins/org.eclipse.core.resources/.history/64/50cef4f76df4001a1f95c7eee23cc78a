@@ -1,0 +1,19 @@
+package Ejercicio2;
+
+import java.util.ArrayList;
+
+public class CasaHowart {
+	String nombre;
+	Cualidad cualidades;
+	ArrayList<Alumno>Alumnos;
+	int cantMaximaAlumnos;
+	
+	
+	public CasaHowart(String n, int c) {
+		cualidades= new Cualidad();
+		Alumnos= new ArrayList<>();
+	}
+	
+	
+	
+}

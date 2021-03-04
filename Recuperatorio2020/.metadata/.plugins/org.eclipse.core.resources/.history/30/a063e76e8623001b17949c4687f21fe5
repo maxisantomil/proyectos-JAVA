@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+public class GrupoZona extends ElementZona {
+	private String nombre;
+	ArrayList<ElementZona>hijos;
+	
+	
+	
+	public GrupoZona(String nombre) {
+		this.nombre=nombre;
+		hijos= new ArrayList<>();
+	}
+	
+	
+	public void agregarElemento(ElementZona e) {
+		hijos.add(e);
+	}
+
+
+	@Override
+	public int cantidadVoluntarios() {
+		int total=0;
+		for (ElementZona e : hijos) {
+			total+=e.cantidadVoluntarios();
+		}
+		return total;
+	}
+}

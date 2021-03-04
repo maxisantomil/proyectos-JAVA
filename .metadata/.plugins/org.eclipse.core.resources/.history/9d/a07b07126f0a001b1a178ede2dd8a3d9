@@ -1,0 +1,18 @@
+package Ejercicio1;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Palabra a1= new Palabra("zola", "palabra que significa");
+		Palabra a2= new Palabra("aola", "palabra que significa");
+		
+		Diccionario espaniol= new Diccionario();
+		
+		espaniol.agregarPalabra(a1);
+		espaniol.agregarPalabra(a2);
+	}
+
+}

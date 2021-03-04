@@ -1,0 +1,67 @@
+package Parcialito2;
+
+public class Main {
+
+	
+	public static void main(String[] args) {
+		
+		General a = new General();
+		General b = new SegundoNivelA();
+		General c = new PrimerNivelB();
+		
+		((PrimerNivelA)b).metDos();
+		a.metUno();
+		a.metDos();
+
+		System.out.println(b.metUno());
+		System.out.println(b.metDos());
+		System.out.println(b.metValor());
+		//b.metTres();
+		
+		System.out.println(c.metUno());
+		System.out.println(c.metDos());
+		System.out.println(c.metValor());
+		//c.metCinco();
+		
+		a = b;
+		b = c;
+		
+		System.out.println(((SegundoNivelA)a).metTres());
+		//((SegundoNivelA)b).metTres();// No se puede castear a SegundoNivelA
+		//((SegundoNivelA)c).metTres(); No se puede castear a SegundoNivelA
+		System.out.println("-------PA-------");
+		PrimerNivelA pA = new PrimerNivelA();
+		System.out.println(pA.metUno());
+		System.out.println(pA.metDos());
+		System.out.println(pA.metTres());
+		System.out.println(pA.metValor());
+		System.out.println("--------------");
+		PrimerNivelB pB = new PrimerNivelB();
+		System.out.println(pB.metUno());
+		System.out.println(pB.metDos());
+		System.out.println(pB.metCinco());
+		System.out.println(pB.metValor());
+		System.out.println("--------------");
+		SegundoNivelA sA = new SegundoNivelA();
+		System.out.println(sA.metUno());
+		System.out.println(sA.metDos());
+		System.out.println(sA.metTres());
+		System.out.println(sA.metCuatro());
+		System.out.println(sA.metValor());
+		((PrimerNivelA)sA).metDos();
+		System.out.println("-----asfa--------");
+		
+		System.out.println("--------------");
+		SegundoNivelB sB = new SegundoNivelB();
+		System.out.println(sB.metUno());
+		System.out.println(sB.metDos());
+		System.out.println(sB.metCinco());
+		System.out.println(sB.metValor());
+		((PrimerNivelB)sB).metUno();
+		
+		a=sB;
+		//sB = b;
+		b=sB;
+		
+	}
+}

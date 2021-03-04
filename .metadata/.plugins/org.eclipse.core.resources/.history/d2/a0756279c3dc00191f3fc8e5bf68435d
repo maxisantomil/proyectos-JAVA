@@ -1,0 +1,37 @@
+package Practico_4_1_Congreso;
+import java.util.ArrayList;
+public class Comite {
+	ArrayList<EvaluadorB>evaluadores;
+	ArrayList<Trabajo>trabajos;
+	ArrayList<String>tema_expert;
+
+	
+	public Comite() {
+		evaluadores=new ArrayList<EvaluadorB>();
+		trabajos=new ArrayList<Trabajo>();
+		tema_expert=new ArrayList<String>();
+	}
+	
+	
+	public void addEvaluadores(EvaluadorB e) {
+		evaluadores.add(e);
+	}
+
+	public void addTrabajos(Trabajo t) {
+		trabajos.add(t);
+	}
+		
+	public void addTemas_expertos(String tema){
+		tema_expert.add(tema);
+	}
+	
+	public void asignarunTPevaluador(Trabajo t,EvaluadorB e) {
+		e.addTrabajo(t);
+	}
+	
+}
+
+
+
+
+

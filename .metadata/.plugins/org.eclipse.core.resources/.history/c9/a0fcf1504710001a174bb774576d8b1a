@@ -1,0 +1,7 @@
+package Libreria;
+
+public interface CriterioDescuento {
+
+	
+	public abstract boolean cumple(Cliente e);
+}

@@ -1,0 +1,48 @@
+package Ejercicio1;
+
+import java.util.ArrayList;
+
+public class Palabra implements Comparable<Palabra> {
+	private String nombre_palabra;
+	private String definicion;
+	private ArrayList<String>sinonimos;
+	private ArrayList<String>antonimos;
+	
+	public Palabra (String n,String definicion) {
+		this.nombre_palabra=n;
+		this.definicion=definicion;
+		sinonimos= new ArrayList<>();
+		antonimos= new ArrayList<>();
+	}
+	
+	
+	
+	public String getNombre_palabra() {
+		return nombre_palabra;
+	}
+
+
+
+	public void setNombre_palabra(String nombre_palabra) {
+		this.nombre_palabra = nombre_palabra;
+	}
+
+
+
+	public String getDefinicion() {
+		return definicion;
+	}
+
+
+
+	public void setDefinicion(String definicion) {
+		this.definicion = definicion;
+	}
+
+
+
+	public int compareTo(Palabra x) {
+		return this.getNombre_palabra().compareTo(x.nombre_palabra);
+
+	}
+}

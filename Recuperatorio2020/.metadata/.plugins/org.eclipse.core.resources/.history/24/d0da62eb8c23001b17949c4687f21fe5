@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+
+public class Voluntario extends ElementZona{
+	private String nombre ;
+	private String nacionalidad;
+	private int edad;
+	private String genero;
+	ArrayList<String>enfermedadesPre;
+	private boolean recibioPlacebo;
+	private boolean contrajoEnfermedad;
+	
+	
+	public Voluntario(String nombre, String nacionalidad,int edad, String genero,boolean placebo, boolean conEnfer) {
+		this.nombre=nombre;
+		this.nacionalidad=nacionalidad;
+		this.edad=edad;
+		this.genero=genero;
+		enfermedadesPre= new ArrayList<>();
+		this.recibioPlacebo=placebo;
+		this.contrajoEnfermedad=conEnfer;
+	}
+	
+	
+	public void agregarEnfermedadPre(String e) {
+		if (!contieneEnfermedad(e)) {
+			enfermedadesPre.add(e);
+		}
+	}
+	
+	public boolean contieneEnfermedad(String enfermedad) {
+		return enfermedadesPre.contains(enfermedad);
+	}
+	
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public String getNacionalidad() {
+		return nacionalidad;
+	}
+
+
+	public int getEdad() {
+		return edad;
+	}
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+	public boolean isRecibioPlacebo() {
+		return recibioPlacebo;
+	}
+
+
+
+
+	public boolean isContrajoEnfermedad() {
+		return contrajoEnfermedad;
+	}
+	
+
+	@Override
+	public int cantidadVoluntarios() {
+		return 1;
+	}
+
+	@Override
+	public int cantidadVoluntariosCriterio(Criterio c) {
+		if (c.cumple(this)){
+			return 1;
+		}
+		return 0;
+	}
+
+
+	@Override
+	public ArrayList<Voluntario> ListaVoluntariosVacuna(Criterio c) {
+		ArrayList<Voluntario>nuevaLista= new ArrayList<>();
+		if (c.cumple(this)) {
+			nuevaLista.add(this);
+		}
+		return nuevaLista;
+	}
+}

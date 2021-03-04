@@ -1,0 +1,35 @@
+package Ejercicio2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		CasaHowart Sliderin= new CasaHowart("siliderin", 50);
+		CasaExigente Grifindor= new CasaExigente("grifindor", 30);
+		
+		Alumno Potter= new Alumno("Harry","Potter");
+		Alumno MadrePotter= new Alumno ("Susan","Potter");
+		Alumno PadrePotter= new Alumno ("Peter","Potter");
+		Potter.AsignarCualidades(true, true, true, true);
+		MadrePotter.AsignarCualidades(true, true, true, true);
+		Grifindor.AsignarCualidades(true, true, true, true);
+		Sliderin.AsignarCualidades(false, true, true, true);
+		Grifindor.AgregarAlumno(MadrePotter);
+		Potter.agregarFamiliar(PadrePotter);
+		Potter.agregarFamiliar(MadrePotter);
+		Grifindor.AgregarAlumno(Potter);
+		System.out.println(Grifindor.AgregarAlumno(PadrePotter));
+		System.out.println("la casa exigente: "+ Grifindor.getNombre()+" tiene de Alumnos :" + Grifindor.getAlumnos());
+		System.out.println(Potter.getFamiliares());
+	}
+
+	
+	//acceder a un metodo del hijo .... desde la clase padre ?//
+	
+	//contains para ver si esta un String en un array sirve sin redefinir el equals??//
+	
+	//hacer una clase de booleanos es una buena practica ??//
+	
+	
+}

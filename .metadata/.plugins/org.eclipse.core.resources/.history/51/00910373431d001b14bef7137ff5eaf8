@@ -1,0 +1,19 @@
+
+public abstract class Pocima {
+	
+	protected String nombre;
+	
+	public Pocima(String s) {
+		nombre=s;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public abstract double modificarAtributo(Atributo c); 
+}

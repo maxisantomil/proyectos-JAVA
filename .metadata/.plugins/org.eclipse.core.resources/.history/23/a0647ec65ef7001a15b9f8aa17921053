@@ -1,0 +1,13 @@
+package Ejercicio4Contribuyentes;
+
+public class mainPais {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Territorio buenosaires= new Territorio("Buenos Aires");
+		Territorio lapampa= new Territorio ("La Pampa");
+		
+		Ciudad tandil= new Ciudad("Tandil");
+	}
+
+}

@@ -1,0 +1,11 @@
+
+public class mainProyectoEspecial {
+
+	public static void main(String[] args) {
+		String mazoPath = "src/Json/superheroes.json";
+		Mazo mazo=new Mazo();
+		mazo.agregarMazo(mazoPath);
+		System.out.println(mazo);
+	}
+
+}

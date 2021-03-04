@@ -1,0 +1,12 @@
+
+public class GrupoPrivado extends GrupoZona {
+
+	public GrupoPrivado(String nombre) {
+		super(nombre);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+
+}

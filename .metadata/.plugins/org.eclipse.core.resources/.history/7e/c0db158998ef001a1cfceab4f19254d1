@@ -1,0 +1,15 @@
+package Ejercicio1;
+
+public class MonitoroAlarma {
+
+	public static void main(String[] args) {
+		Alarma a1= new Alarma();
+		AlarmaLuminosa a2= new AlarmaLuminosa();
+		
+		
+		Timbre t1= new Timbre("1");
+		Luz l1= new Luz("blanca");
+
+	}
+
+}

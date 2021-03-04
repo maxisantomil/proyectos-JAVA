@@ -1,0 +1,10 @@
+package Ejercicio4Contribuyentes;
+
+public class mainPais {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

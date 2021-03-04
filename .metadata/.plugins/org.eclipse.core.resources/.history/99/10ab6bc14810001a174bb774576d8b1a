@@ -1,0 +1,16 @@
+package Libreria;
+
+public class DescuentoDineroGastado implements CriterioDescuento{
+	double cant;
+	int porcentaje;
+	
+	public DescuentoDineroGastado(double d, int po) {
+		cant=d;
+		porcentaje=po;
+	}
+	
+	public boolean cumple(Cliente c) {
+		return c.getDinerogastado()>=cant;
+	}
+
+}

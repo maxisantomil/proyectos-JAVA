@@ -1,0 +1,13 @@
+package Ejercicio1Contrato;
+
+public class Contrato {
+	String empresa;
+	double sueldo;
+	int horasSemanales;
+	Criterio criterio;
+	
+	
+	Public boolean CompararC(Contrato c) {
+		
+	}
+}

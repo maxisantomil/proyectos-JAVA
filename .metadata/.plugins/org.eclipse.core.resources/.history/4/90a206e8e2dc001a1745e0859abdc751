@@ -1,0 +1,67 @@
+package AgendaPersonal;
+
+import java.util.ArrayList;
+
+public class Usuario {
+
+	private String name;
+	private int telefono;
+	private String mail;
+	private String direccion;
+	ArrayList<Reunion>Reuniones;
+	
+	public Usuario(String n ,int tel, String mail, String direc) {
+		this.name=n;
+		this.telefono=tel;
+		this.mail=mail;
+		this.direccion=direc;
+		Reuniones = new ArrayList<Reunion>();
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getTelefono() {
+		return telefono;
+	}
+
+
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
+
+
+	public String getMail() {
+		return mail;
+	}
+
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	
+	
+	public void AgregarReunion (Reunion re) {
+		Reuniones.add(re);
+		re.AgregarParticipante(this.name);
+	}
+}
+

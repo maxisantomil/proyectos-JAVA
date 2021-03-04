@@ -1,0 +1,10 @@
+package Ejercicio2SistemaElectoral;
+
+public abstract class ElementoElectoral {
+	
+	
+	
+	
+	
+	public abstract int getDni();
+}

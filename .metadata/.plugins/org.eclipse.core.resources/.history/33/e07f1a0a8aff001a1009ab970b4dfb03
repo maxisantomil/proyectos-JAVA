@@ -1,0 +1,60 @@
+package Ejercicio2Meteorologo;
+
+public class Registro {
+	int cantllovido;
+	int temperatura;
+	int humedad;
+	int velocidadViento;
+	int hora;
+	
+	public Registro(int cantllovido,int temp,int hum,int vel, int hora) {
+		this.cantllovido=cantllovido;
+		temperatura=temp;
+		humedad=hum;
+		velocidadViento=vel;
+		this.hora=hora;
+	}
+	
+	
+	public int getCantllovido() {
+		return cantllovido;
+	}
+	public void setCantllovido(int cantllovido) {
+		this.cantllovido = cantllovido;
+	}
+	public int getTemperatura() {
+		return temperatura;
+	}
+	public void setTemperatura(int temperatura) {
+		this.temperatura = temperatura;
+	}
+	public int getHumedad() {
+		return humedad;
+	}
+	public void setHumedad(int humedad) {
+		this.humedad = humedad;
+	}
+	public int getVelocidadViento() {
+		return velocidadViento;
+	}
+	public void setVelocidadViento(int velocidadViento) {
+		this.velocidadViento = velocidadViento;
+	}
+	public int getHora() {
+		return hora;
+	}
+	public void setHora(int hora) {
+		this.hora = hora;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Registro [cantllovido=" + cantllovido + ", temperatura=" + temperatura + ", humedad=" + humedad
+				+ ", velocidadViento=" + velocidadViento + ", hora=" + hora + "]";
+	}
+	
+	
+	
+	
+}

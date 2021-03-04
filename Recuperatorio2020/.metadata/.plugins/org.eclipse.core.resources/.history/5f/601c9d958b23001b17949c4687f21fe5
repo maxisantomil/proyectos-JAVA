@@ -1,0 +1,14 @@
+
+public class CriterioSexo implements Criterio {
+
+	private String genero;
+	
+	public CriterioSexo(String s) {
+		genero=s;
+	}
+	@Override
+	public boolean cumple(Voluntario v) {
+		return v.getGenero().equals(genero);
+	}
+
+}

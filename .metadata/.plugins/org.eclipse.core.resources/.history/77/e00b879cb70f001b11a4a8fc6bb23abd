@@ -1,0 +1,54 @@
+package Ejercicio4Vivero;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Vivero {
+	private String nombre;
+	private ArrayList<Fichaplanta>plantas;
+	
+	
+	public Vivero(String nombre) {
+		this.nombre=nombre;
+		this.plantas= new ArrayList<>();
+	}
+	
+	
+	public void agregarFicha(Fichaplanta f) {
+		if (!plantas.contains(f)) {
+			plantas.add(f);
+		}
+	}
+	
+	
+	
+	public ArrayList<Fichaplanta> listaxCriterio(Filtro filtro){
+		ArrayList<Fichaplanta> listaAux= new ArrayList<>();
+		for (Fichaplanta ficha :plantas) {
+			if (filtro.cumple(ficha)){
+				listaAux.add(ficha);
+			}
+		}
+		return listaAux;
+	}
+	
+	public ArrayList<Fichaplanta>listaordenadaxComparador(Filtro filtro, Comparator<Fichaplanta> c){
+		ArrayList<Fichaplanta> listaAux= new ArrayList<>();
+		for (Fichaplanta ficha :plantas) {
+			if (filtro.cumple(ficha)){
+				listaAux.add(ficha);
+			}
+		}
+		Collections.sort(listaAux, c);
+		return listaAux;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Vivero [nombre=" + nombre + "plantas=" +plantas +"]";
+	}
+	
+	
+}

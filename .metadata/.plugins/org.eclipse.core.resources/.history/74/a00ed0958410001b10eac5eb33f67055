@@ -1,0 +1,15 @@
+
+public class Fortalecedora extends Pocima {
+	private int porcentaje;
+	
+	
+	public Fortalecedora(int por) {
+		this.porcentaje=por;
+	}
+	
+	@Override
+	public int modificarAtributo(Atributo atr) {
+	
+	}
+
+}

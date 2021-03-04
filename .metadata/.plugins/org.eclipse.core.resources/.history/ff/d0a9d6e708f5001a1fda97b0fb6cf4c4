@@ -1,0 +1,49 @@
+package Ejercicio3CooperativaAgricola;
+
+import java.util.ArrayList;
+
+public class Lote {
+	String nombre;
+	int superficie;
+	ArrayList<String>minerales;
+	
+
+	public Lote(String n,int sup) {
+		nombre=n;
+		superficie=sup;
+	}
+	
+	public void agregarMineral(String a) {
+		String mineral= a.toLowerCase();
+		if (!(minerales.contains(mineral))){
+			minerales.add(a);
+		}
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getSuperficie() {
+		return superficie;
+	}
+
+	public void setSuperficie(int superficie) {
+		this.superficie = superficie;
+	}
+
+	public ArrayList<String> getMinerales() {
+		return minerales;
+	}
+
+	public void setMinerales(ArrayList<String> minerales) {
+		this.minerales = minerales;
+	}
+	
+	
+	
+}

@@ -1,0 +1,10 @@
+
+public class PocimaCocktail extends Pocima {
+
+	@Override
+	public double modificarAtributo(Atributo c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,0 +1,10 @@
+
+public class Fortalecedora extends Pocima {
+
+	@Override
+	public int modificarAtributo(Atributo atr) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

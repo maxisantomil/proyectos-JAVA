@@ -1,0 +1,15 @@
+package Ejercicio2Meteorologo;
+
+public class PrediccionUltimoRegistro extends Prediccion {
+	
+	public PrediccionUltimoRegistro(int valormaximo) {
+		super(1,valormaximo);
+	}
+
+	@Override
+	public boolean predicelluvia(EstacionMeteorologica e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

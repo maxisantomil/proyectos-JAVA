@@ -1,0 +1,28 @@
+package Ejercicio4Contribuyentes;
+
+import java.util.ArrayList;
+
+public class Territorio {
+	String nombre;
+	ArrayList<Ciudad>provincia;
+	
+	public Territorio(String nombre) {
+		this.nombre=nombre;
+	}
+	
+	
+	
+	public String provDeficit() {
+		int cant=0;
+		for (Ciudad c:provincia) {
+			if (c.estaEnDeficit()){
+				cant++;
+			}
+		}
+		if (cant > (provincia.size()/2)){
+			return "la provincia tiene mas de la mitad de sus ciudades en deficit";
+		}else return "la provincia no esta en deficit por el momento";
+	}
+	
+	
+}

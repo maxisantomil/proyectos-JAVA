@@ -1,0 +1,20 @@
+
+public class Rectangulo {
+  PuntoGeometrico vertice1;
+  PuntoGeometrico vertice2;
+  PuntoGeometrico vertice3;
+  PuntoGeometrico vertice4;
+  double lado_a;
+  double lado_b;
+  double lado_c;
+  double lado_d;
+   
+  public Rectangulo(PuntoGeometrico a,PuntoGeometrico b,PuntoGeometrico c,PuntoGeometrico d) {
+	  vertice1= a;
+	  vertice2=b;
+	  vertice3=c;
+	  vertice4=d;
+	  
+  }
+}
+

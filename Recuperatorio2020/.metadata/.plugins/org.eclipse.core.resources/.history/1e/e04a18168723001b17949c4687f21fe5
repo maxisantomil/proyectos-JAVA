@@ -1,0 +1,10 @@
+
+public class CriterioContieneEnfermedadPreexistente implements Criterio {
+
+	@Override
+	public boolean cumple(Voluntario v) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

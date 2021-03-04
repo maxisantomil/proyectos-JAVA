@@ -1,0 +1,33 @@
+package Ejercicio2;
+
+import java.util.ArrayList;
+
+
+public class Alarma {
+	String nombre;
+	ArrayList<Sensor>Sensores;
+	Timbre timbre;
+
+	public Alarma() {
+		nombre="comun";
+		Sensores= new ArrayList<Sensor>();
+	}
+
+
+public void  comprobar () {
+	for (Sensor s:Sensores) {
+		if (s.seActivo) {
+			ActivarAlarma();
+		}
+	}
+}
+
+public void ActivarAlarma() {
+		timbre.HacerSonar();
+	}
+
+public void setTimbre(Timbre t) {
+	timbre=t;
+}
+
+}
